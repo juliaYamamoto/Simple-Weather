@@ -25,5 +25,6 @@ extension UIColor {
         static let darkBlue = UIColor(red: 68, green: 84, blue: 100)
         static let darkYellow = UIColor(red: 251, green: 212, blue: 28)
     }
+
 }
 

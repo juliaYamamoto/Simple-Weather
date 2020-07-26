@@ -16,6 +16,7 @@
 		A31629E124CA2B05003AF90B /* NewSimpleWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31629E024CA2B05003AF90B /* NewSimpleWeatherTests.swift */; };
 		A31629EC24CA2B05003AF90B /* NewSimpleWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31629EB24CA2B05003AF90B /* NewSimpleWeatherUITests.swift */; };
 		A3291EAE24CAA25F0064CB06 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3291EAD24CAA25F0064CB06 /* UIColor.swift */; };
+		A3C8596124CCDCF200C7CF71 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C8596024CCDCF200C7CF71 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		A31629EB24CA2B05003AF90B /* NewSimpleWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSimpleWeatherUITests.swift; sourceTree = "<group>"; };
 		A31629ED24CA2B05003AF90B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3291EAD24CAA25F0064CB06 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		A3C8596024CCDCF200C7CF71 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +110,7 @@
 				A31629D424CA2B04003AF90B /* LaunchScreen.storyboard */,
 				A31629D224CA2B04003AF90B /* Assets.xcassets */,
 				A31629D724CA2B04003AF90B /* Info.plist */,
-				A3291EAF24CAA2C90064CB06 /* Extensions */,
+				A3291EAF24CAA2C90064CB06 /* Utils */,
 			);
 			path = NewSimpleWeather;
 			sourceTree = "<group>";
@@ -131,12 +133,13 @@
 			path = NewSimpleWeatherUITests;
 			sourceTree = "<group>";
 		};
-		A3291EAF24CAA2C90064CB06 /* Extensions */ = {
+		A3291EAF24CAA2C90064CB06 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				A3291EAD24CAA25F0064CB06 /* UIColor.swift */,
+				A3C8596024CCDCF200C7CF71 /* Constants.swift */,
 			);
-			path = Extensions;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3C8596124CCDCF200C7CF71 /* Constants.swift in Sources */,
 				A31629CE24CA2B02003AF90B /* ViewController.swift in Sources */,
 				A3291EAE24CAA25F0064CB06 /* UIColor.swift in Sources */,
 				A31629CA24CA2B02003AF90B /* AppDelegate.swift in Sources */,
