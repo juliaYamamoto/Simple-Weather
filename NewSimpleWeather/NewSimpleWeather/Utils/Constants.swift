@@ -10,4 +10,8 @@ import UIKit
 
 class Constants: NSObject {
 
+    public struct API{
+        let baseURL: String = "https://api.darksky.net/forecast"
+        let idkey: String = "8be6ee97dfdc80b35ee98a2ec52b938d"
+    }
 }

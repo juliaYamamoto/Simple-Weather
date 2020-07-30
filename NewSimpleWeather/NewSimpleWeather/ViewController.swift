@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
     
     // MARK: - IBOutlet
@@ -24,6 +25,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var locationImageTopContraint: NSLayoutConstraint!
     
     
+    // MARK: - Location Atributes
+    let locationManager = CLLocationManager()
+    var currentPosition: (latitude: Double, longitude: Double) = (0.0, 0.0)
+    
     
     // MARK: - Atributes
     var menuIsOpen = false
@@ -34,6 +39,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupLocation()
     }
     
     
@@ -59,6 +65,19 @@ class ViewController: UIViewController {
     }
     
     
+    // MARK: - Location Methods
+    
+    func setupLocation() {
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    
     // MARK: - IBAction
     
     @IBAction func menuButtonClicked(_ sender: Any) {
@@ -72,6 +91,26 @@ class ViewController: UIViewController {
             self.view.layoutIfNeeded()
         }) { (_) in
             self.menuIsOpen = !self.menuIsOpen
+        }
+    }
+    
+    // MARK: - CLLocationManagerDelegate
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locationManager.location{
+            currentPosition = (location.coordinate.latitude, location.coordinate.longitude)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+        switch CLLocationManager.authorizationStatus() {
+        case .denied:
+            print("denied")
+            //TODO
+            break
+        default:
+            break
         }
     }
 }
