@@ -102,9 +102,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         APIRequest.requestWeatherWith(latitude: self.currentPosition.latitude, longitude: self.currentPosition.longitude, completionSuccess: { (weather) in
-            print("1")
+            print("SUCCESS retrieving weather information!")
         }) { (_) in
-            print("2")
+        print("FAILIURE retrieving weather information!")
         }
     }
     
