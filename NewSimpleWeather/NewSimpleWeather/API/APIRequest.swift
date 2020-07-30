@@ -9,34 +9,43 @@
 import UIKit
 
 class APIRequest: NSObject {
+    
+    static func getCompletePathWith(_ latitude: Double, _ longitude: Double) -> String {
+        return "\(Constants.API().forecastPath)/\(Constants.API().idkey)/\(latitude),\(longitude)"
+    }
 
     static func requestWeatherWith(latitude: Double, longitude: Double,
                                    completionSuccess: @escaping (Weather) -> Void,
                                    completionFailed: @escaping (Error?) -> Void){
         
+        var components = URLComponents()
+        components.scheme = Constants.API().schemeURL
+        components.host = Constants.API().baseURL
+        components.path = APIRequest.getCompletePathWith(latitude, longitude)
+
+        guard let url = components.url else {return}
         
-        
-//        if var url = URL(string: baseUrl) {
-//            url.appendPathComponent(completePath)
-//
-//            URLSession.shared.dataTask(with: url) { (data, response, error) in
-//                if error != nil {
-//                    //Return error message
-//                    failure(Constants.ErrorMessage().errorUrlSession)
-//                    return
-//                }
-//
-//                guard let data = data else {
-//                    //Return error message
-//                    failure(Constants.ErrorMessage().errorRetrievingData)
-//                    return
-//                }
-//
-//                success(data)
-//            }.resume()
-//        }
-        
-        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                completionFailed(error)
+                return
+            }
+            
+            guard let data = data else {
+                completionFailed(nil)
+                return
+            }
+
+            do {
+                //Decode
+                let weather = try! JSONDecoder().decode(Weather.self, from: data)
+                completionSuccess(weather)
+            }
+            catch {
+                completionFailed(nil)
+            }
+            
+        }.resume()
         
     }
 }
