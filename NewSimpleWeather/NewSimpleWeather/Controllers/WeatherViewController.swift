@@ -9,41 +9,24 @@
 import UIKit
 import CoreLocation
 
-class WeatherViewController: UIViewController, CLLocationManagerDelegate {
+class WeatherViewController: UIViewController, LocationDelegate {
 
     // MARK: - Attributes
+    let location = Location()
     
-    let locationManager = CLLocationManager()
-    var currentPosition: (latitude: Double, longitude: Double) = (0.0, 0.0)
-
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Location().setupLocationManager(locationManager: locationManager, weatherVC: self)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
-        if let location = Location().getCurrentLocation(locationManager) {
-            currentPosition = location
-        }
-       
+        location.delegate = self
+        location.setupLocationManagerWithVC()
     }
     
-    
-    // MARK: - CLLocationManagerDelegate
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch CLLocationManager.authorizationStatus() {
-        case .denied:
-            print("denied")
-            //TODO - Ask to point a city or redirect to settings and change permission
-            break
-        default:
-            break
-        }
+    // MARK: - LocationDelegate
+    func gotCurrentLocation(latitude: Double, longitude: Double) {
+        print("\(latitude), \(longitude)")
     }
+    
 }
