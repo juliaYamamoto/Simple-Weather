@@ -16,6 +16,8 @@
 		A31629E124CA2B05003AF90B /* NewSimpleWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31629E024CA2B05003AF90B /* NewSimpleWeatherTests.swift */; };
 		A31629EC24CA2B05003AF90B /* NewSimpleWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31629EB24CA2B05003AF90B /* NewSimpleWeatherUITests.swift */; };
 		A3291EAE24CAA25F0064CB06 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3291EAD24CAA25F0064CB06 /* UIColor.swift */; };
+		A34CE30824D8EB7D00747092 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34CE30724D8EB7D00747092 /* WeatherViewController.swift */; };
+		A34CE30B24D8ECF500747092 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34CE30A24D8ECF500747092 /* Location.swift */; };
 		A3B9E8A524D1327D00688C16 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9E8A424D1327D00688C16 /* APIRequest.swift */; };
 		A3B9E8A824D1342D00688C16 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9E8A724D1342D00688C16 /* WeatherModel.swift */; };
 		A3C8596124CCDCF200C7CF71 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C8596024CCDCF200C7CF71 /* Constants.swift */; };
@@ -54,6 +56,8 @@
 		A31629EB24CA2B05003AF90B /* NewSimpleWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSimpleWeatherUITests.swift; sourceTree = "<group>"; };
 		A31629ED24CA2B05003AF90B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3291EAD24CAA25F0064CB06 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		A34CE30724D8EB7D00747092 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		A34CE30A24D8ECF500747092 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		A3B9E8A424D1327D00688C16 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		A3B9E8A724D1342D00688C16 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		A3C8596024CCDCF200C7CF71 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 		A31629C824CA2B02003AF90B /* NewSimpleWeather */ = {
 			isa = PBXGroup;
 			children = (
+				A34CE30924D8EBD300747092 /* Views */,
+				A34CE30624D8EB4A00747092 /* Controllers */,
 				A3B9E8A624D1341B00688C16 /* Model */,
 				A3B9E8A324D1320A00688C16 /* API */,
 				A31629C924CA2B02003AF90B /* AppDelegate.swift */,
@@ -146,6 +152,22 @@
 				A3C8596024CCDCF200C7CF71 /* Constants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		A34CE30624D8EB4A00747092 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A34CE30724D8EB7D00747092 /* WeatherViewController.swift */,
+				A34CE30A24D8ECF500747092 /* Location.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A34CE30924D8EBD300747092 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A3B9E8A324D1320A00688C16 /* API */ = {
@@ -299,7 +321,9 @@
 				A31629CE24CA2B02003AF90B /* ViewController.swift in Sources */,
 				A3B9E8A524D1327D00688C16 /* APIRequest.swift in Sources */,
 				A3B9E8A824D1342D00688C16 /* WeatherModel.swift in Sources */,
+				A34CE30B24D8ECF500747092 /* Location.swift in Sources */,
 				A3291EAE24CAA25F0064CB06 /* UIColor.swift in Sources */,
+				A34CE30824D8EB7D00747092 /* WeatherViewController.swift in Sources */,
 				A31629CA24CA2B02003AF90B /* AppDelegate.swift in Sources */,
 				A31629CC24CA2B02003AF90B /* SceneDelegate.swift in Sources */,
 			);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RsM-3L-1zy">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -7,119 +7,29 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Weather View Controller-->
+        <scene sceneID="Rvl-0a-oEn">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NewSimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="RsM-3L-1zy" customClass="WeatherViewController" customModule="NewSimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s1s-iF-O36">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9j-Yt-bAZ" userLabel="MenuView">
-                                <rect key="frame" x="0.0" y="-44" width="375" height="240"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="darkMenu" translatesAutoresizingMaskIntoConstraints="NO" id="EnZ-h1-0yR">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
-                                    </imageView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="y9p-Z0-r1j">
-                                        <rect key="frame" x="20" y="59" width="90" height="46"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="YuR-2h-qT5"/>
-                                            <constraint firstAttribute="height" constant="45" id="ton-hD-yo4"/>
-                                        </constraints>
-                                        <segments>
-                                            <segment title="ºC"/>
-                                            <segment title="ºF"/>
-                                        </segments>
-                                    </segmentedControl>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lightLocation" translatesAutoresizingMaskIntoConstraints="NO" id="6XH-Ko-6rb">
-                                        <rect key="frame" x="40" y="130" width="45" height="75"/>
-                                        <color key="tintColor" red="0.69387143849999999" green="0.82698452469999995" blue="0.88160556550000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="45" id="6Ly-iP-VBm"/>
-                                            <constraint firstAttribute="height" constant="75" id="kxB-f3-CDx"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City name" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qWV-jm-de2">
-                                        <rect key="frame" x="100" y="130" width="248" height="50"/>
-                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="vI1-pf-gic"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="48"/>
-                                        <color key="textColor" red="0.69387143849999999" green="0.82698452469999995" blue="0.88160556550000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <size key="shadowOffset" width="0.0" height="0.0"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hZA-c2-MhC">
-                                        <rect key="frame" x="100" y="175" width="248" height="30"/>
-                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="ZqH-al-WnG"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
-                                        <color key="textColor" red="0.69387143849999999" green="0.82698452469999995" blue="0.88160556550000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <size key="shadowOffset" width="0.0" height="0.0"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstItem="EnZ-h1-0yR" firstAttribute="top" secondItem="a9j-Yt-bAZ" secondAttribute="top" id="10A-pC-6hD"/>
-                                    <constraint firstAttribute="trailing" secondItem="hZA-c2-MhC" secondAttribute="trailing" constant="27" id="4qh-Ot-6hN"/>
-                                    <constraint firstItem="6XH-Ko-6rb" firstAttribute="top" secondItem="a9j-Yt-bAZ" secondAttribute="top" constant="130" id="5FU-Y4-7Ai"/>
-                                    <constraint firstItem="6XH-Ko-6rb" firstAttribute="leading" secondItem="a9j-Yt-bAZ" secondAttribute="leading" constant="40" id="A5Z-ZI-9X2"/>
-                                    <constraint firstItem="qWV-jm-de2" firstAttribute="leading" secondItem="6XH-Ko-6rb" secondAttribute="trailing" constant="15" id="GhN-vy-yHe"/>
-                                    <constraint firstItem="hZA-c2-MhC" firstAttribute="top" secondItem="qWV-jm-de2" secondAttribute="bottom" constant="-5" id="IAr-S2-dso"/>
-                                    <constraint firstAttribute="trailing" secondItem="EnZ-h1-0yR" secondAttribute="trailing" id="Lj2-Q9-l7S"/>
-                                    <constraint firstAttribute="height" constant="240" id="NKF-Fh-jJi"/>
-                                    <constraint firstItem="hZA-c2-MhC" firstAttribute="leading" secondItem="6XH-Ko-6rb" secondAttribute="trailing" constant="15" id="YpK-iF-twe"/>
-                                    <constraint firstItem="EnZ-h1-0yR" firstAttribute="leading" secondItem="a9j-Yt-bAZ" secondAttribute="leading" id="caK-EI-8pc"/>
-                                    <constraint firstAttribute="trailing" secondItem="qWV-jm-de2" secondAttribute="trailing" constant="27" id="chU-h0-q9l"/>
-                                    <constraint firstItem="y9p-Z0-r1j" firstAttribute="leading" secondItem="a9j-Yt-bAZ" secondAttribute="leading" constant="20" id="d7U-ab-P6h"/>
-                                    <constraint firstItem="qWV-jm-de2" firstAttribute="top" secondItem="a9j-Yt-bAZ" secondAttribute="top" constant="130" id="e1f-qD-wDS"/>
-                                    <constraint firstAttribute="bottom" secondItem="EnZ-h1-0yR" secondAttribute="bottom" id="pFZ-h3-Iyc"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3v6-7W-lza">
-                                <rect key="frame" x="318" y="15" width="30" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="1sG-Tw-LTW"/>
-                                    <constraint firstAttribute="height" constant="20" id="PTx-ju-VaF"/>
-                                </constraints>
-                                <state key="normal" image="lightMenuButton"/>
-                                <connections>
-                                    <action selector="menuButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L3m-ie-2jr"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="oi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhd-eu-OBM">
+                                <rect key="frame" x="166" y="278" width="14" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="3v6-7W-lza" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="6Q9-85-6aZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a9j-Yt-bAZ" secondAttribute="trailing" id="BWj-Ez-cMQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3v6-7W-lza" secondAttribute="trailing" constant="27" id="HQi-dX-hi0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="a9j-Yt-bAZ" secondAttribute="top" constant="44" id="Rvk-14-Hvk"/>
-                            <constraint firstItem="y9p-Z0-r1j" firstAttribute="top" secondItem="a9j-Yt-bAZ" secondAttribute="top" constant="59" id="ZeR-vn-BN5"/>
-                            <constraint firstItem="a9j-Yt-bAZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mdN-cN-GmU"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="EGe-pF-poB"/>
                     </view>
-                    <connections>
-                        <outlet property="degreesSegmentedControl" destination="y9p-Z0-r1j" id="YCW-IX-rOn"/>
-                        <outlet property="locationImageTopContraint" destination="5FU-Y4-7Ai" id="utb-mF-fj4"/>
-                        <outlet property="menuLeadingConstraint" destination="mdN-cN-GmU" id="oGH-Tj-QG3"/>
-                        <outlet property="menuTopConstraint" destination="Rvk-14-Hvk" id="siH-DA-Rlb"/>
-                        <outlet property="menuTrailingConstraint" destination="BWj-Ez-cMQ" id="hry-dc-Gvy"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ily-Q8-PAa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.40000000000001" y="98.50074962518741"/>
+            <point key="canvasLocation" x="546" y="-538"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="darkMenu" width="621" height="330"/>
-        <image name="lightLocation" width="37.5" height="60"/>
-        <image name="lightMenuButton" width="60" height="50"/>
-    </resources>
 </document>
