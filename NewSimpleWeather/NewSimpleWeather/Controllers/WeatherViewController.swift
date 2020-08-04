@@ -27,6 +27,13 @@ class WeatherViewController: UIViewController, LocationDelegate {
     // MARK: - LocationDelegate
     func gotCurrentLocation(latitude: Double, longitude: Double) {
         print("\(latitude), \(longitude)")
+        
+        
+        APIRequest.requestWeatherWith(latitude, longitude, success: { (weather) in
+            print("completionSuccess")
+        }) { (error) in
+            print("error")
+        }
     }
     
 }

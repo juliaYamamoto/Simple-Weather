@@ -115,6 +115,7 @@
 				A34CE30624D8EB4A00747092 /* Controllers */,
 				A3B9E8A624D1341B00688C16 /* Model */,
 				A3B9E8A324D1320A00688C16 /* API */,
+				A3291EAF24CAA2C90064CB06 /* Utils */,
 				A31629C924CA2B02003AF90B /* AppDelegate.swift */,
 				A31629CB24CA2B02003AF90B /* SceneDelegate.swift */,
 				A31629CD24CA2B02003AF90B /* ViewController.swift */,
@@ -122,7 +123,6 @@
 				A31629D424CA2B04003AF90B /* LaunchScreen.storyboard */,
 				A31629D224CA2B04003AF90B /* Assets.xcassets */,
 				A31629D724CA2B04003AF90B /* Info.plist */,
-				A3291EAF24CAA2C90064CB06 /* Utils */,
 			);
 			path = NewSimpleWeather;
 			sourceTree = "<group>";
