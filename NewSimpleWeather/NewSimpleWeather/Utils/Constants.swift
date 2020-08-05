@@ -12,22 +12,20 @@ class Constants: NSObject {
 
     public struct API{
         let schemeURL: String = "https"
-        let baseURL: String = "api.openweathermap.org"
+        let baseURL: String = "api.darksky.net"
         
-        let dataPath: String = "/data"
-        let apiVersion = "/2.5"
-        let onecall = "/onecall"
+        let forecastPath: String = "forecast"
+        let keyValue: String = "8be6ee97dfdc80b35ee98a2ec52b938d"
         
-        let keyName: String = "appid"
-        let keyValue: String = "7b82c01bf433db50a7a373053507692f"
-        
-        let queryNameLatitude: String = "lat"
-        let queryNameLongitude: String = "lon"
         let queryNameExclude: String = "exclude"
-        
-        let queryValueCurrent: String = "current"
+        let queryValueCurrently: String = "currently"
         let queryValueMinutely: String = "minutely"
         let queryValueHourly: String = "hourly"
         let queryValueDaily: String = "daily"
+        let queryValueAlerts: String = "alerts"
+        let queryValueFlags: String = "flags"
+        
+        let queryNameUnits: String = "units"
+        let queryValueUnitCA: String = "ca"
     }
 }

@@ -10,17 +10,15 @@ import UIKit
 
 class APIRequest: NSObject {
     
-    static func getCompletePath() -> String {
-        return "/\(Constants.API().dataPath)\(Constants.API().apiVersion)\(Constants.API().onecall)"
+    
+    static func getCompletePathWith(_ latitude: Double, _ longitude: Double) -> String {
+        return "/\(Constants.API().forecastPath)/\(Constants.API().keyValue)/\(latitude),\(longitude)"
     }
     
-    //Excluding hourly and minutely (keeping daily and current)
+    //Excluding hourly, minutely, alerts and flags (keeping daily and current)
     static func getExcludeValue() -> String {
-        return "\(Constants.API().queryValueHourly),\(Constants.API().queryValueMinutely)"
+        return "\(Constants.API().queryValueHourly),\(Constants.API().queryValueMinutely),\(Constants.API().queryValueAlerts),\(Constants.API().queryValueFlags)"
     }
-    
-    //https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}& exclude={part}&appid={YOUR API KEY}
-    
     
     static func requestWeatherWith(_ latitude: Double, _ longitude: Double,
                                    success: @escaping (Weather) -> Void,
@@ -30,37 +28,35 @@ class APIRequest: NSObject {
         var components = URLComponents()
         components.scheme = Constants.API().schemeURL
         components.host = Constants.API().baseURL
-        components.path = APIRequest.getCompletePath()
+        components.path = APIRequest.getCompletePathWith(latitude, longitude)
         components.queryItems = [
-            URLQueryItem(name: Constants.API().queryNameLatitude, value: latitude.description),
-            URLQueryItem(name: Constants.API().queryNameLongitude, value: longitude.description),
-            URLQueryItem(name: Constants.API().queryNameExclude, value:getExcludeValue() ),
-            URLQueryItem(name: Constants.API().keyName, value: Constants.API().keyValue)
+            URLQueryItem(name: Constants.API().queryNameExclude, value: APIRequest.getExcludeValue()),
+            URLQueryItem(name: Constants.API().queryNameUnits, value: Constants.API().queryValueUnitCA)
+            
         ]
 
         guard let url = components.url else {return}
-        print(url)
         
-//        URLSession.shared.dataTask(with: url) { (data, response, error) in
-//            if error != nil {
-//                completionFailed(error)
-//                return
-//            }
-//
-//            guard let data = data else {
-//                completionFailed(nil)
-//                return
-//            }
-//
-//            do {
-//                //Decode
-//                let weather = try JSONDecoder().decode(Weather.self, from: data)
-//                completionSuccess(weather)
-//            } catch {
-//                completionFailed(nil)
-//            }
-//
-//        }.resume()
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                failed(error)
+                return
+            }
+
+            guard let data = data else {
+                failed(nil)
+                return
+            }
+
+            do {
+                //Decode
+                let weather = try JSONDecoder().decode(Weather.self, from: data)
+                success(weather)
+            } catch {
+                failed(nil)
+            }
+
+        }.resume()
         
     }
 }
