@@ -14,11 +14,15 @@ class WeatherViewController: UIViewController, LocationDelegate {
     // MARK: - Attributes
     let location = Location()
     
-    
     // MARK: - Lifecycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         location.delegate = self
         location.setupLocationManagerWithVC()
@@ -26,11 +30,8 @@ class WeatherViewController: UIViewController, LocationDelegate {
     
     // MARK: - LocationDelegate
     func gotCurrentLocation(latitude: Double, longitude: Double) {
-        print("\(latitude), \(longitude)")
-        
-        
         APIRequest.requestWeatherWith(latitude, longitude, success: { (weather) in
-            print("completionSuccess")
+            let today = TodayWeather(from: weather)
         }) { (error) in
             print("error")
         }

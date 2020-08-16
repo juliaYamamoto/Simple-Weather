@@ -10,7 +10,6 @@ import UIKit
 
 struct DataWeather: Codable {
     let time: Int
-    let summary: String
     let icon: String
     let sunriseTime: Int
     let sunsetTime: Int
@@ -22,18 +21,15 @@ struct DataWeather: Codable {
     let temperatureMax: Double
     let apparentTemperatureMin: Double
     let apparentTemperatureMax: Double
-    
 }
 
 struct DayWeather: Codable {
-    let summary: String
     let icon: String
     let data: [DataWeather]
 }
 
 struct CurrentWeather: Codable {
     let time: Int
-    let summary: String
     let icon: String
     let precipProbability: Double
     let temperature: Double

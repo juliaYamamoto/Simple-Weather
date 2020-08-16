@@ -49,8 +49,8 @@ class APIRequest: NSObject {
             }
 
             do {
-                //Decode
                 let weather = try JSONDecoder().decode(Weather.self, from: data)
+                print(data)
                 success(weather)
             } catch {
                 failed(nil)

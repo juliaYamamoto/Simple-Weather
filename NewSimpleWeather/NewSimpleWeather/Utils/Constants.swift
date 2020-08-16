@@ -28,4 +28,17 @@ class Constants: NSObject {
         let queryNameUnits: String = "units"
         let queryValueUnitCA: String = "ca"
     }
+    
+    public struct StateIcon{
+        let clearDay: String = "ClearDay"
+        let clearNight: String = "ClearNight"
+        let cloudyNight: String = "CloudyNight"
+        let fog: String = "Fog"
+        let partlyCloudDay: String = "PartlyCloudDay"
+        let partlyCloudNight: String = "PartlyCloudNight"
+        let rain: String = "Rain"
+        let sleet: String = "Sleet"
+        let snow: String = "Snow"
+        let wind: String = "Wind"
+    }
 }
