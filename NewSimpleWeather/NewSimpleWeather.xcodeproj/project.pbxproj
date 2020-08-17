@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A30F697A24EB243B00D7CFBB /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F697924EB243B00D7CFBB /* Temperature.swift */; };
+		A30F697C24EB30D000D7CFBB /* MoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F697B24EB30D000D7CFBB /* MoonPhase.swift */; };
 		A31629CA24CA2B02003AF90B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31629C924CA2B02003AF90B /* AppDelegate.swift */; };
 		A31629CC24CA2B02003AF90B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31629CB24CA2B02003AF90B /* SceneDelegate.swift */; };
 		A31629CE24CA2B02003AF90B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31629CD24CA2B02003AF90B /* ViewController.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A30F697924EB243B00D7CFBB /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
+		A30F697B24EB30D000D7CFBB /* MoonPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhase.swift; sourceTree = "<group>"; };
 		A31629C624CA2B02003AF90B /* NewSimpleWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSimpleWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A31629C924CA2B02003AF90B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A31629CB24CA2B02003AF90B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 				A3291EAD24CAA25F0064CB06 /* UIColor.swift */,
 				A3C8596024CCDCF200C7CF71 /* Constants.swift */,
 				A3A9A4DC24E6C41A00AEE26E /* Reachability.swift */,
+				A30F697924EB243B00D7CFBB /* Temperature.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -188,8 +193,9 @@
 		A3B9E8A624D1341B00688C16 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A3B9E8A724D1342D00688C16 /* WeatherModel.swift */,
 				A3A6FCED24DE31D0005012D5 /* IconWeather.swift */,
+				A30F697B24EB30D000D7CFBB /* MoonPhase.swift */,
+				A3B9E8A724D1342D00688C16 /* WeatherModel.swift */,
 				A3E620C624E8D37200FBDEFD /* TodayWeather.swift */,
 			);
 			path = Model;
@@ -334,7 +340,9 @@
 				A34CE30B24D8ECF500747092 /* Location.swift in Sources */,
 				A3291EAE24CAA25F0064CB06 /* UIColor.swift in Sources */,
 				A3A9A4DD24E6C41A00AEE26E /* Reachability.swift in Sources */,
+				A30F697C24EB30D000D7CFBB /* MoonPhase.swift in Sources */,
 				A34CE30824D8EB7D00747092 /* WeatherViewController.swift in Sources */,
+				A30F697A24EB243B00D7CFBB /* Temperature.swift in Sources */,
 				A31629CA24CA2B02003AF90B /* AppDelegate.swift in Sources */,
 				A3E620C724E8D37200FBDEFD /* TodayWeather.swift in Sources */,
 				A31629CC24CA2B02003AF90B /* SceneDelegate.swift in Sources */,

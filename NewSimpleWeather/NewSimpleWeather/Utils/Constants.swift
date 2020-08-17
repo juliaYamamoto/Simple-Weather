@@ -29,6 +29,11 @@ class Constants: NSObject {
         let queryValueUnitCA: String = "ca"
     }
     
+    public struct Temperature{
+        let celsius: String = "°C"
+        let fahrenheit: String = "°F"
+    }
+    
     public struct StateIcon{
         let clearDay: String = "ClearDay"
         let clearNight: String = "ClearNight"
@@ -41,4 +46,6 @@ class Constants: NSObject {
         let snow: String = "Snow"
         let wind: String = "Wind"
     }
+    
+    
 }
