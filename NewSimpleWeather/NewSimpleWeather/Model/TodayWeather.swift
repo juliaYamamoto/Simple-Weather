@@ -30,6 +30,7 @@ class TodayWeather: NSObject {
         self.cityName = getLocationCity(location: weather.timezone)
         self.contryName = getLocationCountry(location: weather.timezone)
         self.icon = IconWeather.getIconType(weather.currently.icon)
+        print("\(weather.currently.humidity)")
         self.humidity = getPercentageFrom(value: weather.currently.humidity)
         self.rain = getPercentageFrom(value: weather.currently.precipProbability)
         self.day = getDayString(value: weather.currently.time)
@@ -42,6 +43,7 @@ class TodayWeather: NSObject {
         self.sunriseTime = getTimeString(value: todayData.sunriseTime)
         self.sunsetTime = getTimeString(value: todayData.sunsetTime)
         self.moonPhase = MoonPhase.getMoonType(todayData.moonPhase)
+        
     }
     
     func getLocationCity(location: String) -> String{
@@ -63,10 +65,8 @@ class TodayWeather: NSObject {
     }
     
     func getPercentageFrom(value: Double) -> String{
-        var percentage = "0%"
-        if let intValue = Int(exactly: (value*100)) {
-            percentage = "\(intValue)%"
-        }
+        var percentage = String(format: "%.0f", value*100)
+        percentage = "\(percentage)%"
         
         return percentage
     }
@@ -95,18 +95,18 @@ class TodayWeather: NSObject {
         return timeString
     }
     
-    //The value is in fahrenheit by default
+    //The value is in celsius by default
     func getTemperatureString(value: Double) -> String{
         let temperaturePreference = Temperature.getPreference()
         var stringTemperature = ""
         
         switch temperaturePreference {
         case .celsius:
-            let degrees = Int(Temperature.fahrenheitToCelsius(value))
+            let degrees = Int(value)
             stringTemperature = "\(degrees)\(Constants.Temperature().celsius)"
             break
         case .fahrenheit:
-            let degrees = Int(value)
+            let degrees = Int(Temperature.celsiusToFahrenheit(value))
             stringTemperature = "\(degrees)\(Constants.Temperature().fahrenheit)"
             break
         }
