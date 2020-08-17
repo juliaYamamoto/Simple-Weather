@@ -30,7 +30,6 @@ class TodayWeather: NSObject {
         self.cityName = getLocationCity(location: weather.timezone)
         self.contryName = getLocationCountry(location: weather.timezone)
         self.icon = IconWeather.getIconType(weather.currently.icon)
-        print("\(weather.currently.humidity)")
         self.humidity = getPercentageFrom(value: weather.currently.humidity)
         self.rain = getPercentageFrom(value: weather.currently.precipProbability)
         self.day = getDayString(value: weather.currently.time)

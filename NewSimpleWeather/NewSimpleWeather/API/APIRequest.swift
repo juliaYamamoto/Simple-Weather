@@ -50,7 +50,6 @@ class APIRequest: NSObject {
 
             do {
                 let weather = try JSONDecoder().decode(Weather.self, from: data)
-                print(data)
                 success(weather)
             } catch {
                 failed(nil)

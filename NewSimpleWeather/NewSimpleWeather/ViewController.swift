@@ -100,13 +100,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if let location = locationManager.location{
             currentPosition = (location.coordinate.latitude, location.coordinate.longitude)
         }
-        
-//        APIRequest.requestWeatherWith(latitude: self.currentPosition.latitude, longitude: self.currentPosition.longitude, completionSuccess: { (weather) in
-//            print("SUCCESS retrieving weather information!")
-//        }) { (_) in
-//        print("FAILIURE retrieving weather information!")
-//        }
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
