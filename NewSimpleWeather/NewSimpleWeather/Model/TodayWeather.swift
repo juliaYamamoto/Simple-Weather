@@ -22,7 +22,7 @@ class TodayWeather: NSObject {
     var temperatureMax: String = ""
     var sunriseTime: String = ""
     var sunsetTime: String = ""
-     var moonPhase: MoonPhase = .newMoon
+    var moonPhase: MoonPhase = .newMoon
     
     init(from weather: Weather){
         super.init()

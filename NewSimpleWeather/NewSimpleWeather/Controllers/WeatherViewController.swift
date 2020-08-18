@@ -28,13 +28,20 @@ class WeatherViewController: UIViewController, LocationDelegate {
         location.setupLocationManagerWithVC()
     }
     
+    // MARK: - Methods
+    func createDataModelsFrom(_ weather: Weather){
+        let today = TodayWeather(from: weather)
+        let nextDays = NextDaysWeather()
+        nextDays.creatNextDaysList(from: weather)
+    }
+    
+    
     // MARK: - LocationDelegate
     func gotCurrentLocation(latitude: Double, longitude: Double) {
         APIRequest.requestWeatherWith(latitude, longitude, success: { (weather) in
-            let today = TodayWeather(from: weather)
+            self.createDataModelsFrom(weather)
         }) { (error) in
             print("error")
         }
     }
-    
 }
