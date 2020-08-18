@@ -34,18 +34,36 @@ class Constants: NSObject {
         let fahrenheit: String = "°F"
     }
     
-    public struct StateIcon{
-        let clearDay: String = "ClearDay"
-        let clearNight: String = "ClearNight"
-        let cloudyNight: String = "CloudyNight"
-        let fog: String = "Fog"
-        let partlyCloudDay: String = "PartlyCloudDay"
-        let partlyCloudNight: String = "PartlyCloudNight"
-        let rain: String = "Rain"
-        let sleet: String = "Sleet"
-        let snow: String = "Snow"
-        let wind: String = "Wind"
+    public struct DateFormat{
+        let day: String = "EEEE - MMMM d, yyyy"
+        let hour: String = "h:mm"
     }
     
+    // MARK: - State Weather Icon
     
+    public struct StateIcon{
+        let clearDay: String = "clear-day"
+        let clearNight: String = "clear-night"
+        let rain: String = "rain"
+        let snow: String = "snow"
+        let sleet: String = "sleet"
+        let wind: String = "wind"
+        let fog: String = "fog"
+        let cloudy: String = "cloudy"
+        let partlyCloudDay: String = "partly-cloudy-day"
+        let partlyCloudNight: String = "partly-cloudy-night"
+    }
+    
+    public struct StateIconImage{
+           let clearDay: String = "ClearDay"
+           let clearNight: String = "ClearNight"
+           let rain: String = "Rain"
+           let snow: String = "Snow"
+           let sleet: String = "Sleet"
+           let wind: String = "Wind"
+           let fog: String = "Fog"
+           let cloudy: String = "Cloudy"
+           let partlyCloudyDay: String = "PartlyCloudyDay"
+           let partlyCloudyNight: String = "PartlyCloudyNight"
+    }
 }

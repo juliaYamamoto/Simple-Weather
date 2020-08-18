@@ -24,6 +24,10 @@ class TodayWeather: NSObject {
     var sunsetTime: String = ""
     var moonPhase: MoonPhase = .newMoon
     
+    override init() {
+       super.init()
+    }
+    
     init(from weather: Weather){
         super.init()
         
@@ -64,7 +68,7 @@ class TodayWeather: NSObject {
     }
     
     func getPercentageFrom(value: Double) -> String{
-        var percentage = String(format: "%.0f", value*100)
+        var percentage = String(format: "%.0f", value * 100)
         percentage = "\(percentage)%"
         
         return percentage
@@ -76,7 +80,7 @@ class TodayWeather: NSObject {
         let date = Date(timeIntervalSince1970: timeValue)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE - MMMM d, yyyy"
+        dateFormatter.dateFormat = Constants.DateFormat().day
         
         
         let dayString = dateFormatter.string(from: date)
@@ -88,7 +92,7 @@ class TodayWeather: NSObject {
         let date = Date(timeIntervalSince1970: timeValue)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "h:mm"
+        dateFormatter.dateFormat = Constants.DateFormat().hour
         
         let timeString = dateFormatter.string(from: date)
         return timeString

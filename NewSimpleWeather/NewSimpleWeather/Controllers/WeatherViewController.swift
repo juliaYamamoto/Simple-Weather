@@ -13,6 +13,13 @@ class WeatherViewController: UIViewController, LocationDelegate {
     
     // MARK: - Attributes
     let location = Location()
+    var todayWeather = TodayWeather()
+    var nextDays = NextDaysWeather()
+    
+    
+    // MARK: - Outlets
+    @IBOutlet var mainScreenView: MainScreenView!
+    
     
     // MARK: - Lifecycle
     
@@ -22,17 +29,20 @@ class WeatherViewController: UIViewController, LocationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         location.delegate = self
         location.setupLocationManagerWithVC()
     }
     
+    
     // MARK: - Methods
     func createDataModelsFrom(_ weather: Weather){
-        let today = TodayWeather(from: weather)
-        let nextDays = NextDaysWeather()
+        self.todayWeather = TodayWeather(from: weather)
+        self.nextDays = NextDaysWeather()
         nextDays.creatNextDaysList(from: weather)
+    }
+    
+    func showTodayWeatherInfo() {
+        mainScreenView.setupInformations(self.todayWeather)
     }
     
     
@@ -41,7 +51,10 @@ class WeatherViewController: UIViewController, LocationDelegate {
         APIRequest.requestWeatherWith(latitude, longitude) { result in
             switch result {
             case .success(let weather):
-                self.createDataModelsFrom(weather)
+                DispatchQueue.main.async {
+                    self.createDataModelsFrom(weather)
+                    self.showTodayWeatherInfo()
+                }
             case .failure(_):
                 //TODO - APIError
                 break

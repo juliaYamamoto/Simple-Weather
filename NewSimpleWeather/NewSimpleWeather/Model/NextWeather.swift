@@ -46,7 +46,7 @@ class NextWeather: NSObject {
         let date = Date(timeIntervalSince1970: timeValue)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE - MMMM d, yyyy"
+        dateFormatter.dateFormat = Constants.DateFormat().day
         
         
         let dayString = dateFormatter.string(from: date)

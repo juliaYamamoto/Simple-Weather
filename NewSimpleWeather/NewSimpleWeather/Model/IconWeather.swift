@@ -8,29 +8,29 @@
 
 import UIKit
 
-enum IconWeather {
-    case clearDay
-    case clearNight
-    case rain
-    case snow
-    case sleet
-    case wind
-    case fog
-    case cloudy
-    case partlyCloudyDay
-    case partlyCloudyNight
+enum IconWeather: String {
+    case clearDay           = "Clear Day"
+    case clearNight         = "Clear Night"
+    case rain               = "Rain"
+    case snow               = "Snow"
+    case sleet              = "Sleet"
+    case wind               = "Wind"
+    case fog                = "Fog"
+    case cloudy             = "Cloudy"
+    case partlyCloudyDay    = "Partly Cloudy day"
+    case partlyCloudyNight  = "Partly Cloudy night"
     
     static func getIconType(_ value: String) -> IconWeather {
-        if (value == "clear-day") { return IconWeather.clearDay }
-        else if (value == "clear-night") { return IconWeather.clearNight }
-        else if (value == "rain") { return IconWeather.rain }
-        else if (value == "snow") { return IconWeather.snow }
-        else if (value == "sleet") { return IconWeather.sleet }
-        else if (value == "wind") { return IconWeather.wind }
-        else if (value == "fog") { return IconWeather.fog }
-        else if (value == "cloudy") { return IconWeather.cloudy }
-        else if (value == "partly-cloudy-day") { return IconWeather.partlyCloudyDay }
-        else if (value == "partly-cloudy-night") { return IconWeather.partlyCloudyNight }
+        if (value == Constants.StateIcon().clearDay) { return IconWeather.clearDay }
+        else if (value == Constants.StateIcon().clearNight) { return IconWeather.clearNight }
+        else if (value == Constants.StateIcon().rain) { return IconWeather.rain }
+        else if (value == Constants.StateIcon().snow) { return IconWeather.snow }
+        else if (value == Constants.StateIcon().sleet) { return IconWeather.sleet }
+        else if (value == Constants.StateIcon().wind) { return IconWeather.wind }
+        else if (value == Constants.StateIcon().fog) { return IconWeather.fog }
+        else if (value == Constants.StateIcon().cloudy) { return IconWeather.cloudy }
+        else if (value == Constants.StateIcon().partlyCloudDay) { return IconWeather.partlyCloudyDay }
+        else if (value == Constants.StateIcon().partlyCloudNight) { return IconWeather.partlyCloudyNight }
         
         return IconWeather.cloudy //Default
     }
