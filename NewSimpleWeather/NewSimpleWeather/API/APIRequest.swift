@@ -19,11 +19,9 @@ class APIRequest: NSObject {
     static func getExcludeValue() -> String {
         return "\(Constants.API().queryValueHourly),\(Constants.API().queryValueMinutely),\(Constants.API().queryValueAlerts),\(Constants.API().queryValueFlags)"
     }
-    
-    static func requestWeatherWith(_ latitude: Double, _ longitude: Double,
-                                   success: @escaping (Weather) -> Void,
-                                   failed: @escaping (Error?) -> Void){
         
+    static func requestWeatherWith(_ latitude: Double, _ longitude: Double,
+                                   completed: @escaping(Result<Weather, APIError>) -> Void){ //TODO - APIError
         
         var components = URLComponents()
         components.scheme = Constants.API().schemeURL
@@ -39,20 +37,20 @@ class APIRequest: NSObject {
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
-                failed(error)
+                completed(.failure(.example)) //TODO - APIError
                 return
             }
 
             guard let data = data else {
-                failed(nil)
+                completed(.failure(.example))
                 return
             }
 
             do {
                 let weather = try JSONDecoder().decode(Weather.self, from: data)
-                success(weather)
+                completed(.success(weather))
             } catch {
-                failed(nil)
+                completed(.failure(.example))
             }
 
         }.resume()

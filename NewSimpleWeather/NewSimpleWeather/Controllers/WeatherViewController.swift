@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 class WeatherViewController: UIViewController, LocationDelegate {
-
+    
     // MARK: - Attributes
     let location = Location()
     
@@ -38,10 +38,14 @@ class WeatherViewController: UIViewController, LocationDelegate {
     
     // MARK: - LocationDelegate
     func gotCurrentLocation(latitude: Double, longitude: Double) {
-        APIRequest.requestWeatherWith(latitude, longitude, success: { (weather) in
-            self.createDataModelsFrom(weather)
-        }) { (error) in
-            print("error")
+        APIRequest.requestWeatherWith(latitude, longitude) { result in
+            switch result {
+            case .success(let weather):
+                self.createDataModelsFrom(weather)
+            case .failure(_):
+                //TODO - APIError
+                break
+            }
         }
     }
 }
