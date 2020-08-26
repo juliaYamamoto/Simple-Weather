@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RsM-3L-1zy">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,30 +12,32 @@
             <objects>
                 <viewController id="RsM-3L-1zy" customClass="WeatherViewController" customModule="NewSimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s1s-iF-O36" customClass="MainScreenView" customModule="NewSimpleWeather" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3N4-28-Agi" userLabel="CityLabel">
-                                <rect key="frame" x="16" y="20" width="343" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3N4-28-Agi" userLabel="CityLabel">
+                                <rect key="frame" x="16" y="20" width="288" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="nFQ-Pu-mBq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yka-ul-XST" userLabel="CountryLabel">
-                                <rect key="frame" x="16" y="60" width="343" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yka-ul-XST" userLabel="CountryLabel">
+                                <rect key="frame" x="16" y="60" width="288" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="ot9-Mb-ip7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="Bs9-cy-pLm" userLabel="stateIconImage">
-                                <rect key="frame" x="33" y="153" width="310" height="190"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="Bs9-cy-pLm" userLabel="stateIconImage">
+                                <rect key="frame" x="32" y="107" width="256.00000000000011" height="214.00000000000006"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nop-hc-513" userLabel="DetailsView">
-                                <rect key="frame" x="82" y="374" width="210" height="135"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nop-hc-513" userLabel="DetailsView">
+                                <rect key="frame" x="55" y="331" width="210" height="135"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Partly cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pC4-xB-OVt" userLabel="DescriptionLabel">
                                         <rect key="frame" x="8" y="20" width="194" height="24"/>
@@ -58,45 +60,80 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" id="2ic-aC-QwO"/>
+                                    <constraint firstAttribute="width" constant="210" id="EMr-MT-FLC"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ayq-22-Op9" userLabel="HumidityView">
-                                <rect key="frame" x="-4" y="519" width="151" height="110.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ayq-22-Op9" userLabel="HumidityView">
+                                <rect key="frame" x="12" y="458" width="90" height="90"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LightHumidity" translatesAutoresizingMaskIntoConstraints="NO" id="P3O-Be-QOu" userLabel="HumidityImage">
-                                        <rect key="frame" x="5" y="0.0" width="140" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LightHumidity" translatesAutoresizingMaskIntoConstraints="NO" id="P3O-Be-QOu" userLabel="HumidityImage">
+                                        <rect key="frame" x="3" y="15" width="84" height="60"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ar-0N-q1c">
-                                        <rect key="frame" x="49" y="48" width="52" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ar-0N-q1c">
+                                        <rect key="frame" x="25.5" y="38" width="39" height="24"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="CEL-0G-Fe1"/>
+                                    <constraint firstAttribute="trailing" secondItem="P3O-Be-QOu" secondAttribute="trailing" constant="3" id="CXR-kU-dEq"/>
+                                    <constraint firstAttribute="width" constant="90" id="O7q-Vm-KMa"/>
+                                    <constraint firstItem="P3O-Be-QOu" firstAttribute="top" secondItem="Ayq-22-Op9" secondAttribute="top" constant="15" id="SmI-61-sWq"/>
+                                    <constraint firstItem="6ar-0N-q1c" firstAttribute="centerX" secondItem="Ayq-22-Op9" secondAttribute="centerX" id="aMC-9W-kOu"/>
+                                    <constraint firstItem="P3O-Be-QOu" firstAttribute="leading" secondItem="Ayq-22-Op9" secondAttribute="leading" constant="3" id="p6C-CD-6ZV"/>
+                                    <constraint firstAttribute="bottom" secondItem="P3O-Be-QOu" secondAttribute="bottom" constant="15" id="t06-78-L4A"/>
+                                    <constraint firstItem="6ar-0N-q1c" firstAttribute="centerY" secondItem="Ayq-22-Op9" secondAttribute="centerY" constant="5" id="wb5-pz-fL8"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WhH-8S-9OS" userLabel="RainView">
-                                <rect key="frame" x="214" y="519" width="151" height="110.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WhH-8S-9OS" userLabel="RainView">
+                                <rect key="frame" x="218" y="468" width="90" height="80"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LightRain" translatesAutoresizingMaskIntoConstraints="NO" id="zn8-Dc-J4m" userLabel="RainImage">
-                                        <rect key="frame" x="20" y="16" width="111" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LightRain" translatesAutoresizingMaskIntoConstraints="NO" id="zn8-Dc-J4m" userLabel="RainImage">
+                                        <rect key="frame" x="8" y="12" width="74" height="60"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZS-4e-y3u">
-                                        <rect key="frame" x="45" y="48" width="61" height="37"/>
+                                        <rect key="frame" x="15" y="21" width="61" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="C2l-NO-XSW"/>
+                                    <constraint firstAttribute="bottom" secondItem="zn8-Dc-J4m" secondAttribute="bottom" constant="8" id="L9I-Mx-NcS"/>
+                                    <constraint firstAttribute="width" constant="90" id="jNR-oj-9P2"/>
+                                    <constraint firstItem="zn8-Dc-J4m" firstAttribute="leading" secondItem="WhH-8S-9OS" secondAttribute="leading" constant="8" id="n5C-LZ-H53"/>
+                                    <constraint firstAttribute="trailing" secondItem="zn8-Dc-J4m" secondAttribute="trailing" constant="8" id="oEZ-qK-66v"/>
+                                    <constraint firstItem="zn8-Dc-J4m" firstAttribute="top" secondItem="WhH-8S-9OS" secondAttribute="top" constant="12" id="xfP-ho-Mjc"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="EGe-pF-poB" firstAttribute="trailing" secondItem="3N4-28-Agi" secondAttribute="trailing" constant="16" id="5XA-LM-WW9"/>
+                            <constraint firstItem="3N4-28-Agi" firstAttribute="top" secondItem="EGe-pF-poB" secondAttribute="top" constant="20" id="9sK-my-CTM"/>
+                            <constraint firstItem="Bs9-cy-pLm" firstAttribute="centerX" secondItem="s1s-iF-O36" secondAttribute="centerX" id="Acg-NV-Tw2"/>
+                            <constraint firstItem="Yka-ul-XST" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" constant="16" id="BNn-Bb-gAK"/>
+                            <constraint firstItem="EGe-pF-poB" firstAttribute="trailing" secondItem="WhH-8S-9OS" secondAttribute="trailing" constant="12" id="JdM-2P-VpD"/>
+                            <constraint firstItem="nop-hc-513" firstAttribute="top" secondItem="Bs9-cy-pLm" secondAttribute="bottom" constant="10" id="KSO-GP-I7m"/>
+                            <constraint firstItem="Ayq-22-Op9" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" constant="12" id="Ncz-6Q-80y"/>
+                            <constraint firstItem="3N4-28-Agi" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" constant="16" id="O6u-1g-uzs"/>
+                            <constraint firstAttribute="trailing" secondItem="Bs9-cy-pLm" secondAttribute="trailing" constant="32" id="b09-QZ-FA1"/>
+                            <constraint firstItem="Bs9-cy-pLm" firstAttribute="centerY" secondItem="s1s-iF-O36" secondAttribute="centerY" constant="-70" id="flp-dE-Cto"/>
+                            <constraint firstItem="EGe-pF-poB" firstAttribute="trailing" secondItem="Yka-ul-XST" secondAttribute="trailing" constant="16" id="mTI-Mr-IFs"/>
+                            <constraint firstItem="EGe-pF-poB" firstAttribute="bottom" secondItem="WhH-8S-9OS" secondAttribute="bottom" constant="20" id="qis-M1-gAs"/>
+                            <constraint firstItem="Bs9-cy-pLm" firstAttribute="leading" secondItem="s1s-iF-O36" secondAttribute="leading" constant="32" id="s6l-7N-OKe"/>
+                            <constraint firstItem="nop-hc-513" firstAttribute="centerX" secondItem="s1s-iF-O36" secondAttribute="centerX" id="shw-cB-EfL"/>
+                            <constraint firstItem="EGe-pF-poB" firstAttribute="bottom" secondItem="Ayq-22-Op9" secondAttribute="bottom" constant="20" id="u71-hx-BSR"/>
+                            <constraint firstItem="Yka-ul-XST" firstAttribute="top" secondItem="EGe-pF-poB" secondAttribute="top" constant="60" id="zmh-cx-2rC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EGe-pF-poB"/>
                         <connections>
                             <outlet property="cityLabel" destination="3N4-28-Agi" id="XPM-xO-jQp"/>
@@ -117,14 +154,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ily-Q8-PAa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="544.79999999999995" y="-538.38080959520244"/>
+            <point key="canvasLocation" x="543.75" y="-538.73239436619724"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="XbS-uU-y2z">
             <objects>
                 <viewController id="Ofz-5L-qfU" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qmP-Cy-cox">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="2TV-6X-VGd"/>
