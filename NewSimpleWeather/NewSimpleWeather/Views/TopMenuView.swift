@@ -13,21 +13,31 @@ class TopMenuView: UIView {
     var topConstraint: NSLayoutConstraint?
     var leadingConstraint: NSLayoutConstraint?
     
-    func openMenu(){
+    func setup(topConstraint: NSLayoutConstraint, leadingConstrain: NSLayoutConstraint, menuWillStartOpen: Bool){
+        self.topConstraint = topConstraint
+        self.leadingConstraint = leadingConstrain
+        if menuWillStartOpen {
+            self.openMenu(animationTime: 0.0)
+        } else {
+            self.closeMenu(animationTime: 0.0)
+        }
+    }
+    
+    func openMenu(animationTime: Double = 0.3){
         guard let topConstraint = self.topConstraint else { return }
         guard let leadingConstraint = self.leadingConstraint else { return }
         
         topConstraint.constant = 0
         leadingConstraint.constant = 0
         
-        UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
+        UIView.animate(withDuration: animationTime, delay: 0, options: [], animations: {
             self.superview?.layoutIfNeeded()
         }) { (_) in
             //Return and say that the menu is open - TODO
         }
     }
     
-    func closeMenu() {
+    func closeMenu(animationTime: Double = 0.3) {
         guard let topConstraint = self.topConstraint else { return }
         guard let leadingConstraint = self.leadingConstraint else { return }
         
@@ -35,7 +45,7 @@ class TopMenuView: UIView {
         topConstraint.constant = -135
         leadingConstraint.constant = screenWidth - 72
         
-        UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
+        UIView.animate(withDuration: animationTime, delay: 0, options: [], animations: {
             self.superview?.layoutIfNeeded()
         }) { (_) in
             //Return and say that the menu is closed  - TODO

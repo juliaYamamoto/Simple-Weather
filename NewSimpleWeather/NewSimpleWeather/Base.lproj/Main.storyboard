@@ -34,10 +34,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="Bs9-cy-pLm" userLabel="stateIconImage">
-                                <rect key="frame" x="32" y="164" width="350" height="428"/>
+                                <rect key="frame" x="32" y="271" width="350.00000000000011" height="214.00000000000006"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nop-hc-513" userLabel="DetailsView">
-                                <rect key="frame" x="102" y="602" width="210" height="135"/>
+                                <rect key="frame" x="102" y="495" width="210" height="135"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Partly cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pC4-xB-OVt" userLabel="DescriptionLabel">
                                         <rect key="frame" x="8" y="20" width="194" height="24"/>
@@ -192,9 +192,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="244"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DarkLocation" translatesAutoresizingMaskIntoConstraints="NO" id="sFF-C3-rcz">
-                                <rect key="frame" x="20" y="130" width="59" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LightMenu" translatesAutoresizingMaskIntoConstraints="NO" id="Hru-Qx-vn0" userLabel="BackgroundImage">
+                                <rect key="frame" x="0.0" y="-52" width="414" height="296"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8r-zE-rIn" userLabel="CityLabel">
                                 <rect key="frame" x="87" y="124" width="271" height="42"/>
@@ -223,11 +222,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DarkLocation" translatesAutoresizingMaskIntoConstraints="NO" id="sFF-C3-rcz">
+                                <rect key="frame" x="20" y="130" width="37.5" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.80729299779999997" green="0.9526875615" blue="0.99909704919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Hru-Qx-vn0" firstAttribute="leading" secondItem="PCK-Ph-z1m" secondAttribute="leading" id="0Q8-tf-yC9"/>
+                            <constraint firstItem="Hru-Qx-vn0" firstAttribute="topMargin" secondItem="gxv-RV-yl6" secondAttribute="top" id="VBk-lq-EhI"/>
+                            <constraint firstItem="Hru-Qx-vn0" firstAttribute="bottom" secondItem="PCK-Ph-z1m" secondAttribute="bottom" id="VxH-Pp-Y1H"/>
                             <constraint firstItem="EOv-ea-m8w" firstAttribute="top" secondItem="gxv-RV-yl6" secondAttribute="top" constant="44" id="fyS-D4-fdC"/>
                             <constraint firstItem="EOv-ea-m8w" firstAttribute="leading" secondItem="gxv-RV-yl6" secondAttribute="leading" constant="16" id="itF-Y8-7Gj"/>
+                            <constraint firstItem="Hru-Qx-vn0" firstAttribute="trailing" secondItem="PCK-Ph-z1m" secondAttribute="trailing" id="nJI-eN-fiL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PCK-Ph-z1m"/>
                     </view>
@@ -237,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTc-zM-48v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1228" y="-916.64167916041981"/>
+            <point key="canvasLocation" x="1227.536231884058" y="-916.74107142857133"/>
         </scene>
     </scenes>
     <resources>
@@ -245,6 +251,7 @@
         <image name="DarkLocation" width="37.5" height="60"/>
         <image name="DarkMenuButton" width="60" height="50"/>
         <image name="LightHumidity" width="206.5" height="225.5"/>
+        <image name="LightMenu" width="621" height="330"/>
         <image name="LightRain" width="275.5" height="227.5"/>
     </resources>
 </document>
