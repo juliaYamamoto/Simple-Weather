@@ -15,7 +15,7 @@ class WeatherViewController: UIViewController, LocationDelegate {
     let location = Location()
     var todayWeather = TodayWeather()
     var nextDays = NextDaysWeather()
-    var isMenuOpen = true
+    var topMenuIsOpen = true
     
     
     // MARK: - Outlets - Main screen view
@@ -54,7 +54,7 @@ class WeatherViewController: UIViewController, LocationDelegate {
     
     func setupView() {
         //Set menu as closed
-        self.isMenuOpen = true
+        self.topMenuIsOpen = true
         self.topScreenView.topConstraint = topConstraintTopMenu
         self.topScreenView.leadingConstraint = leadingConstraintTopMenu
     }
@@ -63,14 +63,14 @@ class WeatherViewController: UIViewController, LocationDelegate {
     // MARK: - IBOutlets
     
     @IBAction func OpenCloseMenu(_ sender: Any) {
-        if isMenuOpen {
+        if topMenuIsOpen {
             self.topScreenView.closeMenu()
-            self.isMenuOpen = false
+            self.topMenuIsOpen = false
         }
-        
+
         else {
             self.topScreenView.openMenu()
-            self.isMenuOpen = true
+            self.topMenuIsOpen = true
         }
     }
     
