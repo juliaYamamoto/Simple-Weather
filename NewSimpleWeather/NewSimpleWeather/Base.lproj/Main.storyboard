@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RsM-3L-1zy">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +12,11 @@
             <objects>
                 <viewController id="RsM-3L-1zy" customClass="WeatherViewController" customModule="NewSimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s1s-iF-O36" customClass="MainScreenView" customModule="NewSimpleWeather" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3N4-28-Agi" userLabel="CityLabel">
-                                <rect key="frame" x="16" y="20" width="288" height="42"/>
+                                <rect key="frame" x="16" y="64" width="382" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="nFQ-Pu-mBq"/>
                                 </constraints>
@@ -25,7 +25,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yka-ul-XST" userLabel="CountryLabel">
-                                <rect key="frame" x="16" y="60" width="288" height="24"/>
+                                <rect key="frame" x="16" y="104" width="382" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="ot9-Mb-ip7"/>
                                 </constraints>
@@ -34,10 +34,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="Bs9-cy-pLm" userLabel="stateIconImage">
-                                <rect key="frame" x="32" y="107" width="256.00000000000011" height="214.00000000000006"/>
+                                <rect key="frame" x="32" y="164" width="350" height="428"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nop-hc-513" userLabel="DetailsView">
-                                <rect key="frame" x="55" y="331" width="210" height="135"/>
+                                <rect key="frame" x="102" y="602" width="210" height="135"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Partly cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pC4-xB-OVt" userLabel="DescriptionLabel">
                                         <rect key="frame" x="8" y="20" width="194" height="24"/>
@@ -66,7 +66,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ayq-22-Op9" userLabel="HumidityView">
-                                <rect key="frame" x="12" y="458" width="90" height="90"/>
+                                <rect key="frame" x="12" y="752" width="90" height="90"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LightHumidity" translatesAutoresizingMaskIntoConstraints="NO" id="P3O-Be-QOu" userLabel="HumidityImage">
                                         <rect key="frame" x="3" y="15" width="84" height="60"/>
@@ -91,7 +91,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WhH-8S-9OS" userLabel="RainView">
-                                <rect key="frame" x="218" y="468" width="90" height="80"/>
+                                <rect key="frame" x="312" y="762" width="90" height="80"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LightRain" translatesAutoresizingMaskIntoConstraints="NO" id="zn8-Dc-J4m" userLabel="RainImage">
                                         <rect key="frame" x="8" y="12" width="74" height="60"/>
@@ -114,19 +114,44 @@
                                     <constraint firstItem="zn8-Dc-J4m" firstAttribute="top" secondItem="WhH-8S-9OS" secondAttribute="top" constant="12" id="xfP-ho-Mjc"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fab-0i-KZo" userLabel="TopViewController" customClass="TopMenuView" customModule="NewSimpleWeather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="244"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="244" id="C7v-Sq-hzv"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="LIR-LY-Nbe" kind="embed" id="Qrq-4t-WGx"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hll-p6-1px" userLabel="Menubutton">
+                                <rect key="frame" x="358" y="44" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="1da-Zs-Mom"/>
+                                    <constraint firstAttribute="height" constant="40" id="dSf-82-D1n"/>
+                                </constraints>
+                                <state key="normal" image="DarkMenuButton"/>
+                                <connections>
+                                    <action selector="OpenCloseMenu:" destination="RsM-3L-1zy" eventType="touchUpInside" id="P9q-cu-Nrl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="EGe-pF-poB" firstAttribute="trailing" secondItem="3N4-28-Agi" secondAttribute="trailing" constant="16" id="5XA-LM-WW9"/>
+                            <constraint firstItem="Fab-0i-KZo" firstAttribute="trailing" secondItem="EGe-pF-poB" secondAttribute="trailing" id="7qZ-1K-Ldg"/>
+                            <constraint firstItem="hll-p6-1px" firstAttribute="top" secondItem="s1s-iF-O36" secondAttribute="top" constant="44" id="9FF-eg-ANh"/>
                             <constraint firstItem="3N4-28-Agi" firstAttribute="top" secondItem="EGe-pF-poB" secondAttribute="top" constant="20" id="9sK-my-CTM"/>
                             <constraint firstItem="Bs9-cy-pLm" firstAttribute="centerX" secondItem="s1s-iF-O36" secondAttribute="centerX" id="Acg-NV-Tw2"/>
+                            <constraint firstItem="Fab-0i-KZo" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" id="BA3-9S-xc3"/>
                             <constraint firstItem="Yka-ul-XST" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" constant="16" id="BNn-Bb-gAK"/>
                             <constraint firstItem="EGe-pF-poB" firstAttribute="trailing" secondItem="WhH-8S-9OS" secondAttribute="trailing" constant="12" id="JdM-2P-VpD"/>
                             <constraint firstItem="nop-hc-513" firstAttribute="top" secondItem="Bs9-cy-pLm" secondAttribute="bottom" constant="10" id="KSO-GP-I7m"/>
                             <constraint firstItem="Ayq-22-Op9" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" constant="12" id="Ncz-6Q-80y"/>
                             <constraint firstItem="3N4-28-Agi" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" constant="16" id="O6u-1g-uzs"/>
                             <constraint firstAttribute="trailing" secondItem="Bs9-cy-pLm" secondAttribute="trailing" constant="32" id="b09-QZ-FA1"/>
+                            <constraint firstItem="EGe-pF-poB" firstAttribute="trailing" secondItem="hll-p6-1px" secondAttribute="trailing" constant="16" id="fUp-JS-YAZ"/>
                             <constraint firstItem="Bs9-cy-pLm" firstAttribute="centerY" secondItem="s1s-iF-O36" secondAttribute="centerY" constant="-70" id="flp-dE-Cto"/>
+                            <constraint firstItem="Fab-0i-KZo" firstAttribute="top" secondItem="s1s-iF-O36" secondAttribute="top" id="lUv-do-FVP"/>
                             <constraint firstItem="EGe-pF-poB" firstAttribute="trailing" secondItem="Yka-ul-XST" secondAttribute="trailing" constant="16" id="mTI-Mr-IFs"/>
                             <constraint firstItem="EGe-pF-poB" firstAttribute="bottom" secondItem="WhH-8S-9OS" secondAttribute="bottom" constant="20" id="qis-M1-gAs"/>
                             <constraint firstItem="Bs9-cy-pLm" firstAttribute="leading" secondItem="s1s-iF-O36" secondAttribute="leading" constant="32" id="s6l-7N-OKe"/>
@@ -149,31 +174,76 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="leadingConstraintTopMenu" destination="BA3-9S-xc3" id="wg2-Fr-bBC"/>
                         <outlet property="mainScreenView" destination="s1s-iF-O36" id="2uW-UC-vJw"/>
+                        <outlet property="topConstraintTopMenu" destination="lUv-do-FVP" id="zbW-pZ-2PR"/>
+                        <outlet property="topScreenView" destination="Fab-0i-KZo" id="BOf-mi-VIM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ily-Q8-PAa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="543.75" y="-538.73239436619724"/>
+            <point key="canvasLocation" x="402.89855072463769" y="-705.13392857142856"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="XbS-uU-y2z">
+        <!--TopMenu-->
+        <scene sceneID="UZh-JT-vGo">
             <objects>
-                <viewController id="Ofz-5L-qfU" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qmP-Cy-cox">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <viewController title="TopMenu" id="LIR-LY-Nbe" customClass="TopMenuViewController" customModule="NewSimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gxv-RV-yl6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="244"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="2TV-6X-VGd"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DarkLocation" translatesAutoresizingMaskIntoConstraints="NO" id="sFF-C3-rcz">
+                                <rect key="frame" x="20" y="130" width="59" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8r-zE-rIn" userLabel="CityLabel">
+                                <rect key="frame" x="87" y="124" width="271" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EOv-ea-m8w">
+                                <rect key="frame" x="16" y="44" width="96" height="32"/>
+                                <color key="backgroundColor" red="0.25601315499999999" green="0.33624881509999999" blue="0.40292274950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="sUa-eB-Cmv"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="°C"/>
+                                    <segment title="°F"/>
+                                </segments>
+                                <color key="tintColor" red="0.65098039215686276" green="0.73725490196078436" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGq-Zb-N64" userLabel="CountryLabel">
+                                <rect key="frame" x="87" y="174" width="271" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80729299779999997" green="0.9526875615" blue="0.99909704919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EOv-ea-m8w" firstAttribute="top" secondItem="gxv-RV-yl6" secondAttribute="top" constant="44" id="fyS-D4-fdC"/>
+                            <constraint firstItem="EOv-ea-m8w" firstAttribute="leading" secondItem="gxv-RV-yl6" secondAttribute="leading" constant="16" id="itF-Y8-7Gj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PCK-Ph-z1m"/>
                     </view>
+                    <connections>
+                        <outlet property="degreesSegmentedControl" destination="EOv-ea-m8w" id="vUI-UC-HjY"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lHP-DN-zim" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eTc-zM-48v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1505" y="-538"/>
+            <point key="canvasLocation" x="1228" y="-916.64167916041981"/>
         </scene>
     </scenes>
     <resources>
         <image name="Cloudy" width="394.5" height="214"/>
+        <image name="DarkLocation" width="37.5" height="60"/>
+        <image name="DarkMenuButton" width="60" height="50"/>
         <image name="LightHumidity" width="206.5" height="225.5"/>
         <image name="LightRain" width="275.5" height="227.5"/>
     </resources>

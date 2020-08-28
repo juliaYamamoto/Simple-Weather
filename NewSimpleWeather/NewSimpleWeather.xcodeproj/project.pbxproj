@@ -23,6 +23,8 @@
 		A32DFDB524EC65C000B1CAED /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32DFDB424EC65C000B1CAED /* MainScreenView.swift */; };
 		A34CE30824D8EB7D00747092 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34CE30724D8EB7D00747092 /* WeatherViewController.swift */; };
 		A34CE30B24D8ECF500747092 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34CE30A24D8ECF500747092 /* Location.swift */; };
+		A356E5D824F8857B006B8BF5 /* TopMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A356E5D724F8857B006B8BF5 /* TopMenuView.swift */; };
+		A37E380A24F71118003EEB2C /* TopMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37E380924F71118003EEB2C /* TopMenuViewController.swift */; };
 		A3A6FCEE24DE31D0005012D5 /* IconWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6FCED24DE31D0005012D5 /* IconWeather.swift */; };
 		A3A9A4DD24E6C41A00AEE26E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9A4DC24E6C41A00AEE26E /* Reachability.swift */; };
 		A3B9E8A524D1327D00688C16 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9E8A424D1327D00688C16 /* APIRequest.swift */; };
@@ -71,6 +73,8 @@
 		A32DFDB424EC65C000B1CAED /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		A34CE30724D8EB7D00747092 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		A34CE30A24D8ECF500747092 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		A356E5D724F8857B006B8BF5 /* TopMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuView.swift; sourceTree = "<group>"; };
+		A37E380924F71118003EEB2C /* TopMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuViewController.swift; sourceTree = "<group>"; };
 		A3A6FCED24DE31D0005012D5 /* IconWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconWeather.swift; sourceTree = "<group>"; };
 		A3A9A4DC24E6C41A00AEE26E /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		A3B9E8A424D1327D00688C16 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 		A31629C824CA2B02003AF90B /* NewSimpleWeather */ = {
 			isa = PBXGroup;
 			children = (
+				A31629CF24CA2B02003AF90B /* Main.storyboard */,
+				A31629D424CA2B04003AF90B /* LaunchScreen.storyboard */,
 				A34CE30924D8EBD300747092 /* Views */,
 				A34CE30624D8EB4A00747092 /* Controllers */,
 				A3B9E8A624D1341B00688C16 /* Model */,
@@ -174,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				A34CE30724D8EB7D00747092 /* WeatherViewController.swift */,
+				A37E380924F71118003EEB2C /* TopMenuViewController.swift */,
 				A34CE30A24D8ECF500747092 /* Location.swift */,
 			);
 			path = Controllers;
@@ -182,9 +189,8 @@
 		A34CE30924D8EBD300747092 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A31629CF24CA2B02003AF90B /* Main.storyboard */,
-				A31629D424CA2B04003AF90B /* LaunchScreen.storyboard */,
 				A32DFDB424EC65C000B1CAED /* MainScreenView.swift */,
+				A356E5D724F8857B006B8BF5 /* TopMenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -346,6 +352,8 @@
 				A3B9E8A524D1327D00688C16 /* APIRequest.swift in Sources */,
 				A3A6FCEE24DE31D0005012D5 /* IconWeather.swift in Sources */,
 				A3B9E8A824D1342D00688C16 /* WeatherModel.swift in Sources */,
+				A37E380A24F71118003EEB2C /* TopMenuViewController.swift in Sources */,
+				A356E5D824F8857B006B8BF5 /* TopMenuView.swift in Sources */,
 				A32DFDB524EC65C000B1CAED /* MainScreenView.swift in Sources */,
 				A34CE30B24D8ECF500747092 /* Location.swift in Sources */,
 				A3291EAE24CAA25F0064CB06 /* UIColor.swift in Sources */,

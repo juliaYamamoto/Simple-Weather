@@ -31,7 +31,6 @@ class MainScreenView: UIView {
         rainLabel.text = todayWeather.rain
     }
     
-    
     func getStateIconImage(_ icon: IconWeather) -> String{
         switch icon {
         case .clearDay:

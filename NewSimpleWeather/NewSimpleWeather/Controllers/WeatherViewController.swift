@@ -15,10 +15,15 @@ class WeatherViewController: UIViewController, LocationDelegate {
     let location = Location()
     var todayWeather = TodayWeather()
     var nextDays = NextDaysWeather()
+    var isMenuOpen = true
     
     
-    // MARK: - Outlets
+    // MARK: - Outlets - Main screen view
     @IBOutlet var mainScreenView: MainScreenView!
+    
+    @IBOutlet var topScreenView: TopMenuView!
+    @IBOutlet weak var leadingConstraintTopMenu: NSLayoutConstraint!
+    @IBOutlet weak var topConstraintTopMenu: NSLayoutConstraint!
     
     
     // MARK: - Lifecycle
@@ -31,6 +36,8 @@ class WeatherViewController: UIViewController, LocationDelegate {
         super.viewDidLoad()
         location.delegate = self
         location.setupLocationManagerWithVC()
+        
+        setupView()
     }
     
     
@@ -43,6 +50,28 @@ class WeatherViewController: UIViewController, LocationDelegate {
     
     func showTodayWeatherInfo() {
         mainScreenView.setupInformations(self.todayWeather)
+    }
+    
+    func setupView() {
+        //Set menu as closed
+        self.isMenuOpen = true
+        self.topScreenView.topConstraint = topConstraintTopMenu
+        self.topScreenView.leadingConstraint = leadingConstraintTopMenu
+    }
+    
+    
+    // MARK: - IBOutlets
+    
+    @IBAction func OpenCloseMenu(_ sender: Any) {
+        if isMenuOpen {
+            self.topScreenView.closeMenu()
+            self.isMenuOpen = false
+        }
+        
+        else {
+            self.topScreenView.openMenu()
+            self.isMenuOpen = true
+        }
     }
     
     
