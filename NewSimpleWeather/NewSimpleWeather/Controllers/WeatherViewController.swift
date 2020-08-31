@@ -24,7 +24,7 @@ class WeatherViewController: UIViewController, LocationDelegate {
     @IBOutlet var topScreenView: TopMenuView!
     @IBOutlet weak var leadingConstraintTopMenu: NSLayoutConstraint!
     @IBOutlet weak var topConstraintTopMenu: NSLayoutConstraint!
-    
+    @IBOutlet weak var traillingConstraintTopMenu: NSLayoutConstraint!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -50,8 +50,7 @@ class WeatherViewController: UIViewController, LocationDelegate {
     func setupView() {
         //Top Menu
         self.topMenuIsOpen = false
-        self.topScreenView.setup(topConstraint: topConstraintTopMenu, leadingConstrain: leadingConstraintTopMenu,
-                                 menuWillStartOpen: self.topMenuIsOpen)
+        self.topScreenView.setup(topConstraint: topConstraintTopMenu, leadingConstrain: leadingConstraintTopMenu, traillingConstrain: traillingConstraintTopMenu, menuWillStartOpen: self.topMenuIsOpen)
     }
     
     

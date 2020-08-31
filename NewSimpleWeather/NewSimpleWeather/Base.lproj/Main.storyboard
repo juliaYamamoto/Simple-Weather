@@ -34,10 +34,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="Bs9-cy-pLm" userLabel="stateIconImage">
-                                <rect key="frame" x="32" y="271" width="350.00000000000011" height="214.00000000000006"/>
+                                <rect key="frame" x="32" y="164" width="350" height="428"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nop-hc-513" userLabel="DetailsView">
-                                <rect key="frame" x="102" y="495" width="210" height="135"/>
+                                <rect key="frame" x="102" y="602" width="210" height="135"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Partly cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pC4-xB-OVt" userLabel="DescriptionLabel">
                                         <rect key="frame" x="8" y="20" width="194" height="24"/>
@@ -178,6 +178,7 @@
                         <outlet property="mainScreenView" destination="s1s-iF-O36" id="2uW-UC-vJw"/>
                         <outlet property="topConstraintTopMenu" destination="lUv-do-FVP" id="zbW-pZ-2PR"/>
                         <outlet property="topScreenView" destination="Fab-0i-KZo" id="BOf-mi-VIM"/>
+                        <outlet property="traillingConstraintTopMenu" destination="7qZ-1K-Ldg" id="TQZ-cm-2BN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ily-Q8-PAa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -195,9 +196,11 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LightMenu" translatesAutoresizingMaskIntoConstraints="NO" id="Hru-Qx-vn0" userLabel="BackgroundImage">
                                 <rect key="frame" x="0.0" y="-52" width="414" height="296"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8r-zE-rIn" userLabel="CityLabel">
-                                <rect key="frame" x="87" y="124" width="271" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8r-zE-rIn" userLabel="CityLabel">
+                                <rect key="frame" x="115" y="125" width="283" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="rkJ-EX-cHj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -215,25 +218,38 @@
                                 <color key="tintColor" red="0.65098039215686276" green="0.73725490196078436" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGq-Zb-N64" userLabel="CountryLabel">
-                                <rect key="frame" x="87" y="174" width="271" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGq-Zb-N64" userLabel="CountryLabel">
+                                <rect key="frame" x="115" y="173" width="283" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="PVg-Sf-sk7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DarkLocation" translatesAutoresizingMaskIntoConstraints="NO" id="sFF-C3-rcz">
-                                <rect key="frame" x="20" y="130" width="37.5" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DarkLocation" translatesAutoresizingMaskIntoConstraints="NO" id="sFF-C3-rcz">
+                                <rect key="frame" x="29" y="125" width="70" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="UIX-VH-BFh"/>
+                                    <constraint firstAttribute="width" constant="70" id="zuY-a7-vkg"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="sFF-C3-rcz" firstAttribute="centerX" secondItem="EOv-ea-m8w" secondAttribute="centerX" id="0Od-NU-8UM"/>
                             <constraint firstItem="Hru-Qx-vn0" firstAttribute="leading" secondItem="PCK-Ph-z1m" secondAttribute="leading" id="0Q8-tf-yC9"/>
+                            <constraint firstItem="pGq-Zb-N64" firstAttribute="leading" secondItem="sFF-C3-rcz" secondAttribute="trailing" constant="16" id="1fS-GF-rcM"/>
+                            <constraint firstItem="PCK-Ph-z1m" firstAttribute="trailing" secondItem="pGq-Zb-N64" secondAttribute="trailing" constant="16" id="4pT-0m-aaI"/>
                             <constraint firstItem="Hru-Qx-vn0" firstAttribute="topMargin" secondItem="gxv-RV-yl6" secondAttribute="top" id="VBk-lq-EhI"/>
                             <constraint firstItem="Hru-Qx-vn0" firstAttribute="bottom" secondItem="PCK-Ph-z1m" secondAttribute="bottom" id="VxH-Pp-Y1H"/>
+                            <constraint firstItem="PCK-Ph-z1m" firstAttribute="trailing" secondItem="T8r-zE-rIn" secondAttribute="trailing" constant="16" id="Xpz-4e-Wxi"/>
+                            <constraint firstItem="pGq-Zb-N64" firstAttribute="top" secondItem="T8r-zE-rIn" secondAttribute="bottom" constant="6" id="cuA-4b-9AP"/>
                             <constraint firstItem="EOv-ea-m8w" firstAttribute="top" secondItem="gxv-RV-yl6" secondAttribute="top" constant="44" id="fyS-D4-fdC"/>
+                            <constraint firstItem="T8r-zE-rIn" firstAttribute="leading" secondItem="sFF-C3-rcz" secondAttribute="trailing" constant="16" id="gr8-U0-agc"/>
                             <constraint firstItem="EOv-ea-m8w" firstAttribute="leading" secondItem="gxv-RV-yl6" secondAttribute="leading" constant="16" id="itF-Y8-7Gj"/>
                             <constraint firstItem="Hru-Qx-vn0" firstAttribute="trailing" secondItem="PCK-Ph-z1m" secondAttribute="trailing" id="nJI-eN-fiL"/>
+                            <constraint firstItem="sFF-C3-rcz" firstAttribute="top" secondItem="EOv-ea-m8w" secondAttribute="bottom" constant="50" id="ti9-U6-ZH0"/>
+                            <constraint firstItem="T8r-zE-rIn" firstAttribute="top" secondItem="sFF-C3-rcz" secondAttribute="top" id="w3S-CK-1GG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PCK-Ph-z1m"/>
                     </view>
