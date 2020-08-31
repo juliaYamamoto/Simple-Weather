@@ -8,18 +8,20 @@
 
 import UIKit
 
-enum TemperatureMeasure {
-    case celsius
-    case fahrenheit
+enum TemperatureMeasure: Int {
+    case celsius = 0
+    case fahrenheit = 1
 }
 
 class Temperature: NSObject {
     static func setPreference(_ value: TemperatureMeasure){
-        //TODO
+        UserDefaults().set(value.rawValue, forKey: Constants.Temperature().preference)
     }
     
     static func getPreference() -> TemperatureMeasure{
-        //TODO
+        if let preference = TemperatureMeasure(rawValue: UserDefaults().integer(forKey: Constants.Temperature().preference)) {
+            return preference
+        }
         return .celsius
     }
     

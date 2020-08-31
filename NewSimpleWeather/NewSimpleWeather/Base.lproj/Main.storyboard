@@ -217,6 +217,9 @@
                                 </segments>
                                 <color key="tintColor" red="0.65098039215686276" green="0.73725490196078436" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="changeTemperaturePreference:" destination="LIR-LY-Nbe" eventType="valueChanged" id="qyi-Kg-L2k"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGq-Zb-N64" userLabel="CountryLabel">
                                 <rect key="frame" x="115" y="173" width="283" height="24"/>

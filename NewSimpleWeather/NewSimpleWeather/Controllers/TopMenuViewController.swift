@@ -15,7 +15,7 @@ class TopMenuViewController: UIViewController {
     
     
     // MARK: - Atributes
-    var menuIsOpen = false
+    var menuIsOpen = false //TODO - update
     
     
     // MARK: - Lifecycle
@@ -24,11 +24,12 @@ class TopMenuViewController: UIViewController {
         super.viewDidLoad()
         setupView()
     }
-    
+
+
     // MARK: - Methods
     
     func setupView() {
-        self.menuIsOpen = false
+        self.menuIsOpen = false //TODO - update
         
         let attributes = [
             NSAttributedString.Key.foregroundColor: UIColor.MainColorGroup.darkBlue,
@@ -37,6 +38,30 @@ class TopMenuViewController: UIViewController {
         degreesSegmentedControl.backgroundColor = UIColor.MainColorGroup.lightBlue
         degreesSegmentedControl.selectedSegmentTintColor = UIColor.white
         degreesSegmentedControl.setTitleTextAttributes(attributes, for: .normal)
+        
+        switch Temperature.getPreference() {
+        case .celsius:
+            degreesSegmentedControl.selectedSegmentIndex = 0
+        case .fahrenheit:
+            degreesSegmentedControl.selectedSegmentIndex = 1
+        }
     }
     
+    
+    // MARK: - IBOutlet
+    
+    @IBAction func changeTemperaturePreference(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0: //Celsius
+            Temperature.setPreference(.celsius)
+            break
+        case 1: //Fahrenheit
+            Temperature.setPreference(.fahrenheit)
+            break
+            
+        default: //Celsius
+            Temperature.setPreference(.celsius)
+            break
+        }
+    }
 }
