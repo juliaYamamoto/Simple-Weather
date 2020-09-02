@@ -19,10 +19,11 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     var topMenuViewController = TopMenuViewController()
     
     
-    // MARK: - Outlets - Main screen view
+    // MARK: - Outlets - Main screen
     @IBOutlet var mainScreenView: MainScreenView!
     
-    @IBOutlet var topScreenView: TopMenuView!
+    
+    // MARK: - Outlets - Top Menu
     @IBOutlet weak var leadingConstraintTopMenu: NSLayoutConstraint!
     @IBOutlet weak var topConstraintTopMenu: NSLayoutConstraint!
     @IBOutlet weak var traillingConstraintTopMenu: NSLayoutConstraint!
@@ -58,22 +59,22 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     func setupView() {
         //Top Menu
         self.topMenuIsOpen = false
-        self.topScreenView.setup(topConstraint: topConstraintTopMenu, leadingConstrain: leadingConstraintTopMenu, traillingConstrain: traillingConstraintTopMenu, menuWillStartOpen: self.topMenuIsOpen)
+        self.topMenuViewController.setupConstraints(topConstraint: topConstraintTopMenu, leadingConstrain: leadingConstraintTopMenu, traillingConstrain: traillingConstraintTopMenu, menuWillStartOpen: self.topMenuIsOpen)
     }
     
     
     // MARK: - IBOutlets
-    
     @IBAction func OpenCloseMenu(_ sender: Any) {
-        if topMenuIsOpen {
-            self.topScreenView.closeMenu()
-            self.topMenuIsOpen = false
-            self.updateTodayWeatherInfo()
-        }
-
-        else {
-            self.topScreenView.openMenu()
-            self.topMenuIsOpen = true
+        if let topMenu = self.topMenuViewController.view as? TopMenuView {
+            if topMenuIsOpen {
+                topMenu.closeMenu(onView: self.view)
+                self.topMenuIsOpen = false
+                self.updateTodayWeatherInfo()
+            }
+            else {
+                topMenu.openMenu(onView: self.view)
+                self.topMenuIsOpen = true
+            }
         }
     }
     

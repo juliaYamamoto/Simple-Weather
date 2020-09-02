@@ -9,24 +9,18 @@
 import UIKit
 
 class TopMenuView: UIView {
-
+    
+    
+    // MARK: - Constraints
+    
     var topConstraint: NSLayoutConstraint?
     var leadingConstraint: NSLayoutConstraint?
     var traillingConstraint: NSLayoutConstraint?
     
-    func setup(topConstraint: NSLayoutConstraint, leadingConstrain: NSLayoutConstraint, traillingConstrain: NSLayoutConstraint, menuWillStartOpen: Bool){
-        self.topConstraint = topConstraint
-        self.leadingConstraint = leadingConstrain
-        self.traillingConstraint = traillingConstrain
-        
-        if menuWillStartOpen {
-            self.openMenu(animationTime: 0.0)
-        } else {
-            self.closeMenu(animationTime: 0.0)
-        }
-    }
     
-    func openMenu(animationTime: Double = 0.3){
+    // MARK: - Methods
+
+    func openMenu(animationTime: Double = 0.3, onView: UIView? = nil){
         guard let topConstraint = self.topConstraint else { return }
         guard let leadingConstraint = self.leadingConstraint else { return }
         guard let traillingConstraint = self.traillingConstraint else { return }
@@ -36,13 +30,13 @@ class TopMenuView: UIView {
         traillingConstraint.constant = 0
         
         UIView.animate(withDuration: animationTime, delay: 0, options: [], animations: {
-            self.superview?.layoutIfNeeded()
+            onView?.layoutIfNeeded()
         }) { (_) in
             //Return and say that the menu is open - TODO
         }
     }
     
-    func closeMenu(animationTime: Double = 0.3) {
+    func closeMenu(animationTime: Double = 0.3, onView: UIView? = nil){
         guard let topConstraint = self.topConstraint else { return }
         guard let leadingConstraint = self.leadingConstraint else { return }
         guard let traillingConstraint = self.traillingConstraint else { return }
@@ -53,7 +47,7 @@ class TopMenuView: UIView {
         traillingConstraint.constant = screenWidth + 72
         
         UIView.animate(withDuration: animationTime, delay: 0, options: [], animations: {
-            self.superview?.layoutIfNeeded()
+            onView?.layoutIfNeeded()
         }) { (_) in
             //Return and say that the menu is closed  - TODO
         }

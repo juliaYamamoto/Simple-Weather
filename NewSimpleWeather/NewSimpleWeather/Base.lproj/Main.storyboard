@@ -177,7 +177,6 @@
                         <outlet property="leadingConstraintTopMenu" destination="BA3-9S-xc3" id="wg2-Fr-bBC"/>
                         <outlet property="mainScreenView" destination="s1s-iF-O36" id="2uW-UC-vJw"/>
                         <outlet property="topConstraintTopMenu" destination="lUv-do-FVP" id="zbW-pZ-2PR"/>
-                        <outlet property="topScreenView" destination="Fab-0i-KZo" id="BOf-mi-VIM"/>
                         <outlet property="traillingConstraintTopMenu" destination="7qZ-1K-Ldg" id="TQZ-cm-2BN"/>
                     </connections>
                 </viewController>
@@ -189,7 +188,7 @@
         <scene sceneID="UZh-JT-vGo">
             <objects>
                 <viewController title="TopMenu" id="LIR-LY-Nbe" customClass="TopMenuViewController" customModule="NewSimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gxv-RV-yl6">
+                    <view key="view" contentMode="scaleToFill" id="gxv-RV-yl6" customClass="TopMenuView" customModule="NewSimpleWeather" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="244"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

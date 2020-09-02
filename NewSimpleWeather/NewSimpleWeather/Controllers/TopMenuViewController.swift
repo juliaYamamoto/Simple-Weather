@@ -21,17 +21,34 @@ class TopMenuViewController: UIViewController {
     // MARK: - Atributes
     var delegate: TopMenuDelegate?
     
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
-
+    
 
     // MARK: - Methods
+    func setupConstraints(topConstraint: NSLayoutConstraint, leadingConstrain: NSLayoutConstraint, traillingConstrain: NSLayoutConstraint, menuWillStartOpen: Bool){
+        
+        if let topMenu = self.view as? TopMenuView {
+            topMenu.topConstraint = topConstraint
+            topMenu.leadingConstraint = leadingConstrain
+            topMenu.traillingConstraint = traillingConstrain
+            
+            if menuWillStartOpen {
+                topMenu.openMenu(animationTime: 0.0)
+            } else {
+                topMenu.closeMenu(animationTime: 0.0)
+            }
+        }
+    }
+    
     
     func setupView() {
+        //Degrees Segmented Control
         let attributes = [
             NSAttributedString.Key.foregroundColor: UIColor.MainColorGroup.darkBlue,
             NSAttributedString.Key.font: UIFont(name: "Futura", size: 18)!
@@ -50,7 +67,6 @@ class TopMenuViewController: UIViewController {
     
     
     // MARK: - IBOutlet
-    
     @IBAction func changeTemperaturePreference(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0: //Celsius
