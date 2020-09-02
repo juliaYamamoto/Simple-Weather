@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol TopMenuDelegate {
+    func temperaturePreferenceChanged()
+}
+
 class TopMenuViewController: UIViewController {
     
     // MARK: - IBOutlet
@@ -15,8 +19,7 @@ class TopMenuViewController: UIViewController {
     
     
     // MARK: - Atributes
-    var menuIsOpen = false //TODO - update
-    
+    var delegate: TopMenuDelegate?
     
     // MARK: - Lifecycle
     
@@ -29,8 +32,6 @@ class TopMenuViewController: UIViewController {
     // MARK: - Methods
     
     func setupView() {
-        self.menuIsOpen = false //TODO - update
-        
         let attributes = [
             NSAttributedString.Key.foregroundColor: UIColor.MainColorGroup.darkBlue,
             NSAttributedString.Key.font: UIFont(name: "Futura", size: 18)!
@@ -62,6 +63,10 @@ class TopMenuViewController: UIViewController {
         default: //Celsius
             Temperature.setPreference(.celsius)
             break
+        }
+        
+        if let delegate = self.delegate {
+            delegate.temperaturePreferenceChanged()
         }
     }
 }

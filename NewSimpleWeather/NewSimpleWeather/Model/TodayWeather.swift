@@ -24,6 +24,11 @@ class TodayWeather: NSObject {
     var sunsetTime: String = ""
     var moonPhase: MoonPhase = .newMoon
     
+    var rawValueTemperature: Double = 0.0
+    var rawValueApparentTemperature: Double = 0.0
+    var rawValueTemperatureMin: Double = 0.0
+    var rawValueTemperatureMax: Double = 0.0
+    
     override init() {
        super.init()
     }
@@ -37,16 +42,26 @@ class TodayWeather: NSObject {
         self.humidity = getPercentageFrom(value: weather.currently.humidity)
         self.rain = getPercentageFrom(value: weather.currently.precipProbability)
         self.day = getDayString(value: weather.currently.time)
-        self.temperature = getTemperatureString(value: weather.currently.temperature)
-        self.apparentTemperature = getTemperatureString(value: weather.currently.apparentTemperature)
+        self.rawValueTemperature = weather.currently.temperature
+        self.rawValueApparentTemperature = weather.currently.apparentTemperature
+        self.temperature = getTemperatureString(value: rawValueTemperature)
+        self.apparentTemperature = getTemperatureString(value: rawValueApparentTemperature)
         
         let todayData = weather.daily.data[0]
-        self.temperatureMin = getTemperatureString(value: todayData.apparentTemperatureMin)
-        self.temperatureMax = getTemperatureString(value: todayData.apparentTemperatureMax)
+        self.rawValueTemperatureMin = todayData.apparentTemperatureMin
+        self.rawValueTemperatureMax = todayData.apparentTemperatureMax
+        self.temperatureMin = getTemperatureString(value: rawValueTemperatureMin)
+        self.temperatureMax = getTemperatureString(value: rawValueTemperatureMax)
         self.sunriseTime = getTimeString(value: todayData.sunriseTime)
         self.sunsetTime = getTimeString(value: todayData.sunsetTime)
         self.moonPhase = MoonPhase.getMoonType(todayData.moonPhase)
-        
+    }
+    
+    func updateTemperature(){
+        self.temperature = getTemperatureString(value: rawValueTemperature)
+        self.apparentTemperature = getTemperatureString(value: rawValueApparentTemperature)
+        self.temperatureMin = getTemperatureString(value: rawValueTemperatureMin)
+        self.temperatureMax = getTemperatureString(value: rawValueTemperatureMax)
     }
     
     func getLocationCity(location: String) -> String{

@@ -30,6 +30,7 @@
 		A3B9E8A524D1327D00688C16 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9E8A424D1327D00688C16 /* APIRequest.swift */; };
 		A3B9E8A824D1342D00688C16 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9E8A724D1342D00688C16 /* WeatherModel.swift */; };
 		A3C8596124CCDCF200C7CF71 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C8596024CCDCF200C7CF71 /* Constants.swift */; };
+		A3DF615C250014410014571B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DF615B250014410014571B /* UIView.swift */; };
 		A3E620C724E8D37200FBDEFD /* TodayWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E620C624E8D37200FBDEFD /* TodayWeather.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		A3B9E8A424D1327D00688C16 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		A3B9E8A724D1342D00688C16 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		A3C8596024CCDCF200C7CF71 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A3DF615B250014410014571B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		A3E620C624E8D37200FBDEFD /* TodayWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,6 +174,7 @@
 				A3C8596024CCDCF200C7CF71 /* Constants.swift */,
 				A3A9A4DC24E6C41A00AEE26E /* Reachability.swift */,
 				A30F697924EB243B00D7CFBB /* Temperature.swift */,
+				A3DF615B250014410014571B /* UIView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3DF615C250014410014571B /* UIView.swift in Sources */,
 				A3C8596124CCDCF200C7CF71 /* Constants.swift in Sources */,
 				A31629CE24CA2B02003AF90B /* ViewController.swift in Sources */,
 				A3B9E8A524D1327D00688C16 /* APIRequest.swift in Sources */,

@@ -9,13 +9,14 @@
 import UIKit
 import CoreLocation
 
-class WeatherViewController: UIViewController, LocationDelegate {
+class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate {
     
     // MARK: - Attributes
     let location = Location()
     var todayWeather = TodayWeather()
     var nextDays = NextDaysWeather()
     var topMenuIsOpen = false
+    var topMenuViewController = TopMenuViewController()
     
     
     // MARK: - Outlets - Main screen view
@@ -26,6 +27,7 @@ class WeatherViewController: UIViewController, LocationDelegate {
     @IBOutlet weak var topConstraintTopMenu: NSLayoutConstraint!
     @IBOutlet weak var traillingConstraintTopMenu: NSLayoutConstraint!
     
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,15 +37,21 @@ class WeatherViewController: UIViewController, LocationDelegate {
         setupView()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let topMenuViewController = segue.destination as? TopMenuViewController {
+            self.topMenuViewController = topMenuViewController
+            self.topMenuViewController.delegate = self
+        }
+    }
+    
     
     // MARK: - Methods
     func createDataModelsFrom(_ weather: Weather){
         self.todayWeather = TodayWeather(from: weather)
         self.nextDays = NextDaysWeather()
-        nextDays.creatNextDaysList(from: weather)
     }
     
-    func showTodayWeatherInfo() {
+    func updateTodayWeatherInfo() {
         mainScreenView.setupInformations(self.todayWeather)
     }
     
@@ -60,6 +68,7 @@ class WeatherViewController: UIViewController, LocationDelegate {
         if topMenuIsOpen {
             self.topScreenView.closeMenu()
             self.topMenuIsOpen = false
+            self.updateTodayWeatherInfo()
         }
 
         else {
@@ -68,6 +77,11 @@ class WeatherViewController: UIViewController, LocationDelegate {
         }
     }
     
+    // MARK: - TopMenuDelegate
+    func temperaturePreferenceChanged() {
+        self.todayWeather.updateTemperature()
+        self.updateTodayWeatherInfo()
+    }
     
     // MARK: - LocationDelegate
     func gotCurrentLocation(latitude: Double, longitude: Double) {
@@ -76,7 +90,7 @@ class WeatherViewController: UIViewController, LocationDelegate {
             case .success(let weather):
                 DispatchQueue.main.async {
                     self.createDataModelsFrom(weather)
-                    self.showTodayWeatherInfo()
+                    self.updateTodayWeatherInfo()
                 }
             case .failure(_):
                 //TODO - APIError
