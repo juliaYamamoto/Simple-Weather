@@ -20,7 +20,7 @@ class TopMenuView: UIView {
     
     // MARK: - Methods
 
-    func openMenu(animationTime: Double = 0.3, onView: UIView? = nil){
+    func openMenu(animationTime: Double = 0.3, onView: UIView? = nil, animationFinished: @escaping() -> Void?){
         guard let topConstraint = self.topConstraint else { return }
         guard let leadingConstraint = self.leadingConstraint else { return }
         guard let traillingConstraint = self.traillingConstraint else { return }
@@ -32,11 +32,11 @@ class TopMenuView: UIView {
         UIView.animate(withDuration: animationTime, delay: 0, options: [], animations: {
             onView?.layoutIfNeeded()
         }) { (_) in
-            //Return and say that the menu is open - TODO
+            animationFinished()
         }
     }
     
-    func closeMenu(animationTime: Double = 0.3, onView: UIView? = nil){
+    func closeMenu(animationTime: Double = 0.3, onView: UIView? = nil, animationFinished: @escaping() -> Void?){
         guard let topConstraint = self.topConstraint else { return }
         guard let leadingConstraint = self.leadingConstraint else { return }
         guard let traillingConstraint = self.traillingConstraint else { return }
@@ -49,7 +49,7 @@ class TopMenuView: UIView {
         UIView.animate(withDuration: animationTime, delay: 0, options: [], animations: {
             onView?.layoutIfNeeded()
         }) { (_) in
-            //Return and say that the menu is closed  - TODO
+            animationFinished()
         }
     }
 }

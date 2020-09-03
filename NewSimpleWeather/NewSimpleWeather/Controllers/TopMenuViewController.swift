@@ -20,6 +20,7 @@ class TopMenuViewController: UIViewController {
     
     // MARK: - Atributes
     var delegate: TopMenuDelegate?
+    var menuIsOpen = false
     
     
     // MARK: - Lifecycle
@@ -29,7 +30,7 @@ class TopMenuViewController: UIViewController {
         setupView()
     }
     
-
+    
     // MARK: - Methods
     func setupConstraints(topConstraint: NSLayoutConstraint, leadingConstrain: NSLayoutConstraint, traillingConstrain: NSLayoutConstraint, menuWillStartOpen: Bool){
         
@@ -39,13 +40,16 @@ class TopMenuViewController: UIViewController {
             topMenu.traillingConstraint = traillingConstrain
             
             if menuWillStartOpen {
-                topMenu.openMenu(animationTime: 0.0)
+                topMenu.openMenu(animationTime: 0.0, onView: nil) { () -> Void? in
+                    self.menuIsOpen = true
+                }
             } else {
-                topMenu.closeMenu(animationTime: 0.0)
+                topMenu.closeMenu(animationTime: 0.0, onView: nil) { () -> Void? in
+                    self.menuIsOpen = false
+                }
             }
         }
     }
-    
     
     func setupView() {
         //Degrees Segmented Control
@@ -64,6 +68,23 @@ class TopMenuViewController: UIViewController {
             degreesSegmentedControl.selectedSegmentIndex = 1
         }
     }
+    
+    
+    func openMenu(animationTime: Double = 0.3, onView: UIView){
+        if let topMenu = self.view as? TopMenuView {
+            topMenu.openMenu(animationTime: animationTime, onView: onView) {
+                self.menuIsOpen = true
+            }
+        }
+    }
+    
+    func closeMenu(animationTime: Double = 0.3, onView: UIView){
+           if let topMenu = self.view as? TopMenuView {
+               topMenu.closeMenu(animationTime: animationTime, onView: onView) {
+                   self.menuIsOpen = false
+               }
+           }
+       }
     
     
     // MARK: - IBOutlet

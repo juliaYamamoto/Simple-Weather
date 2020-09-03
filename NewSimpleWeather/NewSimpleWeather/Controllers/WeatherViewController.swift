@@ -15,7 +15,6 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     let location = Location()
     var todayWeather = TodayWeather()
     var nextDays = NextDaysWeather()
-    var topMenuIsOpen = false
     var topMenuViewController = TopMenuViewController()
     
     
@@ -58,23 +57,16 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     
     func setupView() {
         //Top Menu
-        self.topMenuIsOpen = false
-        self.topMenuViewController.setupConstraints(topConstraint: topConstraintTopMenu, leadingConstrain: leadingConstraintTopMenu, traillingConstrain: traillingConstraintTopMenu, menuWillStartOpen: self.topMenuIsOpen)
+        self.topMenuViewController.setupConstraints(topConstraint: topConstraintTopMenu, leadingConstrain: leadingConstraintTopMenu, traillingConstrain: traillingConstraintTopMenu, menuWillStartOpen: false)
     }
     
     
     // MARK: - IBOutlets
     @IBAction func OpenCloseMenu(_ sender: Any) {
-        if let topMenu = self.topMenuViewController.view as? TopMenuView {
-            if topMenuIsOpen {
-                topMenu.closeMenu(onView: self.view)
-                self.topMenuIsOpen = false
-                self.updateTodayWeatherInfo()
-            }
-            else {
-                topMenu.openMenu(onView: self.view)
-                self.topMenuIsOpen = true
-            }
+        if self.topMenuViewController.menuIsOpen {
+            self.topMenuViewController.closeMenu(onView: self.view)
+        } else {
+            self.topMenuViewController.openMenu(onView: self.view)
         }
     }
     
