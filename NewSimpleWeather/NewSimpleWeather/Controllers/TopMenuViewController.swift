@@ -16,6 +16,7 @@ class TopMenuViewController: UIViewController {
     
     // MARK: - IBOutlet
     @IBOutlet weak var degreesSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var locationImage: UIImageView!
     
     
     // MARK: - Atributes
@@ -40,10 +41,12 @@ class TopMenuViewController: UIViewController {
             topMenu.traillingConstraint = traillingConstrain
             
             if menuWillStartOpen {
+                showLocationImage()
                 topMenu.openMenu(animationTime: 0.0, onView: nil) { () -> Void? in
                     self.menuIsOpen = true
                 }
             } else {
+                hideLocationImage()
                 topMenu.closeMenu(animationTime: 0.0, onView: nil) { () -> Void? in
                     self.menuIsOpen = false
                 }
@@ -69,9 +72,21 @@ class TopMenuViewController: UIViewController {
         }
     }
     
+    func showLocationImage(){
+        UIView.animate(withDuration: 0.3) {
+            self.locationImage.alpha = 1
+        }
+    }
+    
+    func hideLocationImage(){
+        UIView.animate(withDuration: 0.3) {
+            self.locationImage.alpha = 0
+        }
+    }
     
     func openMenu(animationTime: Double = 0.3, onView: UIView){
         if let topMenu = self.view as? TopMenuView {
+            showLocationImage()
             topMenu.openMenu(animationTime: animationTime, onView: onView) {
                 self.menuIsOpen = true
             }
@@ -79,12 +94,13 @@ class TopMenuViewController: UIViewController {
     }
     
     func closeMenu(animationTime: Double = 0.3, onView: UIView){
-           if let topMenu = self.view as? TopMenuView {
-               topMenu.closeMenu(animationTime: animationTime, onView: onView) {
-                   self.menuIsOpen = false
-               }
-           }
-       }
+        if let topMenu = self.view as? TopMenuView {
+            hideLocationImage()
+            topMenu.closeMenu(animationTime: animationTime, onView: onView) {
+                self.menuIsOpen = false
+            }
+        }
+    }
     
     
     // MARK: - IBOutlet

@@ -257,6 +257,7 @@
                     </view>
                     <connections>
                         <outlet property="degreesSegmentedControl" destination="EOv-ea-m8w" id="vUI-UC-HjY"/>
+                        <outlet property="locationImage" destination="sFF-C3-rcz" id="jla-ja-3Xg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTc-zM-48v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
