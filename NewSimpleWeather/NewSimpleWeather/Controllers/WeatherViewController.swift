@@ -15,8 +15,6 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     let location = Location()
     var todayWeather = TodayWeather()
     var nextDays = NextDaysWeather()
-    var topMenuViewController = TopMenuViewController()
-    
     
     // MARK: - Outlets - Main screen
     @IBOutlet var mainScreenView: MainScreenView!
@@ -26,6 +24,17 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     @IBOutlet weak var leadingConstraintTopMenu: NSLayoutConstraint!
     @IBOutlet weak var topConstraintTopMenu: NSLayoutConstraint!
     @IBOutlet weak var traillingConstraintTopMenu: NSLayoutConstraint!
+    
+    
+    // MARK: - Outlets - Bot Menu
+    @IBOutlet weak var topConstraintBotMenu: NSLayoutConstraint!
+    @IBOutlet weak var heightConstraintBotMenu: NSLayoutConstraint!
+    
+    
+    // MARK: - Attributes - Menus
+    var topMenuViewController = TopMenuViewController()
+    var botMenuViewController = BotMenuViewController()
+    
     
     
     // MARK: - Lifecycle
@@ -38,13 +47,20 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let topMenuViewController = segue.destination as? TopMenuViewController {
-            self.topMenuViewController = topMenuViewController
-            self.topMenuViewController.delegate = self
+        if segue.identifier == "segueToTop" {
+            if let topMenuViewController = segue.destination as? TopMenuViewController {
+                self.topMenuViewController = topMenuViewController
+                self.topMenuViewController.delegate = self
+            }
+        }
+        else if segue.identifier == "segueToBot" {
+            if let botMenuViewController = segue.destination as? BotMenuViewController {
+                self.botMenuViewController = botMenuViewController
+                self.botMenuViewController.superview = self.view
+            }
         }
     }
-    
-    
+
     // MARK: - Methods
     func createDataModelsFrom(_ weather: Weather){
         self.todayWeather = TodayWeather(from: weather)
@@ -57,7 +73,10 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     
     func setupView() {
         //Top Menu
-        self.topMenuViewController.setupConstraints(topConstraint: topConstraintTopMenu, leadingConstrain: leadingConstraintTopMenu, traillingConstrain: traillingConstraintTopMenu, menuWillStartOpen: false)
+        self.topMenuViewController.setupConstraints(topConstraint: topConstraintTopMenu, leadingConstraint: leadingConstraintTopMenu, traillingConstraint: traillingConstraintTopMenu, menuWillStartOpen: false)
+        
+        //Bot Menu
+        self.botMenuViewController.setupConstraints(topConstaint: topConstraintBotMenu, heightConstraint: heightConstraintBotMenu, menuWillStartOpen: false)
     }
     
     

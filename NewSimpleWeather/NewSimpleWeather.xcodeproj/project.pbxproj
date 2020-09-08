@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A30C881F25082BB100352F16 /* BotMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C881E25082BB100352F16 /* BotMenuViewController.swift */; };
+		A30C882125082BC600352F16 /* BotMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C882025082BC600352F16 /* BotMenuView.swift */; };
 		A30F697A24EB243B00D7CFBB /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F697924EB243B00D7CFBB /* Temperature.swift */; };
 		A30F697C24EB30D000D7CFBB /* MoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F697B24EB30D000D7CFBB /* MoonPhase.swift */; };
 		A31629CA24CA2B02003AF90B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31629C924CA2B02003AF90B /* AppDelegate.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A30C881E25082BB100352F16 /* BotMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotMenuViewController.swift; sourceTree = "<group>"; };
+		A30C882025082BC600352F16 /* BotMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotMenuView.swift; sourceTree = "<group>"; };
 		A30F697924EB243B00D7CFBB /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		A30F697B24EB30D000D7CFBB /* MoonPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhase.swift; sourceTree = "<group>"; };
 		A31629C624CA2B02003AF90B /* NewSimpleWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSimpleWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +188,7 @@
 			children = (
 				A34CE30724D8EB7D00747092 /* WeatherViewController.swift */,
 				A37E380924F71118003EEB2C /* TopMenuViewController.swift */,
+				A30C881E25082BB100352F16 /* BotMenuViewController.swift */,
 				A34CE30A24D8ECF500747092 /* Location.swift */,
 			);
 			path = Controllers;
@@ -194,6 +199,7 @@
 			children = (
 				A32DFDB424EC65C000B1CAED /* MainScreenView.swift */,
 				A356E5D724F8857B006B8BF5 /* TopMenuView.swift */,
+				A30C882025082BC600352F16 /* BotMenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -363,6 +369,7 @@
 				A3291EAE24CAA25F0064CB06 /* UIColor.swift in Sources */,
 				A32DFDB324EC562C00B1CAED /* APIError.swift in Sources */,
 				A3A9A4DD24E6C41A00AEE26E /* Reachability.swift in Sources */,
+				A30C881F25082BB100352F16 /* BotMenuViewController.swift in Sources */,
 				A30F697C24EB30D000D7CFBB /* MoonPhase.swift in Sources */,
 				A34CE30824D8EB7D00747092 /* WeatherViewController.swift in Sources */,
 				A30F697A24EB243B00D7CFBB /* Temperature.swift in Sources */,
@@ -370,6 +377,7 @@
 				A3E620C724E8D37200FBDEFD /* TodayWeather.swift in Sources */,
 				A32DFDB024EC4FCB00B1CAED /* NextWeather.swift in Sources */,
 				A31629CC24CA2B02003AF90B /* SceneDelegate.swift in Sources */,
+				A30C882125082BC600352F16 /* BotMenuView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

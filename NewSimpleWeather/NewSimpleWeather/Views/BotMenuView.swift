@@ -1,31 +1,25 @@
 //
-//  TopMenuView.swift
+//  BotMenuView.swift
 //  NewSimpleWeather
 //
-//  Created by Júlia Yamamoto on 27/08/20.
+//  Created by Júlia Yamamoto on 08/09/20.
 //  Copyright © 2020 Júlia Yamamoto. All rights reserved.
 //
 
 import UIKit
 
-class TopMenuView: UIView {
+class BotMenuView: UIView {
     
     // MARK: - Constraints
     var topConstraint: NSLayoutConstraint?
-    var leadingConstraint: NSLayoutConstraint?
-    var traillingConstraint: NSLayoutConstraint?
+    var heightConstraint: NSLayoutConstraint?
     
     
     // MARK: - Methods
-
+    
     func openMenu(animationTime: Double = 0.3, onView: UIView? = nil, animationFinished: @escaping() -> Void?){
         guard let topConstraint = self.topConstraint else { return }
-        guard let leadingConstraint = self.leadingConstraint else { return }
-        guard let traillingConstraint = self.traillingConstraint else { return }
-        
-        topConstraint.constant = 0
-        leadingConstraint.constant = 0
-        traillingConstraint.constant = 0
+        topConstraint.constant = 60
         
         UIView.animate(withDuration: animationTime, delay: 0, options: [], animations: {
             onView?.layoutIfNeeded()
@@ -35,14 +29,11 @@ class TopMenuView: UIView {
     }
     
     func closeMenu(animationTime: Double = 0.3, onView: UIView? = nil, animationFinished: @escaping() -> Void?){
+        let screenHeight = UIScreen.main.bounds.size.height
         guard let topConstraint = self.topConstraint else { return }
-        guard let leadingConstraint = self.leadingConstraint else { return }
-        guard let traillingConstraint = self.traillingConstraint else { return }
+        guard let heightConstraint = self.topConstraint else { return }
         
-        let screenWidth = UIScreen.main.bounds.size.width
-        topConstraint.constant = -135
-        leadingConstraint.constant = screenWidth - 72
-        traillingConstraint.constant = screenWidth + 72
+        topConstraint.constant = screenHeight - 60
         
         UIView.animate(withDuration: animationTime, delay: 0, options: [], animations: {
             onView?.layoutIfNeeded()
@@ -50,4 +41,6 @@ class TopMenuView: UIView {
             animationFinished()
         }
     }
+    
+    
 }

@@ -33,12 +33,12 @@ class TopMenuViewController: UIViewController {
     
     
     // MARK: - Methods
-    func setupConstraints(topConstraint: NSLayoutConstraint, leadingConstrain: NSLayoutConstraint, traillingConstrain: NSLayoutConstraint, menuWillStartOpen: Bool){
+    func setupConstraints(topConstraint: NSLayoutConstraint, leadingConstraint: NSLayoutConstraint, traillingConstraint: NSLayoutConstraint, menuWillStartOpen: Bool){
         
         if let topMenu = self.view as? TopMenuView {
             topMenu.topConstraint = topConstraint
-            topMenu.leadingConstraint = leadingConstrain
-            topMenu.traillingConstraint = traillingConstrain
+            topMenu.leadingConstraint = leadingConstraint
+            topMenu.traillingConstraint = traillingConstraint
             
             if menuWillStartOpen {
                 showLocationImage()
