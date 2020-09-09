@@ -23,7 +23,7 @@ class MainScreenView: UIView {
     
     func setupInformations(_ todayWeather: TodayWeather) {
         cityLabel.text = todayWeather.cityName
-        countryLabel.text = todayWeather.contryName
+        countryLabel.text = todayWeather.countryName
         stateIconImage.image = UIImage(named: getStateIconImage(todayWeather.icon))
         stateDescriptionLabel.text = todayWeather.icon.rawValue
         degreesLabel.text = todayWeather.temperature

@@ -17,7 +17,8 @@ class TopMenuViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var degreesSegmentedControl: UISegmentedControl!
     @IBOutlet weak var locationImage: UIImageView!
-    
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
     
     // MARK: - Atributes
     var delegate: TopMenuDelegate?
@@ -52,6 +53,11 @@ class TopMenuViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func updateTodayValues(cityName: String, countryName: String){
+        self.cityLabel.text = cityName
+        self.countryLabel.text = countryName
     }
     
     func setupView() {

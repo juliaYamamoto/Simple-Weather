@@ -34,10 +34,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="Bs9-cy-pLm" userLabel="stateIconImage">
-                                <rect key="frame" x="32" y="49.5" width="311" height="428"/>
+                                <rect key="frame" x="32" y="156.49999999999997" width="311.00000000000011" height="214.00000000000009"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nop-hc-513" userLabel="DetailsView">
-                                <rect key="frame" x="82.5" y="487.5" width="210" height="135"/>
+                                <rect key="frame" x="82.5" y="380.5" width="210" height="135"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Partly cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pC4-xB-OVt" userLabel="DescriptionLabel">
                                         <rect key="frame" x="8" y="20" width="194" height="24"/>
@@ -270,6 +270,8 @@
                         <viewLayoutGuide key="safeArea" id="PCK-Ph-z1m"/>
                     </view>
                     <connections>
+                        <outlet property="cityLabel" destination="T8r-zE-rIn" id="W6s-Dz-rPP"/>
+                        <outlet property="countryLabel" destination="pGq-Zb-N64" id="vLN-yJ-Klb"/>
                         <outlet property="degreesSegmentedControl" destination="EOv-ea-m8w" id="vUI-UC-HjY"/>
                         <outlet property="locationImage" destination="sFF-C3-rcz" id="jla-ja-3Xg"/>
                     </connections>
@@ -305,6 +307,7 @@
                             <constraint firstItem="NcQ-IA-lVo" firstAttribute="centerX" secondItem="GHe-mH-XOg" secondAttribute="centerX" id="7Pn-pz-M3R"/>
                             <constraint firstItem="NcQ-IA-lVo" firstAttribute="top" secondItem="GHe-mH-XOg" secondAttribute="topMargin" constant="5" id="zjT-CR-OPq"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="ob1-uY-ZWq"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSQ-bH-Zt3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

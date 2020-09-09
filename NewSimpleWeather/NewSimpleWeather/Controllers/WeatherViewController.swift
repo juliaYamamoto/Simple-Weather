@@ -60,7 +60,7 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
             }
         }
     }
-
+    
     // MARK: - Methods
     func createDataModelsFrom(_ weather: Weather){
         self.todayWeather = TodayWeather(from: weather)
@@ -69,6 +69,7 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     
     func updateTodayWeatherInfo() {
         mainScreenView.setupInformations(self.todayWeather)
+        self.topMenuViewController.updateTodayValues(cityName: self.todayWeather.cityName, countryName: self.todayWeather.countryName)
     }
     
     func setupView() {

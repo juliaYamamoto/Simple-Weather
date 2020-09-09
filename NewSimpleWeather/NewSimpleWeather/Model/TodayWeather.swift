@@ -11,7 +11,7 @@ import UIKit
 class TodayWeather: NSObject {
 
     var cityName: String = ""
-    var contryName: String = ""
+    var countryName: String = ""
     var icon: IconWeather = IconWeather.cloudy
     var humidity: String = ""
     var rain: String = ""
@@ -37,7 +37,7 @@ class TodayWeather: NSObject {
         super.init()
         
         self.cityName = getLocationCity(location: weather.timezone)
-        self.contryName = getLocationCountry(location: weather.timezone)
+        self.countryName = getLocationCountry(location: weather.timezone)
         self.icon = IconWeather.getIconType(weather.currently.icon)
         self.humidity = getPercentageFrom(value: weather.currently.humidity)
         self.rain = getPercentageFrom(value: weather.currently.precipProbability)

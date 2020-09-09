@@ -31,7 +31,6 @@ class BotMenuView: UIView {
     func closeMenu(animationTime: Double = 0.3, onView: UIView? = nil, animationFinished: @escaping() -> Void?){
         let screenHeight = UIScreen.main.bounds.size.height
         guard let topConstraint = self.topConstraint else { return }
-        guard let heightConstraint = self.topConstraint else { return }
         
         topConstraint.constant = screenHeight - 60
         

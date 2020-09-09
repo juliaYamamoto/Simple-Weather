@@ -53,12 +53,14 @@ class BotMenuViewController: UIViewController {
             if let botMenu = self.view as? BotMenuView {
                 botMenu.closeMenu(animationTime: 0.3, onView: self.superview) {
                     self.menuIsOpen = false
+                    return sender.imageView?.image = UIImage(systemName: "chevron.compact.up")
                 }
             }
         } else {
             if let botMenu = self.view as? BotMenuView {
                 botMenu.openMenu(animationTime: 0.3, onView: self.superview) {
                     self.menuIsOpen = true
+                    return sender.imageView?.image = UIImage(systemName: "chevron.compact.down")
                 }
             }
         }
