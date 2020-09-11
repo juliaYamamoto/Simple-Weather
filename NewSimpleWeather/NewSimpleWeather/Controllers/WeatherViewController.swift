@@ -27,8 +27,7 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     
     
     // MARK: - Outlets - Bot Menu
-    @IBOutlet weak var topConstraintBotMenu: NSLayoutConstraint!
-    @IBOutlet weak var heightConstraintBotMenu: NSLayoutConstraint!
+    @IBOutlet weak var botView: UIView!
     
     
     // MARK: - Attributes - Menus
@@ -36,13 +35,19 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     var botMenuViewController = BotMenuViewController()
     
     
-    
     // MARK: - Lifecycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         location.delegate = self
         location.setupLocationManagerWithVC()
         
+        //        setupPanGesture()
+        setupSwipeGesture()
         setupView()
     }
     
@@ -56,12 +61,28 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
         else if segue.identifier == "segueToBot" {
             if let botMenuViewController = segue.destination as? BotMenuViewController {
                 self.botMenuViewController = botMenuViewController
-                self.botMenuViewController.superview = self.view
             }
         }
     }
     
     // MARK: - Methods
+    
+    func setupSwipeGesture(){
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(self.handleSwipe))
+        swipe.direction = .up
+        self.botView.addGestureRecognizer(swipe)
+    }
+    
+    @objc func handleSwipe(_ sender: UISwipeGestureRecognizer){
+        openBotMenu()
+    }
+
+    
+    func openBotMenu(){
+        self.botMenuViewController = BotMenuViewController()
+        self.performSegue(withIdentifier: "segueToBot", sender: self)
+    }
+    
     func createDataModelsFrom(_ weather: Weather){
         self.todayWeather = TodayWeather(from: weather)
         self.nextDays = NextDaysWeather()
@@ -75,9 +96,6 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     func setupView() {
         //Top Menu
         self.topMenuViewController.setupConstraints(topConstraint: topConstraintTopMenu, leadingConstraint: leadingConstraintTopMenu, traillingConstraint: traillingConstraintTopMenu, menuWillStartOpen: false)
-        
-        //Bot Menu
-        self.botMenuViewController.setupConstraints(topConstaint: topConstraintBotMenu, heightConstraint: heightConstraintBotMenu, menuWillStartOpen: false)
     }
     
     
@@ -89,6 +107,7 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
             self.topMenuViewController.openMenu(onView: self.view)
         }
     }
+    
     
     // MARK: - TopMenuDelegate
     func temperaturePreferenceChanged() {

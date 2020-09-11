@@ -10,16 +10,20 @@ import UIKit
 
 class BotMenuViewController: UIViewController {
     
-    // MARK: - Atributes
+    // MARK: - Variables
     var menuIsOpen = false
-    var superview: UIView?
     
     // MARK: - Lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupView()
-    }
+       override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(true)
+           self.navigationController?.setNavigationBarHidden(true, animated: true)
+       }
+       
+       override func viewDidLoad() {
+           super.viewDidLoad()
+           
+           setupView()
+       }
     
     
     // MARK: - Methods
@@ -27,44 +31,4 @@ class BotMenuViewController: UIViewController {
     func setupView() {
         
     }
-    
-    func setupConstraints(topConstaint: NSLayoutConstraint, heightConstraint: NSLayoutConstraint, menuWillStartOpen: Bool) {
-        if let botMenu = self.view as? BotMenuView {
-            botMenu.topConstraint = topConstaint
-            botMenu.heightConstraint = heightConstraint
-            
-            if menuWillStartOpen {
-                botMenu.openMenu(animationTime: 0.0, onView: nil) { () -> Void? in
-                    self.menuIsOpen = true
-                }
-            } else {
-                botMenu.closeMenu(animationTime: 0.0, onView: nil) { () -> Void? in
-                    self.menuIsOpen = false
-                }
-            }
-        }
-    }
-    
-    
-    // MARK: - IBActions
-    
-    @IBAction func openCloseButtonClicked(_ sender: UIButton) {
-        if menuIsOpen {
-            if let botMenu = self.view as? BotMenuView {
-                botMenu.closeMenu(animationTime: 0.3, onView: self.superview) {
-                    self.menuIsOpen = false
-                    return sender.imageView?.image = UIImage(systemName: "chevron.compact.up")
-                }
-            }
-        } else {
-            if let botMenu = self.view as? BotMenuView {
-                botMenu.openMenu(animationTime: 0.3, onView: self.superview) {
-                    self.menuIsOpen = true
-                    return sender.imageView?.image = UIImage(systemName: "chevron.compact.down")
-                }
-            }
-        }
-        
-    }
-    
 }

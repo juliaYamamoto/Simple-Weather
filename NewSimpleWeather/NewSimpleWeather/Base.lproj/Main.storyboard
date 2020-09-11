@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RsM-3L-1zy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LLP-Yd-FV0">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3N4-28-Agi" userLabel="CityLabel">
-                                <rect key="frame" x="16" y="20" width="343" height="42"/>
+                                <rect key="frame" x="16" y="64" width="343" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="nFQ-Pu-mBq"/>
                                 </constraints>
@@ -25,7 +25,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yka-ul-XST" userLabel="CountryLabel">
-                                <rect key="frame" x="16" y="60" width="343" height="24"/>
+                                <rect key="frame" x="16" y="104" width="343" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="ot9-Mb-ip7"/>
                                 </constraints>
@@ -134,15 +134,26 @@
                                     <action selector="OpenCloseMenu:" destination="RsM-3L-1zy" eventType="touchUpInside" id="P9q-cu-Nrl"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SId-jH-vim">
-                                <rect key="frame" x="0.0" y="607" width="375" height="607"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15T-SK-Mkx" userLabel="BotView">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Igm-Ig-HJG" userLabel="OpenMenu">
+                                        <rect key="frame" x="178" y="5" width="19" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="XcT-Gg-9ga"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                        <color key="tintColor" red="0.2758137584" green="0.35201996559999998" blue="0.41454875470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="chevron.compact.up" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.79916614289999999" green="0.95263546710000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="607" id="KXV-zL-0gA"/>
+                                    <constraint firstItem="Igm-Ig-HJG" firstAttribute="centerX" secondItem="15T-SK-Mkx" secondAttribute="centerX" id="GNw-bs-lor"/>
+                                    <constraint firstAttribute="height" constant="60" id="RUd-2S-Yif"/>
+                                    <constraint firstItem="Igm-Ig-HJG" firstAttribute="top" secondItem="15T-SK-Mkx" secondAttribute="top" constant="5" id="uq3-jP-Mx1"/>
                                 </constraints>
-                                <connections>
-                                    <segue destination="5xo-nj-0Hg" kind="embed" identifier="segueToBot" id="nSE-ei-ksB"/>
-                                </connections>
-                            </containerView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -157,19 +168,19 @@
                             <constraint firstItem="nop-hc-513" firstAttribute="top" secondItem="Bs9-cy-pLm" secondAttribute="bottom" constant="10" id="KSO-GP-I7m"/>
                             <constraint firstItem="Ayq-22-Op9" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" constant="12" id="Ncz-6Q-80y"/>
                             <constraint firstItem="3N4-28-Agi" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" constant="16" id="O6u-1g-uzs"/>
-                            <constraint firstItem="SId-jH-vim" firstAttribute="trailing" secondItem="EGe-pF-poB" secondAttribute="trailing" id="abi-4P-238"/>
                             <constraint firstAttribute="trailing" secondItem="Bs9-cy-pLm" secondAttribute="trailing" constant="32" id="b09-QZ-FA1"/>
-                            <constraint firstItem="SId-jH-vim" firstAttribute="top" secondItem="EGe-pF-poB" secondAttribute="top" constant="607" id="bLc-Ms-YBO"/>
                             <constraint firstItem="EGe-pF-poB" firstAttribute="trailing" secondItem="hll-p6-1px" secondAttribute="trailing" constant="16" id="fUp-JS-YAZ"/>
                             <constraint firstItem="Bs9-cy-pLm" firstAttribute="centerY" secondItem="s1s-iF-O36" secondAttribute="centerY" constant="-70" id="flp-dE-Cto"/>
+                            <constraint firstItem="15T-SK-Mkx" firstAttribute="trailing" secondItem="EGe-pF-poB" secondAttribute="trailing" id="hvb-R9-1qU"/>
+                            <constraint firstItem="15T-SK-Mkx" firstAttribute="bottom" secondItem="EGe-pF-poB" secondAttribute="bottom" id="kuU-jo-7Ec"/>
                             <constraint firstItem="Fab-0i-KZo" firstAttribute="top" secondItem="s1s-iF-O36" secondAttribute="top" id="lUv-do-FVP"/>
                             <constraint firstItem="EGe-pF-poB" firstAttribute="trailing" secondItem="Yka-ul-XST" secondAttribute="trailing" constant="16" id="mTI-Mr-IFs"/>
-                            <constraint firstItem="SId-jH-vim" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" id="mxm-D5-R5o"/>
                             <constraint firstItem="EGe-pF-poB" firstAttribute="bottom" secondItem="WhH-8S-9OS" secondAttribute="bottom" constant="60" id="qis-M1-gAs"/>
                             <constraint firstItem="Bs9-cy-pLm" firstAttribute="leading" secondItem="s1s-iF-O36" secondAttribute="leading" constant="32" id="s6l-7N-OKe"/>
                             <constraint firstItem="nop-hc-513" firstAttribute="centerX" secondItem="s1s-iF-O36" secondAttribute="centerX" id="shw-cB-EfL"/>
                             <constraint firstItem="EGe-pF-poB" firstAttribute="bottom" secondItem="Ayq-22-Op9" secondAttribute="bottom" constant="60" id="u71-hx-BSR"/>
                             <constraint firstItem="Yka-ul-XST" firstAttribute="top" secondItem="EGe-pF-poB" secondAttribute="top" constant="60" id="zmh-cx-2rC"/>
+                            <constraint firstItem="15T-SK-Mkx" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" id="zu1-Vl-1wY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EGe-pF-poB"/>
                         <connections>
@@ -185,18 +196,35 @@
                             <outlet property="stateIconImage" destination="Bs9-cy-pLm" id="NLo-71-TwJ"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="1n2-2o-gth"/>
                     <connections>
-                        <outlet property="heightConstraintBotMenu" destination="KXV-zL-0gA" id="9yV-SQ-xaz"/>
+                        <outlet property="botView" destination="15T-SK-Mkx" id="pEh-tY-FRc"/>
                         <outlet property="leadingConstraintTopMenu" destination="BA3-9S-xc3" id="wg2-Fr-bBC"/>
                         <outlet property="mainScreenView" destination="s1s-iF-O36" id="2uW-UC-vJw"/>
-                        <outlet property="topConstraintBotMenu" destination="bLc-Ms-YBO" id="6nM-00-LaQ"/>
                         <outlet property="topConstraintTopMenu" destination="lUv-do-FVP" id="zbW-pZ-2PR"/>
                         <outlet property="traillingConstraintTopMenu" destination="7qZ-1K-Ldg" id="TQZ-cm-2BN"/>
+                        <segue destination="I2a-zq-AUj" kind="showDetail" identifier="segueToBot" id="t4n-uZ-nn5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ily-Q8-PAa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="402.39999999999998" y="-705.69715142428788"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6fn-sJ-eFo">
+            <objects>
+                <navigationController id="LLP-Yd-FV0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p8S-fr-4FQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="RsM-3L-1zy" kind="relationship" relationship="rootViewController" id="zer-qo-usp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0jn-v9-Vmv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-412" y="-706"/>
         </scene>
         <!--TopMenu-->
         <scene sceneID="UZh-JT-vGo">
@@ -280,39 +308,36 @@
             </objects>
             <point key="canvasLocation" x="1146" y="-896"/>
         </scene>
-        <!--Bot Menu View Controller-->
-        <scene sceneID="gLt-rj-fkr">
+        <!--BotMenu-->
+        <scene sceneID="apB-MK-xH4">
             <objects>
-                <viewController id="5xo-nj-0Hg" customClass="BotMenuViewController" customModule="NewSimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GHe-mH-XOg" customClass="BotMenuView" customModule="NewSimpleWeather" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                <viewController title="BotMenu" id="I2a-zq-AUj" customClass="BotMenuViewController" customModule="NewSimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Em5-Q5-mNY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcQ-IA-lVo">
-                                <rect key="frame" x="157.5" y="5" width="60" height="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXz-2F-vkO" userLabel="OpenMenu">
+                                <rect key="frame" x="178" y="5" width="19" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="Rnn-UK-hYO"/>
-                                    <constraint firstAttribute="width" constant="60" id="rEW-Pt-g9y"/>
+                                    <constraint firstAttribute="height" constant="20" id="GmK-CP-2ne"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <color key="tintColor" red="0.2758137584" green="0.35201996559999998" blue="0.41454875470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="chevron.compact.up" catalog="system"/>
-                                <connections>
-                                    <action selector="openCloseButtonClicked:" destination="5xo-nj-0Hg" eventType="touchUpInside" id="asV-Nd-7J3"/>
-                                </connections>
+                                <state key="normal" image="chevron.compact.down" catalog="system"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.77972847219999997" green="0.92932164669999995" blue="0.96746665239999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.80322211980000002" green="0.95262283089999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NcQ-IA-lVo" firstAttribute="centerX" secondItem="GHe-mH-XOg" secondAttribute="centerX" id="7Pn-pz-M3R"/>
-                            <constraint firstItem="NcQ-IA-lVo" firstAttribute="top" secondItem="GHe-mH-XOg" secondAttribute="topMargin" constant="5" id="zjT-CR-OPq"/>
+                            <constraint firstItem="yXz-2F-vkO" firstAttribute="centerX" secondItem="Em5-Q5-mNY" secondAttribute="centerX" id="EIh-Og-xYf"/>
+                            <constraint firstItem="yXz-2F-vkO" firstAttribute="top" secondItem="bXg-nl-4ez" secondAttribute="top" constant="5" id="Ngh-8y-jYY"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ob1-uY-ZWq"/>
+                        <viewLayoutGuide key="safeArea" id="bXg-nl-4ez"/>
                     </view>
+                    <navigationItem key="navigationItem" id="AbO-WR-VIk"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oSQ-bH-Zt3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5d1-z0-sxq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="402" y="37"/>
+            <point key="canvasLocation" x="1145" y="-220"/>
         </scene>
     </scenes>
     <resources>
@@ -322,6 +347,7 @@
         <image name="LightHumidity" width="206.5" height="225.5"/>
         <image name="LightMenu" width="621" height="330"/>
         <image name="LightRain" width="275.5" height="227.5"/>
+        <image name="chevron.compact.down" catalog="system" width="64" height="20"/>
         <image name="chevron.compact.up" catalog="system" width="64" height="20"/>
     </resources>
 </document>
