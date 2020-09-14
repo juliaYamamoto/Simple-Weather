@@ -21,9 +21,10 @@ extension UIColor {
     }
     
     struct MainColorGroup {
-        static let lightBlue = UIColor(red: 203, green: 243, blue: 251)
-        static let darkBlue = UIColor(red: 68, green: 84, blue: 100)
-        static let darkYellow = UIColor(red: 251, green: 212, blue: 28)
+        static let lightBlue = UIColor(red: 206, green: 243, blue: 251)
+        static let mediumBlue = UIColor(red: 155, green: 203, blue: 227)
+        static let darkBlue = UIColor(red: 66, green: 86, blue: 102)
+        static let darkYellow = UIColor(red: 255, green: 214, blue: 28)
     }
 
 }

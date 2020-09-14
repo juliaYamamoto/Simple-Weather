@@ -20,6 +20,24 @@ class MainScreenView: UIView {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var rainImage: UIImageView!
     @IBOutlet weak var rainLabel: UILabel!
+    @IBOutlet weak var botMenuView: UIView!
+    @IBOutlet weak var botMenuButton: UIButton!
+    @IBOutlet weak var topMenuViewButton: UIButton!
+    
+    func setupView() {
+        self.backgroundColor = UIColor.MainColorGroup.lightBlue
+        cityLabel.textColor = UIColor.MainColorGroup.darkBlue
+        countryLabel.textColor = UIColor.MainColorGroup.darkBlue
+        stateDescriptionLabel.textColor = UIColor.MainColorGroup.darkBlue
+        divisionView.backgroundColor = UIColor.MainColorGroup.darkBlue
+        degreesLabel.textColor = UIColor.MainColorGroup.darkBlue
+        humidityLabel.textColor = UIColor.MainColorGroup.lightBlue
+        rainLabel.textColor = UIColor.MainColorGroup.lightBlue
+        botMenuView.backgroundColor = UIColor.MainColorGroup.darkBlue
+        botMenuButton.imageView?.tintColor = UIColor.MainColorGroup.lightBlue
+        topMenuViewButton.imageView?.tintColor = UIColor.MainColorGroup.lightBlue
+    }
+    
     
     func setupInformations(_ todayWeather: TodayWeather) {
         cityLabel.text = todayWeather.cityName
@@ -31,7 +49,7 @@ class MainScreenView: UIView {
         rainLabel.text = todayWeather.rain
     }
     
-    func getStateIconImage(_ icon: IconWeather) -> String{
+    func getStateIconImage(_ icon: IconWeather) -> String {
         switch icon {
         case .clearDay:
             return Constants.StateIconImage().clearDay

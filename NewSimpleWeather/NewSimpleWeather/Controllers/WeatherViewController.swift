@@ -94,6 +94,8 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     }
     
     func setupView() {
+        mainScreenView.setupView()
+        
         //Top Menu
         self.topMenuViewController.setupConstraints(topConstraint: topConstraintTopMenu, leadingConstraint: leadingConstraintTopMenu, traillingConstraint: traillingConstraintTopMenu, menuWillStartOpen: false)
     }
