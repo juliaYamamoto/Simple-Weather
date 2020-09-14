@@ -46,7 +46,6 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
         location.delegate = self
         location.setupLocationManagerWithVC()
         
-        //        setupPanGesture()
         setupSwipeGesture()
         setupView()
     }
@@ -86,6 +85,7 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     func createDataModelsFrom(_ weather: Weather){
         self.todayWeather = TodayWeather(from: weather)
         self.nextDays = NextDaysWeather()
+        self.nextDays.creatNextDaysList(from: weather)
     }
     
     func updateTodayWeatherInfo() {
