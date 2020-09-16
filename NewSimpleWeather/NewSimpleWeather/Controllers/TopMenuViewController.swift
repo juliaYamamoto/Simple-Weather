@@ -15,6 +15,7 @@ protocol TopMenuDelegate {
 class TopMenuViewController: UIViewController {
     
     // MARK: - IBOutlet
+    @IBOutlet var topMeuView: TopMenuView!
     @IBOutlet weak var degreesSegmentedControl: UISegmentedControl!
     @IBOutlet weak var locationImage: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
@@ -29,7 +30,8 @@ class TopMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        self.topMeuView.setupView()
+        setupTemperaturePreference()
     }
     
     
@@ -60,16 +62,7 @@ class TopMenuViewController: UIViewController {
         self.countryLabel.text = countryName
     }
     
-    func setupView() {
-        //Degrees Segmented Control
-        let attributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.MainColorGroup.darkBlue,
-            NSAttributedString.Key.font: UIFont(name: "Futura", size: 18)!
-        ]
-        degreesSegmentedControl.backgroundColor = UIColor.MainColorGroup.lightBlue
-        degreesSegmentedControl.selectedSegmentTintColor = UIColor.white
-        degreesSegmentedControl.setTitleTextAttributes(attributes, for: .normal)
-        
+    func setupTemperaturePreference() {
         switch Temperature.getPreference() {
         case .celsius:
             degreesSegmentedControl.selectedSegmentIndex = 0

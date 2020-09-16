@@ -10,14 +10,35 @@ import UIKit
 
 class TopMenuView: UIView {
     
+    // MARK: - IBOutlets
+    
+    @IBOutlet weak var temperatureSegmentedontrol: UISegmentedControl!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
+    
+    
     // MARK: - Constraints
     var topConstraint: NSLayoutConstraint?
     var leadingConstraint: NSLayoutConstraint?
     var traillingConstraint: NSLayoutConstraint?
     
-    
     // MARK: - Methods
-
+    func setupView() {
+        cityLabel.textColor = UIColor.MainColorGroup.lightBlue
+        countryLabel.textColor = UIColor.MainColorGroup.lightBlue
+        
+        //Degrees Segmented Control
+        let textAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.MainColorGroup.darkBlue,
+            NSAttributedString.Key.font: UIFont(name: "Futura", size: 18)!
+        ]
+        temperatureSegmentedontrol.backgroundColor = UIColor.MainColorGroup.mediumBlue
+        temperatureSegmentedontrol.selectedSegmentTintColor = UIColor.MainColorGroup.lightBlue
+        temperatureSegmentedontrol.setTitleTextAttributes(textAttributes, for: .normal)
+    }
+    
+    // MARK: - Methods - Animation
+    
     func openMenu(animationTime: Double = 0.3, onView: UIView? = nil, animationFinished: @escaping() -> Void?){
         guard let topConstraint = self.topConstraint else { return }
         guard let leadingConstraint = self.leadingConstraint else { return }

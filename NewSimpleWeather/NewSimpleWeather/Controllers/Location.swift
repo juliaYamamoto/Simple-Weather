@@ -27,6 +27,7 @@ class Location: NSObject, CLLocationManagerDelegate {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
             locationManager.startUpdatingLocation()
+            getCurrentLocation()
         }
     }
    
