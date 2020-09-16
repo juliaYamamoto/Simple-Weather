@@ -21,7 +21,6 @@ class BotMenuViewController: UIViewController {
        
        override func viewDidLoad() {
            super.viewDidLoad()
-           
            setupView()
        }
     

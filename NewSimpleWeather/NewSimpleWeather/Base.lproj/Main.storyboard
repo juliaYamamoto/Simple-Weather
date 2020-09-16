@@ -33,43 +33,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PartlyCloudyDay" translatesAutoresizingMaskIntoConstraints="NO" id="Bs9-cy-pLm" userLabel="stateIconImage">
-                                <rect key="frame" x="32" y="96" width="311" height="335"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nop-hc-513" userLabel="DetailsView">
-                                <rect key="frame" x="82.5" y="441" width="210" height="135"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Partly cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pC4-xB-OVt" userLabel="DescriptionLabel">
-                                        <rect key="frame" x="8" y="20" width="194" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EDu-HJ-jZ1" userLabel="DivisionView">
-                                        <rect key="frame" x="19" y="48" width="171" height="5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="25C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBg-01-xds" userLabel="DegreesLabel">
-                                        <rect key="frame" x="19" y="60" width="171" height="55"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="42"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="Bs9-cy-pLm" userLabel="stateIconImage">
+                                <rect key="frame" x="16" y="138.5" width="343" height="270"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="135" id="2ic-aC-QwO"/>
-                                    <constraint firstAttribute="width" constant="210" id="EMr-MT-FLC"/>
+                                    <constraint firstAttribute="height" constant="270" id="pzb-al-L80"/>
                                 </constraints>
-                            </view>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ayq-22-Op9" userLabel="HumidityView">
                                 <rect key="frame" x="12" y="517" width="90" height="90"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DarkHumidity" translatesAutoresizingMaskIntoConstraints="NO" id="P3O-Be-QOu" userLabel="HumidityImage">
-                                        <rect key="frame" x="3" y="15" width="84.000000000000057" height="60"/>
+                                        <rect key="frame" x="3" y="15" width="84" height="60"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ar-0N-q1c">
                                         <rect key="frame" x="25.5" y="38" width="39" height="24"/>
@@ -156,30 +130,59 @@
                                     <constraint firstItem="Igm-Ig-HJG" firstAttribute="top" secondItem="15T-SK-Mkx" secondAttribute="top" constant="5" id="uq3-jP-Mx1"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nop-hc-513" userLabel="DetailsView">
+                                <rect key="frame" x="82.5" y="412" width="210" height="135"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Partly cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pC4-xB-OVt" userLabel="DescriptionLabel">
+                                        <rect key="frame" x="8" y="20" width="194" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EDu-HJ-jZ1" userLabel="DivisionView">
+                                        <rect key="frame" x="19" y="48" width="171" height="5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="25C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBg-01-xds" userLabel="DegreesLabel">
+                                        <rect key="frame" x="19" y="60" width="171" height="55"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="42"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="pwl-Yv-27H"/>
+                                    <constraint firstAttribute="height" constant="135" id="rME-sL-ey4"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.80729299779999997" green="0.9526875615" blue="0.99909704919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Bs9-cy-pLm" firstAttribute="centerY" secondItem="s1s-iF-O36" secondAttribute="centerY" constant="-60" id="4fP-gW-QJg"/>
                             <constraint firstItem="EGe-pF-poB" firstAttribute="trailing" secondItem="3N4-28-Agi" secondAttribute="trailing" constant="16" id="5XA-LM-WW9"/>
                             <constraint firstItem="Fab-0i-KZo" firstAttribute="trailing" secondItem="EGe-pF-poB" secondAttribute="trailing" id="7qZ-1K-Ldg"/>
+                            <constraint firstItem="Bs9-cy-pLm" firstAttribute="centerX" secondItem="s1s-iF-O36" secondAttribute="centerX" id="823-E7-KqV"/>
                             <constraint firstItem="hll-p6-1px" firstAttribute="top" secondItem="s1s-iF-O36" secondAttribute="top" constant="44" id="9FF-eg-ANh"/>
                             <constraint firstItem="3N4-28-Agi" firstAttribute="top" secondItem="EGe-pF-poB" secondAttribute="top" constant="20" id="9sK-my-CTM"/>
-                            <constraint firstItem="Bs9-cy-pLm" firstAttribute="centerX" secondItem="s1s-iF-O36" secondAttribute="centerX" id="Acg-NV-Tw2"/>
                             <constraint firstItem="Fab-0i-KZo" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" id="BA3-9S-xc3"/>
                             <constraint firstItem="Yka-ul-XST" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" constant="16" id="BNn-Bb-gAK"/>
+                            <constraint firstItem="Bs9-cy-pLm" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" constant="16" id="Cdh-mg-BUy"/>
                             <constraint firstItem="EGe-pF-poB" firstAttribute="trailing" secondItem="WhH-8S-9OS" secondAttribute="trailing" constant="12" id="JdM-2P-VpD"/>
-                            <constraint firstItem="nop-hc-513" firstAttribute="top" secondItem="Bs9-cy-pLm" secondAttribute="bottom" constant="10" id="KSO-GP-I7m"/>
                             <constraint firstItem="Ayq-22-Op9" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" constant="12" id="Ncz-6Q-80y"/>
                             <constraint firstItem="3N4-28-Agi" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" constant="16" id="O6u-1g-uzs"/>
-                            <constraint firstAttribute="trailing" secondItem="Bs9-cy-pLm" secondAttribute="trailing" constant="32" id="b09-QZ-FA1"/>
+                            <constraint firstItem="nop-hc-513" firstAttribute="centerX" secondItem="s1s-iF-O36" secondAttribute="centerX" id="SmF-QI-nI9"/>
+                            <constraint firstItem="15T-SK-Mkx" firstAttribute="top" secondItem="nop-hc-513" secondAttribute="bottom" constant="60" id="WT9-PC-K90"/>
                             <constraint firstItem="EGe-pF-poB" firstAttribute="trailing" secondItem="hll-p6-1px" secondAttribute="trailing" constant="16" id="fUp-JS-YAZ"/>
-                            <constraint firstItem="Bs9-cy-pLm" firstAttribute="centerY" secondItem="s1s-iF-O36" secondAttribute="centerY" constant="-70" id="flp-dE-Cto"/>
                             <constraint firstItem="15T-SK-Mkx" firstAttribute="trailing" secondItem="EGe-pF-poB" secondAttribute="trailing" id="hvb-R9-1qU"/>
-                            <constraint firstItem="15T-SK-Mkx" firstAttribute="bottom" secondItem="EGe-pF-poB" secondAttribute="bottom" id="kuU-jo-7Ec"/>
+                            <constraint firstItem="15T-SK-Mkx" firstAttribute="bottom" secondItem="s1s-iF-O36" secondAttribute="bottom" id="kuU-jo-7Ec"/>
                             <constraint firstItem="Fab-0i-KZo" firstAttribute="top" secondItem="s1s-iF-O36" secondAttribute="top" id="lUv-do-FVP"/>
                             <constraint firstItem="EGe-pF-poB" firstAttribute="trailing" secondItem="Yka-ul-XST" secondAttribute="trailing" constant="16" id="mTI-Mr-IFs"/>
                             <constraint firstItem="EGe-pF-poB" firstAttribute="bottom" secondItem="WhH-8S-9OS" secondAttribute="bottom" constant="60" id="qis-M1-gAs"/>
-                            <constraint firstItem="Bs9-cy-pLm" firstAttribute="leading" secondItem="s1s-iF-O36" secondAttribute="leading" constant="32" id="s6l-7N-OKe"/>
-                            <constraint firstItem="nop-hc-513" firstAttribute="centerX" secondItem="s1s-iF-O36" secondAttribute="centerX" id="shw-cB-EfL"/>
+                            <constraint firstItem="EGe-pF-poB" firstAttribute="trailing" secondItem="Bs9-cy-pLm" secondAttribute="trailing" constant="16" id="tO3-KP-gWS"/>
                             <constraint firstItem="EGe-pF-poB" firstAttribute="bottom" secondItem="Ayq-22-Op9" secondAttribute="bottom" constant="60" id="u71-hx-BSR"/>
                             <constraint firstItem="Yka-ul-XST" firstAttribute="top" secondItem="EGe-pF-poB" secondAttribute="top" constant="60" id="zmh-cx-2rC"/>
                             <constraint firstItem="15T-SK-Mkx" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" id="zu1-Vl-1wY"/>
@@ -538,12 +541,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Cloudy" width="550.5" height="366"/>
         <image name="DarkHumidity" width="206" height="225.5"/>
         <image name="DarkMenu" width="621" height="330"/>
         <image name="DarkRain" width="275" height="227"/>
         <image name="LightLocation" width="37.5" height="60"/>
         <image name="LightMenuButton" width="60" height="50"/>
-        <image name="PartlyCloudyDay" width="366" height="335"/>
         <image name="chevron.compact.down" catalog="system" width="64" height="20"/>
         <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
     </resources>
