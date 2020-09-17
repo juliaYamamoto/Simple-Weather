@@ -127,7 +127,7 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
                     self.updateTodayWeatherInfo()
                 }
             case .failure(_):
-                //TODO - APIError
+                #warning("TODO: APIError")
                 break
             }
         }
