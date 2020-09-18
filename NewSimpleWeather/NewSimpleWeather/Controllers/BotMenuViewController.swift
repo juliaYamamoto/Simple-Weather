@@ -11,7 +11,11 @@ import UIKit
 class BotMenuViewController: UIViewController {
     
     // MARK: - Variables
-    var menuIsOpen = false
+    var todayWeather: TodayWeather?
+    var nextDaysWeather :NextDaysWeather?
+    
+    // MARK: - IBOutlet
+    @IBOutlet var botView: BotMenuView!
     
     // MARK: - Lifecycle
        override func viewWillAppear(_ animated: Bool) {
@@ -21,13 +25,25 @@ class BotMenuViewController: UIViewController {
        
        override func viewDidLoad() {
            super.viewDidLoad()
-           setupView()
+            setupView()
+        
+            
        }
     
     
     // MARK: - Methods
     
     func setupView() {
+        botView.setupView()
         
+        if let today = self.todayWeather {
+            print(today)
+            #warning("TODO - show values")
+        }
+        
+        if let next = self.nextDaysWeather {
+            print(next)
+            #warning("TODO - show values")
+        }
     }
 }

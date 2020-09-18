@@ -343,7 +343,7 @@
         <scene sceneID="apB-MK-xH4">
             <objects>
                 <viewController title="BotMenu" id="I2a-zq-AUj" customClass="BotMenuViewController" customModule="NewSimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Em5-Q5-mNY">
+                    <view key="view" contentMode="scaleToFill" id="Em5-Q5-mNY" customClass="BotMenuView" customModule="NewSimpleWeather" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -468,6 +468,9 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3FE-wP-8cH" userLabel="HumidityView">
                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="140"/>
                                                 <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LightHumidity" translatesAutoresizingMaskIntoConstraints="NO" id="qdE-Rz-acR">
+                                                        <rect key="frame" x="8" y="8" width="74.000000000000227" height="92"/>
+                                                    </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PO-LX-1yh">
                                                         <rect key="frame" x="8" y="108" width="74" height="24"/>
                                                         <constraints>
@@ -483,9 +486,6 @@
                                                         <color key="textColor" red="0.26010754699999999" green="0.3363266587" blue="0.39884877200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LightHumidity" translatesAutoresizingMaskIntoConstraints="NO" id="qdE-Rz-acR">
-                                                        <rect key="frame" x="8" y="8" width="74.000000000000227" height="92"/>
-                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -706,8 +706,31 @@
                             <constraint firstItem="aHs-6l-DDX" firstAttribute="centerY" secondItem="Em5-Q5-mNY" secondAttribute="centerY" constant="22" id="z5z-h4-f2y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bXg-nl-4ez"/>
+                        <connections>
+                            <outlet property="darkSkyButton" destination="g8E-98-ir8" id="KXZ-5J-hxk"/>
+                            <outlet property="humidityDescriptionLabel" destination="9PO-LX-1yh" id="Sqf-jU-SFO"/>
+                            <outlet property="humidityValueLabel" destination="fxD-sG-y6w" id="IUM-91-hFP"/>
+                            <outlet property="moonDescriptionLabel" destination="xig-Bg-nGs" id="s39-uB-Z2t"/>
+                            <outlet property="rainDescriptionLabel" destination="gX0-e8-FKG" id="1ZD-7a-abo"/>
+                            <outlet property="rainValueLabel" destination="rOV-p8-Shv" id="SjR-0L-si8"/>
+                            <outlet property="sunriseDescriptionLabel" destination="MdF-fA-j9l" id="cwl-uA-dLt"/>
+                            <outlet property="sunriseValueLabel" destination="kWe-VP-inF" id="UkB-Nc-iDe"/>
+                            <outlet property="sunsetDescriptionLabel" destination="VcE-ft-LJT" id="RQP-gU-HJI"/>
+                            <outlet property="sunsetValueLabel" destination="cAn-bS-HYe" id="bVc-gc-bKQ"/>
+                            <outlet property="temperatureFeelsLikeLabel" destination="OAR-97-VXW" id="KW2-RT-Z7V"/>
+                            <outlet property="temperatureLabel" destination="QAt-Xa-RzU" id="NEi-3s-alp"/>
+                            <outlet property="temperatureMaxLabel" destination="cZq-Jn-0FE" id="Uap-RU-w0P"/>
+                            <outlet property="temperatureMinLabel" destination="0Ym-L3-cM8" id="HBA-xI-Giy"/>
+                            <outlet property="titleLabel" destination="lO7-8K-moK" id="pIZ-Lc-VLt"/>
+                            <outlet property="weatherStatusLabel" destination="D8i-9k-jFf" id="O9Z-5a-RqZ"/>
+                            <outlet property="windDescriptionLabel" destination="eAD-Aa-qzd" id="9CW-vz-hhH"/>
+                            <outlet property="windValueLabel" destination="ctI-dk-aCF" id="Ley-BZ-TRv"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="AbO-WR-VIk"/>
+                    <connections>
+                        <outlet property="botView" destination="Em5-Q5-mNY" id="3Ws-69-BgN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5d1-z0-sxq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
