@@ -29,4 +29,17 @@ enum MoonPhase {
         
         return moonPhase
     }
+    
+    static func getStateIconImage(_ icon: MoonPhase) -> String {
+        switch icon {
+        case .firtsQuarter:
+            return Constants.StateMoonImage().firstQuarter
+        case .newMoon:
+            return Constants.StateMoonImage().newMoon
+        case .fullMoon:
+            return Constants.StateMoonImage().fullMoon
+        case .lastQuarter:
+            return Constants.StateMoonImage().lastQuarter
+        }
+    }
 }

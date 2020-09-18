@@ -21,6 +21,12 @@ class NextDaysWeather: NSObject {
     
         self.nextDaysList.remove(at: 0)
     }
+    
+    func updateTemperature() {
+        for day in nextDaysList {
+            day.updateTemperature()
+        }
+    }
 }
 
 class NextWeather: NSObject {
@@ -29,6 +35,8 @@ class NextWeather: NSObject {
     var day: String = ""
     var temperatureMin: String = ""
     var temperatureMax: String = ""
+    var rawValueTemperatureMin: Double = 0.0
+    var rawValueTemperatureMax: Double = 0.0
     
     init(from weather: DataWeather){
         super.init()
@@ -37,7 +45,8 @@ class NextWeather: NSObject {
         self.day = getDayString(value: weather.time)
         self.temperatureMin = getTemperatureString(value: weather.apparentTemperatureMin)
         self.temperatureMax = getTemperatureString(value: weather.apparentTemperatureMax)
-        
+        self.rawValueTemperatureMin = weather.temperatureMin
+        self.rawValueTemperatureMax = weather.temperatureMax
     }
     
     //Week day - Month day, year
@@ -73,4 +82,8 @@ class NextWeather: NSObject {
         return stringTemperature
     }
     
+    func updateTemperature(){
+        self.temperatureMin = getTemperatureString(value: self.rawValueTemperatureMin)
+        self.temperatureMax = getTemperatureString(value: self.rawValueTemperatureMax)
+    }
 }

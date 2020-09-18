@@ -60,6 +60,7 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
         else if segue.identifier == "segueToBot" {
             if let botMenuViewController = segue.destination as? BotMenuViewController {
                 self.botMenuViewController = botMenuViewController
+                self.botMenuViewController.updateWeatherInfo(today: self.todayWeather, nextDays: self.nextDays)
             }
         }
     }
@@ -91,6 +92,7 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     func updateTodayWeatherInfo() {
         mainScreenView.setupInformations(self.todayWeather)
         self.topMenuViewController.updateTodayValues(cityName: self.todayWeather.cityName, countryName: self.todayWeather.countryName)
+        self.botMenuViewController.updateWeatherInfo(today: self.todayWeather, nextDays: self.nextDays)
     }
     
     func setupView() {
@@ -114,6 +116,7 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     // MARK: - TopMenuDelegate
     func temperaturePreferenceChanged() {
         self.todayWeather.updateTemperature()
+        self.nextDays.updateTemperature()
         self.updateTodayWeatherInfo()
     }
     

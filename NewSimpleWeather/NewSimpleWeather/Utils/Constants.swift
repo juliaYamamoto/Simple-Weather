@@ -10,7 +10,7 @@ import UIKit
 
 class Constants: NSObject {
 
-    public struct API{
+    public struct API {
         let schemeURL: String = "https"
         let baseURL: String = "api.darksky.net"
         
@@ -29,20 +29,30 @@ class Constants: NSObject {
         let queryValueUnitCA: String = "ca"
     }
     
-    public struct Temperature{
+    public struct Temperature {
         let preference: String = "TemperaturePreference"
         let celsius: String = "°C"
         let fahrenheit: String = "°F"
     }
     
-    public struct DateFormat{
+    public struct DateFormat {
         let day: String = "EEEE - MMMM d, yyyy"
         let hour: String = "h:mm"
     }
     
+    // MARK: - State Moon Icon
+    
+    public struct StateMoonImage {
+           let firstQuarter: String = "FirstQuarter"
+           let fullMoon: String = "FullMoon"
+           let lastQuarter: String = "LastQuarter"
+           let newMoon: String = "NewMoon"
+    }
+    
+    
     // MARK: - State Weather Icon
     
-    public struct StateIcon{
+    public struct StateIcon {
         let clearDay: String = "clear-day"
         let clearNight: String = "clear-night"
         let rain: String = "rain"
@@ -55,7 +65,7 @@ class Constants: NSObject {
         let partlyCloudNight: String = "partly-cloudy-night"
     }
     
-    public struct StateIconImage{
+    public struct StateIconImage {
            let clearDay: String = "ClearDay"
            let clearNight: String = "ClearNight"
            let rain: String = "Rain"

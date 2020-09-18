@@ -38,41 +38,13 @@ class MainScreenView: UIView {
         topMenuViewButton.imageView?.tintColor = UIColor.MainColorGroup.lightBlue
     }
     
-    
     func setupInformations(_ todayWeather: TodayWeather) {
         cityLabel.text = todayWeather.cityName
         countryLabel.text = todayWeather.countryName
-        stateIconImage.image = UIImage(named: getStateIconImage(todayWeather.icon))
+        stateIconImage.image = UIImage(named: IconWeather.getStateIconImage(todayWeather.icon))
         stateDescriptionLabel.text = todayWeather.icon.rawValue
         degreesLabel.text = todayWeather.temperature
         humidityLabel.text = todayWeather.humidity
         rainLabel.text = todayWeather.rain
     }
-    
-    func getStateIconImage(_ icon: IconWeather) -> String {
-        switch icon {
-        case .clearDay:
-            return Constants.StateIconImage().clearDay
-        case .clearNight:
-            return Constants.StateIconImage().clearNight
-        case .rain:
-            return Constants.StateIconImage().rain
-        case .snow:
-            return Constants.StateIconImage().snow
-        case .sleet:
-            return Constants.StateIconImage().sleet
-        case .wind:
-            return Constants.StateIconImage().wind
-        case .fog:
-            return Constants.StateIconImage().fog
-        case .cloudy:
-            return Constants.StateIconImage().cloudy
-        case .partlyCloudyDay:
-            return Constants.StateIconImage().partlyCloudyDay
-        case .partlyCloudyNight:
-            return Constants.StateIconImage().partlyCloudyNight
-        }
-    }
 }
-
-

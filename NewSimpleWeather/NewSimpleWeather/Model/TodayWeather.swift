@@ -23,6 +23,7 @@ class TodayWeather: NSObject {
     var sunriseTime: String = ""
     var sunsetTime: String = ""
     var moonPhase: MoonPhase = .newMoon
+    var wind: String = ""
     
     var rawValueTemperature: Double = 0.0
     var rawValueApparentTemperature: Double = 0.0
@@ -45,7 +46,8 @@ class TodayWeather: NSObject {
         self.rawValueTemperature = weather.currently.temperature
         self.rawValueApparentTemperature = weather.currently.apparentTemperature
         self.temperature = getTemperatureString(value: rawValueTemperature)
-        self.apparentTemperature = getTemperatureString(value: rawValueApparentTemperature)
+        self.apparentTemperature = "Feels like: \(getTemperatureString(value: rawValueApparentTemperature))"
+        self.wind = "\(weather.currently.windSpeed)km/h"
         
         let todayData = weather.daily.data[0]
         self.rawValueTemperatureMin = todayData.apparentTemperatureMin
@@ -62,9 +64,10 @@ class TodayWeather: NSObject {
         self.apparentTemperature = getTemperatureString(value: rawValueApparentTemperature)
         self.temperatureMin = getTemperatureString(value: rawValueTemperatureMin)
         self.temperatureMax = getTemperatureString(value: rawValueTemperatureMax)
+        self.apparentTemperature = "Feels like: \(getTemperatureString(value: rawValueApparentTemperature))"
     }
     
-    func getLocationCity(location: String) -> String{
+    private func getLocationCity(location: String) -> String{
         guard let city = location.components(separatedBy: "/").last else {  return " " }
         if (city.contains("_")) {
             let cityFullName: String = city.components(separatedBy: "_").joined(separator: " ")
@@ -73,7 +76,7 @@ class TodayWeather: NSObject {
         return city
     }
     
-    func getLocationCountry(location: String) -> String{
+    private func getLocationCountry(location: String) -> String{
         guard let country = location.components(separatedBy: "/").first else {  return " " }
         if (country.contains("_")) {
             let countryFullName: String = country.components(separatedBy: "_").joined(separator: " ")
@@ -82,7 +85,7 @@ class TodayWeather: NSObject {
         return country
     }
     
-    func getPercentageFrom(value: Double) -> String{
+    private func getPercentageFrom(value: Double) -> String{
         var percentage = String(format: "%.0f", value * 100)
         percentage = "\(percentage)%"
         
@@ -90,7 +93,7 @@ class TodayWeather: NSObject {
     }
     
     //Week day - Month day, year
-    func getDayString(value: Int) -> String {
+    private func getDayString(value: Int) -> String {
         let timeValue = TimeInterval(value)
         let date = Date(timeIntervalSince1970: timeValue)
         
@@ -102,7 +105,7 @@ class TodayWeather: NSObject {
         return dayString
     }
     
-    func getTimeString(value: Int) -> String {
+    private func getTimeString(value: Int) -> String {
         let timeValue = TimeInterval(value)
         let date = Date(timeIntervalSince1970: timeValue)
         
@@ -114,7 +117,7 @@ class TodayWeather: NSObject {
     }
     
     //The value is in celsius by default
-    func getTemperatureString(value: Double) -> String{
+    private func getTemperatureString(value: Double) -> String{
         let temperaturePreference = Temperature.getPreference()
         var stringTemperature = ""
         

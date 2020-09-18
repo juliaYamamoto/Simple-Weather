@@ -34,4 +34,29 @@ enum IconWeather: String {
         
         return IconWeather.cloudy //Default
     }
+    
+    static func getStateIconImage(_ icon: IconWeather) -> String {
+        switch icon {
+        case .clearDay:
+            return Constants.StateIconImage().clearDay
+        case .clearNight:
+            return Constants.StateIconImage().clearNight
+        case .rain:
+            return Constants.StateIconImage().rain
+        case .snow:
+            return Constants.StateIconImage().snow
+        case .sleet:
+            return Constants.StateIconImage().sleet
+        case .wind:
+            return Constants.StateIconImage().wind
+        case .fog:
+            return Constants.StateIconImage().fog
+        case .cloudy:
+            return Constants.StateIconImage().cloudy
+        case .partlyCloudyDay:
+            return Constants.StateIconImage().partlyCloudyDay
+        case .partlyCloudyNight:
+            return Constants.StateIconImage().partlyCloudyNight
+        }
+    }
 }

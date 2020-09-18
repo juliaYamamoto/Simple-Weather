@@ -12,7 +12,8 @@ class BotMenuViewController: UIViewController {
     
     // MARK: - Variables
     var todayWeather: TodayWeather?
-    var nextDaysWeather :NextDaysWeather?
+    var nextDaysWeather: NextDaysWeather?
+    
     
     // MARK: - IBOutlet
     @IBOutlet var botView: BotMenuView!
@@ -26,24 +27,22 @@ class BotMenuViewController: UIViewController {
        override func viewDidLoad() {
            super.viewDidLoad()
             setupView()
-        
-            
        }
     
     
     // MARK: - Methods
     
     func setupView() {
-        botView.setupView()
+        guard let today = self.todayWeather else { return }
+        guard let next = self.nextDaysWeather else { return }
         
-        if let today = self.todayWeather {
-            print(today)
-            #warning("TODO - show values")
-        }
-        
-        if let next = self.nextDaysWeather {
-            print(next)
-            #warning("TODO - show values")
-        }
+        botMenu.setupView()
+        botMenu.setupValues(today: today, nextDays: next)
+    }
+    
+    func updateWeatherInfo(today: TodayWeather, nextDays: NextDaysWeather) {
+        self.todayWeather = today
+        self.nextDaysWeather = nextDays
+        self.setupView()
     }
 }
