@@ -19,15 +19,15 @@ class BotMenuViewController: UIViewController {
     @IBOutlet var botView: BotMenuView!
     
     // MARK: - Lifecycle
-       override func viewWillAppear(_ animated: Bool) {
-           super.viewWillAppear(true)
-           self.navigationController?.setNavigationBarHidden(true, animated: true)
-       }
-       
-       override func viewDidLoad() {
-           super.viewDidLoad()
-            setupView()
-       }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+    }
     
     
     // MARK: - Methods
@@ -36,13 +36,16 @@ class BotMenuViewController: UIViewController {
         guard let today = self.todayWeather else { return }
         guard let next = self.nextDaysWeather else { return }
         
-        botMenu.setupView()
-        botMenu.setupValues(today: today, nextDays: next)
+        botView.setupView()
+        botView.setupValues(today: today, nextDays: next)
     }
     
     func updateWeatherInfo(today: TodayWeather, nextDays: NextDaysWeather) {
         self.todayWeather = today
         self.nextDaysWeather = nextDays
-        self.setupView()
+        
+        if self.botView != nil {
+            setupView()
+        }
     }
 }
