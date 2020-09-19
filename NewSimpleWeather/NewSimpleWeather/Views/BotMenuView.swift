@@ -75,10 +75,18 @@ class BotMenuView: UIView {
     
     func setupSpaceStackViews() {
         let screenSize = UIScreen.main.bounds.size
-        print("Width --- ", screenSize.width)
-        print("Height --- ", screenSize.height)
+        let minWidth:CGFloat = 320.0
+        let widthMultiplier:CGFloat = 3
+        let minHeight:CGFloat = 568.0
+        let heightMultiplier:CGFloat = 6
         
+        let verticalSpace:CGFloat = (screenSize.width - minWidth) / widthMultiplier
+        let horizontalSpace:CGFloat = (screenSize.height - minHeight) / heightMultiplier
         
+        masterStackView.spacing = horizontalSpace
+        firstLineStackView.spacing = verticalSpace
+        secondLineStackView.spacing = verticalSpace
+        thirdLineStackView.spacing = verticalSpace
     }
     
     func setupValues(today: TodayWeather, nextDays: NextDaysWeather){
