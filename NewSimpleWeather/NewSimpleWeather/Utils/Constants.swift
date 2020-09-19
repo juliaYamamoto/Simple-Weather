@@ -31,6 +31,7 @@ class Constants: NSObject {
     
     public struct Temperature {
         let preference: String = "TemperaturePreference"
+        let feelsLike: String = "Feels like:"
         let celsius: String = "°C"
         let fahrenheit: String = "°F"
     }

@@ -11,6 +11,7 @@ import UIKit
 class BotMenuView: UIView {
     
     // MARK: - IBOutlets
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var weatherStateImage: UIImageView!
     @IBOutlet weak var weatherStatusLabel: UILabel!
@@ -37,9 +38,17 @@ class BotMenuView: UIView {
     @IBOutlet weak var darkSkyButton: UIButton!
     
     
+    // MARK: - IBOutlets
+    @IBOutlet weak var masterStackView: UIStackView!
+    @IBOutlet weak var firstLineStackView: UIStackView!
+    @IBOutlet weak var secondLineStackView: UIStackView!
+    @IBOutlet weak var thirdLineStackView: UIStackView!
+    
     // MARK: - Methods
     
     func setupView() {
+        setupSpaceStackViews()
+        
         self.titleLabel.textColor = UIColor.MainColorGroup.lightBlue
         self.weatherStatusLabel.textColor = UIColor.MainColorGroup.lightBlue
         
@@ -62,6 +71,14 @@ class BotMenuView: UIView {
         self.sunsetDescriptionLabel.textColor = UIColor.MainColorGroup.lightBlue
         
         self.darkSkyButton.tintColor = UIColor.MainColorGroup.lightBlue
+    }
+    
+    func setupSpaceStackViews() {
+        let screenSize = UIScreen.main.bounds.size
+        print("Width --- ", screenSize.width)
+        print("Height --- ", screenSize.height)
+        
+        
     }
     
     func setupValues(today: TodayWeather, nextDays: NextDaysWeather){

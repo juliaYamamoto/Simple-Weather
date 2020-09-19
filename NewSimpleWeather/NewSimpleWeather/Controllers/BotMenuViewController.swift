@@ -16,9 +16,12 @@ class BotMenuViewController: UIViewController {
     
     
     // MARK: - IBOutlet
+    
     @IBOutlet var botView: BotMenuView!
     
+    
     // MARK: - Lifecycle
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -47,5 +50,22 @@ class BotMenuViewController: UIViewController {
         if self.botView != nil {
             setupView()
         }
+    }
+    
+    // MARK: - IBActions
+    
+    @IBAction func darkSkyButton(_ sender: Any) {
+        let openWebsiteAlert = UIAlertController(title: "Open 'Dark Sky' website?", message: "This action will take you out of the app, do you wish to continue?", preferredStyle: .alert)
+        
+        openWebsiteAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+            if let url = URL(string: "https://darksky.net/poweredby/") {
+                UIApplication.shared.open(url, options: [:])
+            }
+        }))
+        openWebsiteAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action: UIAlertAction!) in
+            return
+        }))
+        
+        present(openWebsiteAlert, animated: true, completion: nil)
     }
 }

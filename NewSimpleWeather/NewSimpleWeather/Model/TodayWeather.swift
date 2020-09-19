@@ -46,8 +46,8 @@ class TodayWeather: NSObject {
         self.rawValueTemperature = weather.currently.temperature
         self.rawValueApparentTemperature = weather.currently.apparentTemperature
         self.temperature = getTemperatureString(value: rawValueTemperature)
-        self.apparentTemperature = "Feels like: \(getTemperatureString(value: rawValueApparentTemperature))"
-        self.wind = "\(weather.currently.windSpeed)km/h"
+        self.apparentTemperature = getFeelsLikeTemperatureString(value: rawValueApparentTemperature)
+        self.wind = getWindSpeedString(value: weather.currently.windSpeed)
         
         let todayData = weather.daily.data[0]
         self.rawValueTemperatureMin = todayData.apparentTemperatureMin
@@ -64,10 +64,9 @@ class TodayWeather: NSObject {
         self.apparentTemperature = getTemperatureString(value: rawValueApparentTemperature)
         self.temperatureMin = getTemperatureString(value: rawValueTemperatureMin)
         self.temperatureMax = getTemperatureString(value: rawValueTemperatureMax)
-        self.apparentTemperature = "Feels like: \(getTemperatureString(value: rawValueApparentTemperature))"
     }
     
-    private func getLocationCity(location: String) -> String{
+    private func getLocationCity(location: String) -> String {
         guard let city = location.components(separatedBy: "/").last else {  return " " }
         if (city.contains("_")) {
             let cityFullName: String = city.components(separatedBy: "_").joined(separator: " ")
@@ -76,7 +75,7 @@ class TodayWeather: NSObject {
         return city
     }
     
-    private func getLocationCountry(location: String) -> String{
+    private func getLocationCountry(location: String) -> String {
         guard let country = location.components(separatedBy: "/").first else {  return " " }
         if (country.contains("_")) {
             let countryFullName: String = country.components(separatedBy: "_").joined(separator: " ")
@@ -85,11 +84,16 @@ class TodayWeather: NSObject {
         return country
     }
     
-    private func getPercentageFrom(value: Double) -> String{
+    private func getPercentageFrom(value: Double) -> String {
         var percentage = String(format: "%.0f", value * 100)
         percentage = "\(percentage)%"
         
         return percentage
+    }
+    
+    private func getWindSpeedString(value: Double) -> String {
+        let windSpeed = "\(Int(value)) km/h"
+        return windSpeed
     }
     
     //Week day - Month day, year
@@ -132,6 +136,11 @@ class TodayWeather: NSObject {
             break
         }
         
+        return stringTemperature
+    }
+    
+    private func getFeelsLikeTemperatureString(value: Double) -> String {
+        let stringTemperature = "\(Constants.Temperature().feelsLike) \(getTemperatureString(value: value))"
         return stringTemperature
     }
 }

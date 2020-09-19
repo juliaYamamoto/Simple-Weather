@@ -692,6 +692,10 @@
                                 <state key="normal" title="Powered by Dark sky">
                                     <color key="titleColor" red="0.80322211980000002" green="0.95262283089999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="darkSkyButton:" destination="vcY-ng-21B" eventType="touchUpInside" id="uoT-1N-dF8"/>
+                                    <action selector="darkSkyButton:" destination="I2a-zq-AUj" eventType="touchUpInside" id="vUR-IE-dRZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.26010754699999999" green="0.3363266587" blue="0.39884877200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -707,13 +711,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bXg-nl-4ez"/>
                         <connections>
-                            <outlet property="darkSkyButton" destination="g8E-98-ir8" id="KXZ-5J-hxk"/>
+                            <outlet property="darkSkyButton" destination="g8E-98-ir8" id="46c-HR-awE"/>
+                            <outlet property="firstLineStackView" destination="eGx-s2-Clr" id="ZFa-nS-gOd"/>
                             <outlet property="humidityDescriptionLabel" destination="9PO-LX-1yh" id="Sqf-jU-SFO"/>
                             <outlet property="humidityValueLabel" destination="fxD-sG-y6w" id="IUM-91-hFP"/>
+                            <outlet property="masterStackView" destination="aHs-6l-DDX" id="ToG-tZ-Yd7"/>
                             <outlet property="moonDescriptionLabel" destination="xig-Bg-nGs" id="s39-uB-Z2t"/>
                             <outlet property="moonStateImage" destination="dUP-bJ-xt8" id="dPo-Cd-62V"/>
                             <outlet property="rainDescriptionLabel" destination="gX0-e8-FKG" id="1ZD-7a-abo"/>
                             <outlet property="rainValueLabel" destination="rOV-p8-Shv" id="SjR-0L-si8"/>
+                            <outlet property="secondLineStackView" destination="nNa-ZQ-a9Q" id="glH-XG-QuN"/>
                             <outlet property="sunriseDescriptionLabel" destination="MdF-fA-j9l" id="cwl-uA-dLt"/>
                             <outlet property="sunriseValueLabel" destination="kWe-VP-inF" id="UkB-Nc-iDe"/>
                             <outlet property="sunsetDescriptionLabel" destination="VcE-ft-LJT" id="RQP-gU-HJI"/>
@@ -722,6 +729,7 @@
                             <outlet property="temperatureLabel" destination="QAt-Xa-RzU" id="NEi-3s-alp"/>
                             <outlet property="temperatureMaxLabel" destination="cZq-Jn-0FE" id="Uap-RU-w0P"/>
                             <outlet property="temperatureMinLabel" destination="0Ym-L3-cM8" id="HBA-xI-Giy"/>
+                            <outlet property="thirdLineStackView" destination="glV-4n-c5h" id="xA9-vV-7c3"/>
                             <outlet property="titleLabel" destination="lO7-8K-moK" id="pIZ-Lc-VLt"/>
                             <outlet property="weatherStateImage" destination="9xs-My-BSw" id="yhu-O3-WT3"/>
                             <outlet property="weatherStatusLabel" destination="D8i-9k-jFf" id="O9Z-5a-RqZ"/>
@@ -735,6 +743,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5d1-z0-sxq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="vcY-ng-21B" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1140" y="-223.53823088455775"/>
         </scene>
