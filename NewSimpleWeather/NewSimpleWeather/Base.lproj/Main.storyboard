@@ -43,7 +43,7 @@
                                 <rect key="frame" x="12" y="517" width="90" height="90"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DarkHumidity" translatesAutoresizingMaskIntoConstraints="NO" id="P3O-Be-QOu" userLabel="HumidityImage">
-                                        <rect key="frame" x="3" y="15" width="84" height="60"/>
+                                        <rect key="frame" x="3" y="15" width="84.000000000000057" height="60"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ar-0N-q1c">
                                         <rect key="frame" x="25.5" y="38" width="39" height="24"/>
@@ -469,7 +469,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="140"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LightHumidity" translatesAutoresizingMaskIntoConstraints="NO" id="qdE-Rz-acR">
-                                                        <rect key="frame" x="8" y="8" width="74" height="92"/>
+                                                        <rect key="frame" x="8" y="8" width="74.000000000000227" height="92"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PO-LX-1yh">
                                                         <rect key="frame" x="8" y="108" width="74" height="24"/>

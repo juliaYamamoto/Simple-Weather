@@ -55,6 +55,7 @@ class BotMenuViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func darkSkyButton(_ sender: Any) {
+        #warning("TODO - Fix string constants")
         let openWebsiteAlert = UIAlertController(title: "Open 'Dark Sky' website?", message: "This action will take you out of the app, do you wish to continue?", preferredStyle: .alert)
         
         openWebsiteAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
