@@ -52,8 +52,8 @@ class TodayWeather: NSObject {
         let todayData = weather.daily.data[0]
         self.rawValueTemperatureMin = todayData.apparentTemperatureMin
         self.rawValueTemperatureMax = todayData.apparentTemperatureMax
-        self.temperatureMin = getTemperatureString(value: rawValueTemperatureMin)
-        self.temperatureMax = getTemperatureString(value: rawValueTemperatureMax)
+        self.temperatureMin = getTemperatureMinMaxString(value: rawValueTemperatureMin)
+        self.temperatureMax = getTemperatureMinMaxString(value: rawValueTemperatureMax)
         self.sunriseTime = getTimeString(value: todayData.sunriseTime)
         self.sunsetTime = getTimeString(value: todayData.sunsetTime)
         self.moonPhase = MoonPhase.getMoonType(todayData.moonPhase)
@@ -62,8 +62,8 @@ class TodayWeather: NSObject {
     func updateTemperature(){
         self.temperature = getTemperatureString(value: rawValueTemperature)
         self.apparentTemperature = getTemperatureString(value: rawValueApparentTemperature)
-        self.temperatureMin = getTemperatureString(value: rawValueTemperatureMin)
-        self.temperatureMax = getTemperatureString(value: rawValueTemperatureMax)
+        self.temperatureMin = getTemperatureMinMaxString(value: rawValueTemperatureMin)
+        self.temperatureMax = getTemperatureMinMaxString(value: rawValueTemperatureMax)
     }
     
     private func getLocationCity(location: String) -> String {
@@ -133,6 +133,25 @@ class TodayWeather: NSObject {
         case .fahrenheit:
             let degrees = Int(Temperature.celsiusToFahrenheit(value))
             stringTemperature = "\(degrees)\(Constants.Temperature().fahrenheit)"
+            break
+        }
+        
+        return stringTemperature
+    }
+    
+    //The value is in celsius by default
+    private func getTemperatureMinMaxString(value: Double) -> String{
+        let temperaturePreference = Temperature.getPreference()
+        var stringTemperature = ""
+        
+        switch temperaturePreference {
+        case .celsius:
+            let degrees = Int(value)
+            stringTemperature = "\(degrees)"
+            break
+        case .fahrenheit:
+            let degrees = Int(Temperature.celsiusToFahrenheit(value))
+            stringTemperature = "\(degrees)"
             break
         }
         

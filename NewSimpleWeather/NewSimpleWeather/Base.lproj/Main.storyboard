@@ -364,7 +364,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="aHs-6l-DDX">
-                                <rect key="frame" x="-480" y="86" width="280" height="420"/>
+                                <rect key="frame" x="20" y="86" width="280" height="420"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="eGx-s2-Clr">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="140"/>
@@ -723,9 +723,12 @@
                                     <action selector="todayClicked:" destination="I2a-zq-AUj" eventType="touchUpInside" id="Z1U-vD-r5Y"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ld6-7U-Bff">
-                                <rect key="frame" x="20" y="84" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ld6-7U-Bff" userLabel="NextDays Stack view">
+                                <rect key="frame" x="520" y="86" width="280" height="420"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="NXh-0y-YW2"/>
+                                    <constraint firstAttribute="height" constant="420" id="li7-Lo-TQX"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.26010754699999999" green="0.3363266587" blue="0.39884877200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -740,7 +743,9 @@
                             <constraint firstItem="46V-44-s8h" firstAttribute="leading" secondItem="bXg-nl-4ez" secondAttribute="leading" constant="16" id="VGn-S6-rNt"/>
                             <constraint firstItem="lO7-8K-moK" firstAttribute="centerX" secondItem="Em5-Q5-mNY" secondAttribute="centerX" id="Yog-SR-zp4"/>
                             <constraint firstItem="46V-44-s8h" firstAttribute="centerY" secondItem="lO7-8K-moK" secondAttribute="centerY" id="cbI-x2-Ee4"/>
-                            <constraint firstItem="aHs-6l-DDX" firstAttribute="centerX" secondItem="Em5-Q5-mNY" secondAttribute="centerX" constant="-500" id="tie-eJ-e9e"/>
+                            <constraint firstItem="Ld6-7U-Bff" firstAttribute="centerX" secondItem="Em5-Q5-mNY" secondAttribute="centerX" constant="500" id="fFN-5b-9k0"/>
+                            <constraint firstItem="aHs-6l-DDX" firstAttribute="centerX" secondItem="Em5-Q5-mNY" secondAttribute="centerX" id="tie-eJ-e9e"/>
+                            <constraint firstItem="Ld6-7U-Bff" firstAttribute="centerY" secondItem="Em5-Q5-mNY" secondAttribute="centerY" constant="22" id="w1p-K3-vfp"/>
                             <constraint firstItem="aHs-6l-DDX" firstAttribute="centerY" secondItem="Em5-Q5-mNY" secondAttribute="centerY" constant="22" id="z5z-h4-f2y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bXg-nl-4ez"/>
@@ -775,6 +780,7 @@
                     <connections>
                         <outlet property="botView" destination="Em5-Q5-mNY" id="3Ws-69-BgN"/>
                         <outlet property="nextDaysButton" destination="dZC-OT-46j" id="YFc-5m-oYv"/>
+                        <outlet property="nextDaysStackViewVerticalConstraint" destination="fFN-5b-9k0" id="RiS-zv-bvq"/>
                         <outlet property="todayButton" destination="46V-44-s8h" id="48G-aq-s87"/>
                         <outlet property="todayStackViewVerticalConstraint" destination="tie-eJ-e9e" id="sCv-D2-O91"/>
                     </connections>

@@ -28,6 +28,7 @@ class BotMenuViewController: UIViewController {
     @IBOutlet weak var todayButton: UIButton!
     @IBOutlet weak var nextDaysButton: UIButton!
     @IBOutlet weak var todayStackViewVerticalConstraint: NSLayoutConstraint!
+    @IBOutlet weak var nextDaysStackViewVerticalConstraint: NSLayoutConstraint!
     
     
     
@@ -53,9 +54,25 @@ class BotMenuViewController: UIViewController {
         botView.setupView()
         botView.setupValues(today: today, nextDays: next)
         
-        todayStackViewVerticalConstraint.constant = 0 //-500
         updateButtons()
+    }
+    
+    func moveBotViewTo(state: MenuState){
+        self.botMenuState = state
         
+        if self.botMenuState == .today {
+            self.todayStackViewVerticalConstraint.constant = 0
+            self.nextDaysStackViewVerticalConstraint.constant = 500
+        } else {
+            self.todayStackViewVerticalConstraint.constant = -500
+            self.nextDaysStackViewVerticalConstraint.constant = 0
+        }
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        }) { _ in
+            self.updateButtons()
+        }
     }
     
     func updateButtons() {
@@ -80,25 +97,11 @@ class BotMenuViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func nextDaysClicked(_ sender: Any) {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.todayStackViewVerticalConstraint.constant = -500
-            self.view.layoutIfNeeded()
-        }) { _ in
-            self.botMenuState = .nextDays
-            self.updateButtons()
-        }
-
+        self.moveBotViewTo(state: .nextDays)
     }
     
     @IBAction func todayClicked(_ sender: Any) {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.todayStackViewVerticalConstraint.constant = 0
-            self.view.layoutIfNeeded()
-        }) { _ in
-            self.botMenuState = .today
-            self.updateButtons()
-        }
-
+        self.moveBotViewTo(state: .today)
     }
     
     @IBAction func darkSkyButton(_ sender: Any) {
