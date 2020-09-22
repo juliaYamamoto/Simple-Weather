@@ -8,16 +8,27 @@
 
 import UIKit
 
+enum MenuState {
+    case today
+    case nextDays
+}
+
 class BotMenuViewController: UIViewController {
     
     // MARK: - Variables
     var todayWeather: TodayWeather?
     var nextDaysWeather: NextDaysWeather?
+    var botMenuState: MenuState = .today
     
     
     // MARK: - IBOutlet
     
     @IBOutlet var botView: BotMenuView!
+    
+    @IBOutlet weak var todayButton: UIButton!
+    @IBOutlet weak var nextDaysButton: UIButton!
+    @IBOutlet weak var todayStackViewVerticalConstraint: NSLayoutConstraint!
+    
     
     
     // MARK: - Lifecycle
@@ -41,6 +52,20 @@ class BotMenuViewController: UIViewController {
         
         botView.setupView()
         botView.setupValues(today: today, nextDays: next)
+        
+        todayStackViewVerticalConstraint.constant = 0 //-500
+        updateButtons()
+        
+    }
+    
+    func updateButtons() {
+        if self.botMenuState == .today {
+            self.todayButton.alpha = 0
+            self.nextDaysButton.alpha = 1
+        } else {
+            self.todayButton.alpha = 1
+            self.nextDaysButton.alpha = 0
+        }
     }
     
     func updateWeatherInfo(today: TodayWeather, nextDays: NextDaysWeather) {
@@ -53,6 +78,28 @@ class BotMenuViewController: UIViewController {
     }
     
     // MARK: - IBActions
+    
+    @IBAction func nextDaysClicked(_ sender: Any) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.todayStackViewVerticalConstraint.constant = -500
+            self.view.layoutIfNeeded()
+        }) { _ in
+            self.botMenuState = .nextDays
+            self.updateButtons()
+        }
+
+    }
+    
+    @IBAction func todayClicked(_ sender: Any) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.todayStackViewVerticalConstraint.constant = 0
+            self.view.layoutIfNeeded()
+        }) { _ in
+            self.botMenuState = .today
+            self.updateButtons()
+        }
+
+    }
     
     @IBAction func darkSkyButton(_ sender: Any) {
         #warning("TODO - Fix string constants")
