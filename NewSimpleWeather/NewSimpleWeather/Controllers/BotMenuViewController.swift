@@ -63,7 +63,11 @@ class BotMenuViewController: UIViewController {
     }
     
     func setupNextDaysViews(_ next: NextDaysWeather) {
+
         let nextDays = next.nextDaysList
+        if nextDays.count == 0 {
+            return
+        }
         
         for view in self.nextDayViewCollection {
             let nextDay: NextWeather = nextDays[view.tag]

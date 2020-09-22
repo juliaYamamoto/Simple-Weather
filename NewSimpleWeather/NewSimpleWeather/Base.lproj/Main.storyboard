@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LLP-Yd-FV0">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +12,11 @@
             <objects>
                 <viewController id="RsM-3L-1zy" customClass="WeatherViewController" customModule="NewSimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s1s-iF-O36" customClass="MainScreenView" customModule="NewSimpleWeather" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3N4-28-Agi" userLabel="CityLabel">
-                                <rect key="frame" x="16" y="64" width="288" height="42"/>
+                                <rect key="frame" x="16" y="108" width="382" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="nFQ-Pu-mBq"/>
                                 </constraints>
@@ -25,7 +25,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yka-ul-XST" userLabel="CountryLabel">
-                                <rect key="frame" x="16" y="104" width="288" height="24"/>
+                                <rect key="frame" x="16" y="148" width="382" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="ot9-Mb-ip7"/>
                                 </constraints>
@@ -34,16 +34,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="Bs9-cy-pLm" userLabel="stateIconImage">
-                                <rect key="frame" x="16" y="89" width="288" height="270"/>
+                                <rect key="frame" x="16" y="253" width="382" height="270"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="270" id="pzb-al-L80"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ayq-22-Op9" userLabel="HumidityView">
-                                <rect key="frame" x="12" y="418" width="90" height="90"/>
+                                <rect key="frame" x="12" y="712" width="90" height="90"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DarkHumidity" translatesAutoresizingMaskIntoConstraints="NO" id="P3O-Be-QOu" userLabel="HumidityImage">
-                                        <rect key="frame" x="3" y="15" width="84.000000000000057" height="60"/>
+                                        <rect key="frame" x="3" y="15" width="84" height="60"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ar-0N-q1c">
                                         <rect key="frame" x="25.5" y="38" width="39" height="24"/>
@@ -65,13 +65,13 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WhH-8S-9OS" userLabel="RainView">
-                                <rect key="frame" x="218" y="428" width="90" height="80"/>
+                                <rect key="frame" x="312" y="722" width="90" height="80"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DarkRain" translatesAutoresizingMaskIntoConstraints="NO" id="zn8-Dc-J4m" userLabel="RainImage">
                                         <rect key="frame" x="8" y="12" width="74" height="60"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZS-4e-y3u">
-                                        <rect key="frame" x="25.5" y="28.5" width="39" height="23.5"/>
+                                        <rect key="frame" x="25.5" y="28.5" width="39" height="23"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                         <color key="textColor" red="0.80729299779999997" green="0.9526875615" blue="0.99909704919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -90,7 +90,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fab-0i-KZo" userLabel="TopViewController" customClass="TopMenuView" customModule="NewSimpleWeather" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="244"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="244"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="244" id="C7v-Sq-hzv"/>
                                 </constraints>
@@ -99,7 +99,7 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hll-p6-1px" userLabel="Menubutton">
-                                <rect key="frame" x="264" y="44" width="40" height="40"/>
+                                <rect key="frame" x="358" y="44" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="1da-Zs-Mom"/>
                                     <constraint firstAttribute="height" constant="40" id="dSf-82-D1n"/>
@@ -110,10 +110,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15T-SK-Mkx" userLabel="BotView">
-                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="836" width="414" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Igm-Ig-HJG" userLabel="OpenMenu">
-                                        <rect key="frame" x="149.5" y="5" width="21" height="20"/>
+                                        <rect key="frame" x="196.5" y="5" width="21" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="XcT-Gg-9ga"/>
                                         </constraints>
@@ -132,7 +132,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nop-hc-513" userLabel="DetailsView">
-                                <rect key="frame" x="55" y="313" width="210" height="135"/>
+                                <rect key="frame" x="102" y="641" width="210" height="135"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partly cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pC4-xB-OVt" userLabel="DescriptionLabel">
                                         <rect key="frame" x="8" y="20" width="194" height="24"/>
@@ -239,7 +239,7 @@
             <objects>
                 <navigationController id="LLP-Yd-FV0" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p8S-fr-4FQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -259,7 +259,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DarkMenu" translatesAutoresizingMaskIntoConstraints="NO" id="Hru-Qx-vn0" userLabel="BackgroundImage">
-                                <rect key="frame" x="0.0" y="-8" width="320" height="252"/>
+                                <rect key="frame" x="0.0" y="-52" width="320" height="296"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8r-zE-rIn" userLabel="CityLabel">
@@ -344,11 +344,11 @@
             <objects>
                 <viewController title="BotMenu" id="I2a-zq-AUj" customClass="BotMenuViewController" customModule="NewSimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Em5-Q5-mNY" customClass="BotMenuView" customModule="NewSimpleWeather" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXz-2F-vkO" userLabel="OpenMenu">
-                                <rect key="frame" x="150.5" y="5" width="19" height="20"/>
+                                <rect key="frame" x="197.5" y="5" width="19" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="GmK-CP-2ne"/>
                                 </constraints>
@@ -357,14 +357,14 @@
                                 <state key="normal" image="chevron.compact.down" catalog="system"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday - Jul 22, 2020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lO7-8K-moK">
-                                <rect key="frame" x="51.5" y="53" width="217.5" height="23.5"/>
+                                <rect key="frame" x="98.5" y="53" width="217.5" height="23.5"/>
                                 <color key="tintColor" red="0.80322211980000002" green="0.95262283089999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <color key="textColor" red="0.80322211980000002" green="0.95262283089999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="aHs-6l-DDX">
-                                <rect key="frame" x="-480" y="86" width="280" height="420"/>
+                                <rect key="frame" x="67" y="233" width="280" height="420"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="eGx-s2-Clr">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="140"/>
@@ -469,7 +469,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="140"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LightHumidity" translatesAutoresizingMaskIntoConstraints="NO" id="qdE-Rz-acR">
-                                                        <rect key="frame" x="8" y="8" width="74.000000000000227" height="92"/>
+                                                        <rect key="frame" x="8" y="8" width="74" height="92"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PO-LX-1yh">
                                                         <rect key="frame" x="8" y="108" width="74" height="24"/>
@@ -687,7 +687,7 @@
                                 <color key="backgroundColor" red="0.69387143849999999" green="0.82698452469999995" blue="0.88160556550000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8E-98-ir8">
-                                <rect key="frame" x="102" y="518" width="116" height="28"/>
+                                <rect key="frame" x="149" y="778" width="116" height="28"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                 <state key="normal" title="Powered by Dark sky">
                                     <color key="titleColor" red="0.80322211980000002" green="0.95262283089999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -698,7 +698,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZC-OT-46j">
-                                <rect key="frame" x="282" y="54" width="22" height="22"/>
+                                <rect key="frame" x="376" y="54" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="Ggk-YH-Bi9"/>
                                     <constraint firstAttribute="height" constant="22" id="xED-KR-hAj"/>
@@ -724,7 +724,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ld6-7U-Bff" userLabel="NextDays Stack view">
-                                <rect key="frame" x="20" y="86" width="280" height="420"/>
+                                <rect key="frame" x="567" y="233" width="280" height="420"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ykj-PU-gr7" customClass="BotNextDayView" customModule="NewSimpleWeather" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
@@ -1079,11 +1079,11 @@
                             <constraint firstItem="g8E-98-ir8" firstAttribute="centerX" secondItem="Em5-Q5-mNY" secondAttribute="centerX" id="NYn-Ui-2hf"/>
                             <constraint firstItem="yXz-2F-vkO" firstAttribute="top" secondItem="bXg-nl-4ez" secondAttribute="top" constant="5" id="Ngh-8y-jYY"/>
                             <constraint firstItem="46V-44-s8h" firstAttribute="leading" secondItem="bXg-nl-4ez" secondAttribute="leading" constant="16" id="VGn-S6-rNt"/>
+                            <constraint firstItem="Ld6-7U-Bff" firstAttribute="firstBaseline" secondItem="aHs-6l-DDX" secondAttribute="firstBaseline" id="Ye1-Wb-hGn"/>
                             <constraint firstItem="lO7-8K-moK" firstAttribute="centerX" secondItem="Em5-Q5-mNY" secondAttribute="centerX" id="Yog-SR-zp4"/>
                             <constraint firstItem="46V-44-s8h" firstAttribute="centerY" secondItem="lO7-8K-moK" secondAttribute="centerY" id="cbI-x2-Ee4"/>
-                            <constraint firstItem="Ld6-7U-Bff" firstAttribute="centerX" secondItem="Em5-Q5-mNY" secondAttribute="centerX" id="fFN-5b-9k0"/>
-                            <constraint firstItem="aHs-6l-DDX" firstAttribute="centerX" secondItem="Em5-Q5-mNY" secondAttribute="centerX" constant="-500" id="tie-eJ-e9e"/>
-                            <constraint firstItem="Ld6-7U-Bff" firstAttribute="centerY" secondItem="Em5-Q5-mNY" secondAttribute="centerY" constant="22" id="w1p-K3-vfp"/>
+                            <constraint firstItem="Ld6-7U-Bff" firstAttribute="centerX" secondItem="Em5-Q5-mNY" secondAttribute="centerX" constant="500" id="fFN-5b-9k0"/>
+                            <constraint firstItem="aHs-6l-DDX" firstAttribute="centerX" secondItem="Em5-Q5-mNY" secondAttribute="centerX" id="tie-eJ-e9e"/>
                             <constraint firstItem="aHs-6l-DDX" firstAttribute="centerY" secondItem="Em5-Q5-mNY" secondAttribute="centerY" constant="22" id="z5z-h4-f2y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bXg-nl-4ez"/>
