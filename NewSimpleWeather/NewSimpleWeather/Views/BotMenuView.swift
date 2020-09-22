@@ -89,7 +89,7 @@ class BotMenuView: UIView {
         thirdLineStackView.spacing = verticalSpace
     }
     
-    func setupValues(today: TodayWeather, nextDays: NextDaysWeather){
+    func setupValues(_ today: TodayWeather){
         self.titleLabel.text = today.day
         self.weatherStateImage.image = UIImage(named: IconWeather.getStateIconImage(today.icon))
         self.weatherStatusLabel.text = today.icon.rawValue

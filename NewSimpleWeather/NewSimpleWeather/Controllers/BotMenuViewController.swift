@@ -24,13 +24,12 @@ class BotMenuViewController: UIViewController {
     // MARK: - IBOutlet
     
     @IBOutlet var botView: BotMenuView!
+     @IBOutlet var nextDayViewCollection: [BotNextDayView]!
     
     @IBOutlet weak var todayButton: UIButton!
     @IBOutlet weak var nextDaysButton: UIButton!
     @IBOutlet weak var todayStackViewVerticalConstraint: NSLayoutConstraint!
     @IBOutlet weak var nextDaysStackViewVerticalConstraint: NSLayoutConstraint!
-    
-    
     
     // MARK: - Lifecycle
     
@@ -41,20 +40,36 @@ class BotMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupView()
     }
     
     
     // MARK: - Methods
     
-    func setupView() {
+    func setupView(){
         guard let today = self.todayWeather else { return }
         guard let next = self.nextDaysWeather else { return }
         
-        botView.setupView()
-        botView.setupValues(today: today, nextDays: next)
-        
+        setupTodayView(today)
+        setupNextDaysViews(next)
         updateButtons()
+    }
+    
+    func setupTodayView(_ today: TodayWeather) {
+        botView.setupView()
+        botView.setupValues(today)
+        
+    }
+    
+    func setupNextDaysViews(_ next: NextDaysWeather) {
+        let nextDays = next.nextDaysList
+        
+        for view in self.nextDayViewCollection {
+            let nextDay: NextWeather = nextDays[view.tag]
+            view.setupView()
+            view.setupValues(nextDay: nextDay)
+        }
     }
     
     func moveBotViewTo(state: MenuState){

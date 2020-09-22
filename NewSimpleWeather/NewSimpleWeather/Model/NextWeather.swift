@@ -50,12 +50,12 @@ class NextWeather: NSObject {
     }
     
     //Week day - Month day, year
-    func getDayString(value: Int) -> String {
+    private func getDayString(value: Int) -> String {
         let timeValue = TimeInterval(value)
         let date = Date(timeIntervalSince1970: timeValue)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = Constants.DateFormat().day
+        dateFormatter.dateFormat = Constants.DateFormat().dayWithoutYear
         
         
         let dayString = dateFormatter.string(from: date)
@@ -64,18 +64,18 @@ class NextWeather: NSObject {
     
     
     //The value is in celsius by default
-    func getTemperatureString(value: Double) -> String{
+    private func getTemperatureString(value: Double) -> String{
         let temperaturePreference = Temperature.getPreference()
         var stringTemperature = ""
         
         switch temperaturePreference {
         case .celsius:
             let degrees = Int(value)
-            stringTemperature = "\(degrees)\(Constants.Temperature().celsius)"
+            stringTemperature = "\(degrees)"
             break
         case .fahrenheit:
             let degrees = Int(Temperature.celsiusToFahrenheit(value))
-            stringTemperature = "\(degrees)\(Constants.Temperature().fahrenheit)"
+            stringTemperature = "\(degrees)"
             break
         }
         

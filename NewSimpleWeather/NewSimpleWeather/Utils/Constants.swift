@@ -38,6 +38,7 @@ class Constants: NSObject {
     
     public struct DateFormat {
         let day: String = "EEEE - MMMM d, yyyy"
+        let dayWithoutYear: String = "EEEE - MMMM d"
         let hour: String = "h:mm"
     }
     
