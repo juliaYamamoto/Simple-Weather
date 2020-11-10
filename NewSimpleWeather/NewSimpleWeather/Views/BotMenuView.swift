@@ -71,6 +71,11 @@ class BotMenuView: UIView {
         self.sunsetDescriptionLabel.textColor = UIColor.MainColorGroup.lightBlue
         
         self.darkSkyButton.tintColor = UIColor.MainColorGroup.lightBlue
+        
+        self.masterStackView.backgroundColor = UIColor.MainColorGroup.darkBlue
+        self.firstLineStackView.backgroundColor = UIColor.MainColorGroup.darkBlue
+        self.secondLineStackView.backgroundColor = UIColor.MainColorGroup.darkBlue
+        self.thirdLineStackView.backgroundColor = UIColor.MainColorGroup.darkBlue
     }
     
     func setupSpaceStackViews() {
