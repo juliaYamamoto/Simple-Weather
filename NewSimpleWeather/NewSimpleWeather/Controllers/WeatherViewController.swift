@@ -128,6 +128,7 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
                 DispatchQueue.main.async {
                     self.createDataModelsFrom(weather)
                     self.updateTodayWeatherInfo()
+                    
                 }
             case .failure(_):
                 #warning("TODO: APIError")
