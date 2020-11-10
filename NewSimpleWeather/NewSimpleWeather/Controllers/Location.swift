@@ -11,6 +11,7 @@ import CoreLocation
 
 protocol LocationDelegate {
     func gotCurrentLocation(latitude: Double, longitude: Double)
+    func permissionDenied()
 }
 
 class Location: NSObject, CLLocationManagerDelegate {
@@ -29,12 +30,24 @@ class Location: NSObject, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
             getCurrentLocation()
         }
+        
+        else if CLLocationManager.authorizationStatus() == .denied{
+            permissionDenied()
+        }
     }
    
     // MARK: - Methods
     func getCurrentLocation() {
-        guard let location = locationManager.location else {return}
-        delegate?.gotCurrentLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        if let location = locationManager.location {
+            delegate?.gotCurrentLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        } else {
+            permissionDenied()
+        }
+        
+    }
+    
+    func permissionDenied() {
+        delegate?.permissionDenied()
     }
     
     
@@ -45,8 +58,7 @@ class Location: NSObject, CLLocationManagerDelegate {
         case .authorizedAlways, .authorizedWhenInUse:
             getCurrentLocation()
         case .denied:
-            print("denied")
-            //TODO - Ask to point a city or redirect to settings and change permission
+            permissionDenied()
             break
         default:
             break

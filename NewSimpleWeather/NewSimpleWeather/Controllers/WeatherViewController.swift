@@ -42,6 +42,7 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     }
     
     override func viewDidLoad() {
+        print("viewDidLoad")
         super.viewDidLoad()
         location.delegate = self
         location.setupLocationManagerWithVC()
@@ -105,10 +106,12 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     
     // MARK: - IBOutlets
     @IBAction func OpenCloseMenu(_ sender: Any) {
-        if self.topMenuViewController.menuIsOpen {
-            self.topMenuViewController.closeMenu(onView: self.view)
-        } else {
-            self.topMenuViewController.openMenu(onView: self.view)
+        if CLLocationManager.authorizationStatus() != .denied {
+            if self.topMenuViewController.menuIsOpen {
+                self.topMenuViewController.closeMenu(onView: self.view)
+            } else {
+                self.topMenuViewController.openMenu(onView: self.view)
+            }
         }
     }
     
@@ -134,6 +137,27 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
                 #warning("TODO: APIError")
                 break
             }
+        }
+    }
+    
+    func permissionDenied() {
+        if CLLocationManager.authorizationStatus() == .denied {
+            let permissionAlert = UIAlertController (title: "Location permission required", message: "To continue using this app, we need your permission to fetch your location. Click the button bellow > Privacy > Location services to change this app permission", preferredStyle: .alert)
+                let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
+
+                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                        return
+                    }
+
+                    if UIApplication.shared.canOpenURL(settingsUrl) {
+                        UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                            print("Settings opened: \(success)")
+                        })
+                    }
+                }
+            
+                permissionAlert.addAction(settingsAction)
+                present(permissionAlert, animated: true, completion: nil)
         }
     }
 }
