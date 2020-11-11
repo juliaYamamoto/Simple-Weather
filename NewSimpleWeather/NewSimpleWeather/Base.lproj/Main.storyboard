@@ -113,23 +113,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15T-SK-Mkx" userLabel="BotView">
                                 <rect key="frame" x="0.0" y="508" width="320" height="60"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Igm-Ig-HJG" userLabel="OpenMenu">
-                                        <rect key="frame" x="149.5" y="5" width="21" height="20"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.up.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="I0B-x3-pHx">
+                                        <rect key="frame" x="154" y="10" width="12" height="11"/>
+                                        <color key="tintColor" red="0.80322211980000002" green="0.95262283089999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="XcT-Gg-9ga"/>
+                                            <constraint firstAttribute="height" constant="15" id="FJq-H8-2ND"/>
+                                            <constraint firstAttribute="width" constant="12" id="d88-MW-Fwd"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                        <color key="tintColor" red="0.80729299779999997" green="0.9526875615" blue="0.99909704919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" image="line.horizontal.3" catalog="system">
-                                            <color key="titleColor" red="0.80729299779999997" green="0.9526875615" blue="0.99909704919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.26010754699999999" green="0.3363266587" blue="0.39884877200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Igm-Ig-HJG" firstAttribute="centerX" secondItem="15T-SK-Mkx" secondAttribute="centerX" id="GNw-bs-lor"/>
+                                    <constraint firstItem="I0B-x3-pHx" firstAttribute="top" secondItem="15T-SK-Mkx" secondAttribute="top" constant="8" id="OwF-pb-ALj"/>
                                     <constraint firstAttribute="height" constant="60" id="RUd-2S-Yif"/>
-                                    <constraint firstItem="Igm-Ig-HJG" firstAttribute="top" secondItem="15T-SK-Mkx" secondAttribute="top" constant="5" id="uq3-jP-Mx1"/>
+                                    <constraint firstItem="I0B-x3-pHx" firstAttribute="centerX" secondItem="15T-SK-Mkx" secondAttribute="centerX" id="sCW-Q0-iFO"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nop-hc-513" userLabel="DetailsView">
@@ -206,7 +203,6 @@
                             <constraint firstItem="15T-SK-Mkx" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" id="zu1-Vl-1wY"/>
                         </constraints>
                         <connections>
-                            <outlet property="botMenuButton" destination="Igm-Ig-HJG" id="Brp-ak-d1T"/>
                             <outlet property="botMenuView" destination="15T-SK-Mkx" id="pAI-aq-H0j"/>
                             <outlet property="cityLabel" destination="3N4-28-Agi" id="XPM-xO-jQp"/>
                             <outlet property="countryLabel" destination="Yka-ul-XST" id="feH-am-1um"/>
@@ -233,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ily-Q8-PAa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="402.39999999999998" y="-705.69715142428788"/>
+            <point key="canvasLocation" x="401.25" y="-706.69014084507046"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6fn-sJ-eFo">
@@ -1154,7 +1150,7 @@
         <image name="Sunset" width="468" height="272"/>
         <image name="arrowtriangle.left.fill" catalog="system" width="128" height="113"/>
         <image name="arrowtriangle.right.fill" catalog="system" width="128" height="113"/>
+        <image name="arrowtriangle.up.fill" catalog="system" width="128" height="124"/>
         <image name="chevron.compact.down" catalog="system" width="128" height="43"/>
-        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
     </resources>
 </document>

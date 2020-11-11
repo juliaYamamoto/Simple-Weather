@@ -21,7 +21,6 @@ class MainScreenView: UIView {
     @IBOutlet weak var rainImage: UIImageView!
     @IBOutlet weak var rainLabel: UILabel!
     @IBOutlet weak var botMenuView: UIView!
-    @IBOutlet weak var botMenuButton: UIButton!
     @IBOutlet weak var topMenuViewButton: UIButton!
     
     func setupView() {
@@ -34,7 +33,6 @@ class MainScreenView: UIView {
         humidityLabel.textColor = UIColor.MainColorGroup.lightBlue
         rainLabel.textColor = UIColor.MainColorGroup.lightBlue
         botMenuView.backgroundColor = UIColor.MainColorGroup.darkBlue
-        botMenuButton.imageView?.tintColor = UIColor.MainColorGroup.lightBlue
         topMenuViewButton.imageView?.tintColor = UIColor.MainColorGroup.lightBlue
     }
     
