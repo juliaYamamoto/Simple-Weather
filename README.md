@@ -17,7 +17,7 @@ This is a simple weather aplication that shows the weather of the place you curr
      
 
 <a name="features"></a>
-### Features
+## Features
 - Made 100% in **Swift**;
 - Using **MVC** Arquitecture;
 - **Constraints** to work in different screen sizes;
@@ -29,7 +29,7 @@ This is a simple weather aplication that shows the weather of the place you curr
       
 
 <a name="screenshots"></a>
-### Screenshots
+## Screenshots
 ![](ReadmeFiles/screens001.png)
 ![](ReadmeFiles/screens002.png)
 
@@ -37,7 +37,7 @@ This is a simple weather aplication that shows the weather of the place you curr
      
 
 <a name="design"></a>
-### Design
+## Design
 The app idea was designed using **keynote**:
 ![](ReadmeFiles/design.png)
       
@@ -45,7 +45,7 @@ The app idea was designed using **keynote**:
       
 
 <a name="api"></a>
-### Dark Sky API 
+## Dark Sky API 
 To learn more about Dark Sky API [click here](https://darksky.net/dev).
      
 Since it uses an ID to identify who is requesting, **you will need to add your own before run the aplication (or it won't work).** It can be easily done by opening the "Contants" class and adding it to the **keyValue** constant, where you can find a comment that says "Add your own key here".
