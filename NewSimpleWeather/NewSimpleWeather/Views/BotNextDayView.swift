@@ -9,12 +9,15 @@
 import UIKit
 
 class BotNextDayView: UIView {
-
+    
+    // MARK: - IBOutlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var stateImage: UIImageView!
     @IBOutlet weak var minLabel: UILabel!
     @IBOutlet weak var maxLabel: UILabel!
     
+    
+    // MARK: - Methods
     func setupView() {
         self.layer.cornerRadius = 5;
         self.layer.masksToBounds = true;

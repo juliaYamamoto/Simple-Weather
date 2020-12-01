@@ -15,7 +15,7 @@ class Constants: NSObject {
         let baseURL: String = "api.darksky.net"
         
         let forecastPath: String = "forecast"
-        let keyValue: String = "8be6ee97dfdc80b35ee98a2ec52b938d"
+        let keyValue: String = "" //Add your own key here
         
         let queryNameExclude: String = "exclude"
         let queryValueCurrently: String = "currently"

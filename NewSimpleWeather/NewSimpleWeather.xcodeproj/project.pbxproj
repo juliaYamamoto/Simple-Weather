@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23DFB0BD255EA427008B28CF /* NoInternetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFB0BC255EA427008B28CF /* NoInternetView.swift */; };
 		A30C881F25082BB100352F16 /* BotMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C881E25082BB100352F16 /* BotMenuViewController.swift */; };
 		A30C882125082BC600352F16 /* BotMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C882025082BC600352F16 /* BotMenuView.swift */; };
 		A30F697A24EB243B00D7CFBB /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F697924EB243B00D7CFBB /* Temperature.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23DFB0BC255EA427008B28CF /* NoInternetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternetView.swift; sourceTree = "<group>"; };
 		A30C881E25082BB100352F16 /* BotMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotMenuViewController.swift; sourceTree = "<group>"; };
 		A30C882025082BC600352F16 /* BotMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotMenuView.swift; sourceTree = "<group>"; };
 		A30F697924EB243B00D7CFBB /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				A356E5D724F8857B006B8BF5 /* TopMenuView.swift */,
 				A30C882025082BC600352F16 /* BotMenuView.swift */,
 				A353473D25199A2E009741C0 /* BotNextDayView.swift */,
+				23DFB0BC255EA427008B28CF /* NoInternetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				A3C8596124CCDCF200C7CF71 /* Constants.swift in Sources */,
 				A31629CE24CA2B02003AF90B /* ViewController.swift in Sources */,
 				A3B9E8A524D1327D00688C16 /* APIRequest.swift in Sources */,
+				23DFB0BD255EA427008B28CF /* NoInternetView.swift in Sources */,
 				A3A6FCEE24DE31D0005012D5 /* IconWeather.swift in Sources */,
 				A3B9E8A824D1342D00688C16 /* WeatherModel.swift in Sources */,
 				A37E380A24F71118003EEB2C /* TopMenuViewController.swift in Sources */,

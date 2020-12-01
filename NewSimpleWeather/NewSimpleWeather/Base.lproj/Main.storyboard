@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LLP-Yd-FV0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LLP-Yd-FV0">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -173,6 +173,61 @@
                                     <constraint firstItem="EDu-HJ-jZ1" firstAttribute="leading" secondItem="nop-hc-513" secondAttribute="leading" constant="20" id="zNu-eW-xLa"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFN-q4-g9W" userLabel="NoInternetView" customClass="NoInternetView" customModule="NewSimpleWeather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No internet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKt-rx-znY">
+                                        <rect key="frame" x="10" y="92" width="300" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="Ox5-ya-nFC"/>
+                                            <constraint firstAttribute="width" constant="300" id="RaC-04-8q7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="32"/>
+                                        <color key="textColor" red="0.80322211980000002" green="0.95262283089999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app needs internet connection to work." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96c-7F-fJP">
+                                        <rect key="frame" x="48" y="166" width="224" height="49.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
+                                        <color key="textColor" red="0.80322211980000002" green="0.95262283089999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DW9-7Z-Fk1">
+                                        <rect key="frame" x="48" y="418" width="224" height="50"/>
+                                        <color key="backgroundColor" red="0.80322211980000002" green="0.95262283089999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="x1c-RU-5bc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="18"/>
+                                        <state key="normal" title="Try again">
+                                            <color key="titleColor" red="0.25601315499999999" green="0.33624881509999999" blue="0.40292274950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="checkConnection:" destination="RsM-3L-1zy" eventType="touchUpInside" id="PAe-32-3wx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.25601315499999999" green="0.33624881509999999" blue="0.40292274950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="DW9-7Z-Fk1" secondAttribute="bottom" constant="100" id="2uh-w2-57Y"/>
+                                    <constraint firstItem="XKt-rx-znY" firstAttribute="top" secondItem="XFN-q4-g9W" secondAttribute="top" constant="92" id="AJO-Nv-ang"/>
+                                    <constraint firstAttribute="trailing" secondItem="96c-7F-fJP" secondAttribute="trailing" constant="48" id="F9B-Bf-3Wl"/>
+                                    <constraint firstItem="DW9-7Z-Fk1" firstAttribute="centerX" secondItem="XFN-q4-g9W" secondAttribute="centerX" id="Jqp-os-JWc"/>
+                                    <constraint firstItem="96c-7F-fJP" firstAttribute="centerX" secondItem="XFN-q4-g9W" secondAttribute="centerX" id="Qzn-Pc-AsD"/>
+                                    <constraint firstItem="DW9-7Z-Fk1" firstAttribute="leading" secondItem="XFN-q4-g9W" secondAttribute="leading" constant="48" id="TxA-W1-J4e"/>
+                                    <constraint firstAttribute="trailing" secondItem="DW9-7Z-Fk1" secondAttribute="trailing" constant="48" id="WeE-ZU-WpQ"/>
+                                    <constraint firstItem="96c-7F-fJP" firstAttribute="centerX" secondItem="XKt-rx-znY" secondAttribute="centerX" id="aRO-YI-Jtt"/>
+                                    <constraint firstItem="XKt-rx-znY" firstAttribute="centerX" secondItem="XFN-q4-g9W" secondAttribute="centerX" id="gs2-Pk-O3b"/>
+                                    <constraint firstItem="DW9-7Z-Fk1" firstAttribute="centerX" secondItem="XKt-rx-znY" secondAttribute="centerX" id="mdh-VK-Tn2"/>
+                                    <constraint firstItem="96c-7F-fJP" firstAttribute="top" secondItem="XKt-rx-znY" secondAttribute="bottom" constant="32" id="suf-Fc-Dfe"/>
+                                    <constraint firstItem="96c-7F-fJP" firstAttribute="leading" secondItem="XFN-q4-g9W" secondAttribute="leading" constant="48" id="yQ1-ft-xkR"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="96c-7F-fJP" id="AWb-K5-XVq"/>
+                                    <outlet property="titleLabel" destination="XKt-rx-znY" id="hdE-V7-h7r"/>
+                                    <outlet property="tryAgainButton" destination="DW9-7Z-Fk1" id="RZq-eh-tLV"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EGe-pF-poB"/>
                         <color key="backgroundColor" red="0.80729299779999997" green="0.9526875615" blue="0.99909704919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -181,19 +236,23 @@
                             <constraint firstItem="EGe-pF-poB" firstAttribute="trailing" secondItem="3N4-28-Agi" secondAttribute="trailing" constant="16" id="5XA-LM-WW9"/>
                             <constraint firstItem="Fab-0i-KZo" firstAttribute="trailing" secondItem="EGe-pF-poB" secondAttribute="trailing" id="7qZ-1K-Ldg"/>
                             <constraint firstItem="Bs9-cy-pLm" firstAttribute="centerX" secondItem="s1s-iF-O36" secondAttribute="centerX" id="823-E7-KqV"/>
+                            <constraint firstItem="XFN-q4-g9W" firstAttribute="trailing" secondItem="EGe-pF-poB" secondAttribute="trailing" id="8sO-pP-uwI"/>
                             <constraint firstItem="hll-p6-1px" firstAttribute="top" secondItem="s1s-iF-O36" secondAttribute="top" constant="44" id="9FF-eg-ANh"/>
                             <constraint firstItem="3N4-28-Agi" firstAttribute="top" secondItem="EGe-pF-poB" secondAttribute="top" constant="20" id="9sK-my-CTM"/>
+                            <constraint firstItem="XFN-q4-g9W" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" id="AC8-TY-ey8"/>
                             <constraint firstItem="Fab-0i-KZo" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" id="BA3-9S-xc3"/>
                             <constraint firstItem="Yka-ul-XST" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" constant="16" id="BNn-Bb-gAK"/>
                             <constraint firstItem="Bs9-cy-pLm" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" constant="16" id="Cdh-mg-BUy"/>
                             <constraint firstItem="EGe-pF-poB" firstAttribute="trailing" secondItem="WhH-8S-9OS" secondAttribute="trailing" constant="12" id="JdM-2P-VpD"/>
                             <constraint firstItem="Ayq-22-Op9" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" constant="12" id="Ncz-6Q-80y"/>
                             <constraint firstItem="3N4-28-Agi" firstAttribute="leading" secondItem="EGe-pF-poB" secondAttribute="leading" constant="16" id="O6u-1g-uzs"/>
+                            <constraint firstItem="XFN-q4-g9W" firstAttribute="bottom" secondItem="EGe-pF-poB" secondAttribute="bottom" id="Pa0-bs-Xvq"/>
                             <constraint firstItem="nop-hc-513" firstAttribute="centerX" secondItem="s1s-iF-O36" secondAttribute="centerX" id="SmF-QI-nI9"/>
                             <constraint firstItem="15T-SK-Mkx" firstAttribute="top" secondItem="nop-hc-513" secondAttribute="bottom" constant="60" id="WT9-PC-K90"/>
                             <constraint firstItem="EGe-pF-poB" firstAttribute="trailing" secondItem="hll-p6-1px" secondAttribute="trailing" constant="16" id="fUp-JS-YAZ"/>
                             <constraint firstItem="15T-SK-Mkx" firstAttribute="trailing" secondItem="EGe-pF-poB" secondAttribute="trailing" id="hvb-R9-1qU"/>
                             <constraint firstItem="15T-SK-Mkx" firstAttribute="bottom" secondItem="s1s-iF-O36" secondAttribute="bottom" id="kuU-jo-7Ec"/>
+                            <constraint firstItem="XFN-q4-g9W" firstAttribute="top" secondItem="s1s-iF-O36" secondAttribute="top" id="lGP-Kh-99t"/>
                             <constraint firstItem="Fab-0i-KZo" firstAttribute="top" secondItem="s1s-iF-O36" secondAttribute="top" id="lUv-do-FVP"/>
                             <constraint firstItem="EGe-pF-poB" firstAttribute="trailing" secondItem="Yka-ul-XST" secondAttribute="trailing" constant="16" id="mTI-Mr-IFs"/>
                             <constraint firstItem="EGe-pF-poB" firstAttribute="bottom" secondItem="WhH-8S-9OS" secondAttribute="bottom" constant="60" id="qis-M1-gAs"/>
@@ -222,6 +281,7 @@
                         <outlet property="botView" destination="15T-SK-Mkx" id="pEh-tY-FRc"/>
                         <outlet property="leadingConstraintTopMenu" destination="BA3-9S-xc3" id="wg2-Fr-bBC"/>
                         <outlet property="mainScreenView" destination="s1s-iF-O36" id="2uW-UC-vJw"/>
+                        <outlet property="noInternetView" destination="XFN-q4-g9W" id="Uvl-87-vbo"/>
                         <outlet property="topConstraintTopMenu" destination="lUv-do-FVP" id="zbW-pZ-2PR"/>
                         <outlet property="traillingConstraintTopMenu" destination="7qZ-1K-Ldg" id="TQZ-cm-2BN"/>
                         <segue destination="I2a-zq-AUj" kind="showDetail" identifier="segueToBot" id="t4n-uZ-nn5"/>

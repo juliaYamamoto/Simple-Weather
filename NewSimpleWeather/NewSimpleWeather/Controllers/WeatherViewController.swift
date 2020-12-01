@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate {
-    
+   
     // MARK: - Attributes
     let location = Location()
     var todayWeather = TodayWeather()
@@ -30,6 +30,10 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     @IBOutlet weak var botView: UIView!
     
     
+    // MARK: - Outlets - No internet
+    @IBOutlet weak var noInternetView: NoInternetView!
+    
+    
     // MARK: - Attributes - Menus
     var topMenuViewController = TopMenuViewController()
     var botMenuViewController = BotMenuViewController()
@@ -42,11 +46,10 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
     }
     
     override func viewDidLoad() {
-        print("viewDidLoad")
         super.viewDidLoad()
         location.delegate = self
-        location.setupLocationManagerWithVC()
         
+        checkForConnection()
         setupSwipeGesture()
         setupView()
     }
@@ -114,6 +117,23 @@ class WeatherViewController: UIViewController, LocationDelegate, TopMenuDelegate
             }
         }
     }
+    
+    // MARK: - NoInternetConnection
+    
+    func checkForConnection(){
+        if Reachability.isConnectedToNetwork(){
+            location.setupLocationManagerWithVC()
+            noInternetView.hideView()
+        } else {
+            noInternetView.showView()
+            noInternetView.setupView()
+        }
+    }
+    
+    @IBAction func checkConnection(_ sender: Any) {
+        checkForConnection()
+    }
+    
     
     
     // MARK: - TopMenuDelegate
